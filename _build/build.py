@@ -499,7 +499,7 @@ today = datetime.date.today().isoformat()
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
     f'  <url><loc>{SITE}{p["path"]}</loc><lastmod>{next((a["date"] for a in ARTICLES if p["path"] == "/blog/"+a["slug"]+"/"), today)}</lastmod></url>\n' for p in PAGES) + '</urlset>\n'
 open(os.path.join(OUT, 'sitemap.xml'), 'w').write(sm)
-open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
+open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /_build/\nSitemap: {SITE}/sitemap.xml\n')
 open(os.path.join(OUT, '.nojekyll'), 'w').write('')
 nf = '''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Page not found | Verso Alto Youth Sports</title>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1b3a,#050d22);color:#fbf6ea;padding:24px}h1{font-size:clamp(3rem,12vw,7rem);margin:0;color:#f2b632;font-family:Anton,Impact,sans-serif}a{display:inline-block;margin-top:24px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,#f2b632,#ff8a3d);color:#0b1430;font-weight:800;text-decoration:none}</style></head>
