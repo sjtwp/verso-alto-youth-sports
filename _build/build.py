@@ -92,7 +92,7 @@ def sport_cards():
 TAG_ICON = {'News': 'logo', 'Faith': 'logo', 'Safety': 'ball', 'Soccer': 'ball', 'Families': 'ball', 'Sports': 'football', 'Community': 'basketball'}
 def post_card(a, i=0):
     ic = TAG_ICON.get(a['tag'], 'ball')
-    vb = '0 0 302 216' if ic == 'logo' else '0 0 100 100'
+    vb = '0 0 1680 1085' if ic == 'logo' else '0 0 100 100'
     return f'''<a class="post-card reveal" style="transition-delay:{(i%3)*.08:.2f}s" data-tag="{a['tag']}" href="@/blog/{a['slug']}/">
   <div class="post-art t-{a['tag']}"><svg class="big" viewBox="{vb}" aria-hidden="true"><use href="#{ic}"/></svg><span class="tagpill">{a['tag']}</span></div>
   <div class="post-body"><time datetime="{a['date']}">{fmt_date(a['date'])}</time><h3>{esc(a['title'])}</h3><p>{esc(a['desc'])}</p><span class="more">Read article →</span></div></a>'''
