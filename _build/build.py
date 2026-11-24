@@ -6,7 +6,9 @@ GitHub Pages (sjtwp.github.io/verso-alto-youth-sports/) and on the real domain."
 import os, re, json, html, shutil, datetime, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, 'src')
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'dist')
+ARGS = [a for a in sys.argv[1:] if not a.startswith('--')]
+SINGLE = '--single' in sys.argv   # one index.html with #hash routes (use until the domain is connected)
+OUT = ARGS[0] if ARGS else os.path.join(ROOT, 'dist')
 SITE = 'https://www.versoaltoyouthsports.com'   # canonical domain
 FORM = 'https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform'
 sys.path.insert(0, SRC)
@@ -482,34 +484,160 @@ for a in ARTICLES:
           "keywords": f"{a['tag']}, youth sports, Arizona, East Valley, Gilbert, Mesa, Chandler, Catholic youth sports"}
     page(f"/blog/{a['slug']}/", a['title'], a['desc'], b, 'blog', ld=ld)
 
+# ---------------------------------------------------------------- single-file mode
+def route_of(path):
+    r = path.strip('/')
+    return r or 'home'
+
+def resolve_single(h):
+    def fix(m):
+        attr, target = m.group(1), m.group(2)
+        if target.startswith('/assets/'):
+            return m.group(0)
+        mm = re.match(r'([^?#]*)(\?[^#]*)?(#.*)?', target)
+        r = route_of(mm.group(1)); q = mm.group(2) or ''; frag = (mm.group(3) or '')[1:]
+        return f'{attr}="#{r}{"/" + frag if frag else ""}{q}"'
+    return re.sub(r'(href|src)="@(/[^"]*)"', fix, h)
+
+ROUTER = r"""
+{
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const ALIAS={soccer:'sports/soccer',baseball:'sports/baseball',basketball:'sports/basketball',football:'sports/football',privacy:'policies/privacy',refund:'policies/refund',waiver:'policies/waiver',concussion:'policies/concussion','child-protection':'policies/child-protection'};
+const pages=$$('.page'), routes=pages.map(p=>p.dataset.route), wipe=$('#wipe');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let current=null;
+function parse(){
+  let h=decodeURIComponent(location.hash.slice(1)), q='';
+  const qi=h.indexOf('?'); if(qi>=0){q=h.slice(qi+1); h=h.slice(0,qi)}
+  h=h.replace(/^\/+|\/+$/g,''); if(ALIAS[h]) h=ALIAS[h]; if(!h) h='home';
+  let r=h, sub='';
+  while(r && !routes.includes(r)){const i=r.lastIndexOf('/'); sub=r.slice(i+1)+(sub?'/'+sub:''); r=i>0?r.slice(0,i):''}
+  if(!r){ if(document.getElementById(h)){r=current||'home'; sub=h} else {r='home'; sub=''} }
+  return {r, sub, q};
+}
+function show(){
+  const {r, sub, q}=parse(), pg=pages[routes.indexOf(r)];
+  document.body.classList.remove('menu-open');
+  pages.forEach(p=>p.classList.toggle('active', p===pg));
+  const sec=pg.dataset.section;
+  $$('#tabs [data-tab]').forEach(a=>a.classList.toggle('active', a.getAttribute('href').slice(1)===sec));
+  $$('#mobileMenu .mm-item > a').forEach(a=>a.classList.toggle('active', a.getAttribute('href').slice(1)===sec));
+  $$('#mobileMenu .mm-group').forEach(g=>g.classList.toggle('current', $('.mm-row > a',g).getAttribute('href').slice(1)===sec));
+  $$('#mobileMenu .mm-sub a').forEach(a=>a.classList.toggle('active', a.getAttribute('href').slice(1)===r));
+  document.title=pg.dataset.title;
+  const md=$('meta[name=description]'); if(md) md.setAttribute('content', pg.dataset.desc);
+  if(r==='contact' && q){const t=new URLSearchParams(q).get('topic'), s=$('#ft'); if(t&&s) [...s.options].forEach(o=>{if(o.text===t) s.value=o.text})}
+  window.VA_setPill && window.VA_setPill();
+  const el=sub && document.getElementById(sub);
+  if(el){ setTimeout(()=>el.scrollIntoView({behavior: current===r?'smooth':'auto', block:'start'}), 30) } else if(current!==r){ window.scrollTo(0,0) }
+  current=r; dispatchEvent(new Event('scroll'));
+}
+function go(){
+  const {r}=parse();
+  if(current===null || r===current || reduce || !wipe){ show(); return }
+  wipe.className='in'; setTimeout(()=>{show(); wipe.className='out'; setTimeout(()=>wipe.className='',700)},520);
+}
+addEventListener('hashchange', go);
+show();
+}
+"""
+
+def build_single(out_dir):
+    desktop, mobile = nav(None, None)
+    pages_html = ''
+    for p in PAGES:
+        full_title = p['title'] if p['home'] else f"{p['title']} | Verso Alto Youth Sports"
+        pages_html += f'<div class="page" data-route="{route_of(p["path"])}" data-section="{p["section"]}" data-title="{esc(full_title)}" data-desc="{esc(p["desc"])}">\n{p["body"]}\n</div>\n'
+    home = PAGES[0]
+    css = rd('site.css'); js = rd('site.js')
+    doc = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{esc(home['title'])}</title>
+<meta name="description" content="{esc(home['desc'])}" />
+<link rel="canonical" href="{SITE}/" />
+<meta property="og:type" content="website" /><meta property="og:site_name" content="Verso Alto Youth Sports" />
+<meta property="og:title" content="{esc(home['title'])}" /><meta property="og:description" content="{esc(home['desc'])}" />
+<meta name="geo.region" content="US-AZ" /><meta name="geo.placename" content="Gilbert, Arizona" />
+<meta name="theme-color" content="#06102a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+{rd('favicon.html').strip()}
+<style>
+{css}
+</style>
+<script type="application/ld+json">{json.dumps(ORG_LD, ensure_ascii=False)}</script>
+</head>
+<body>
+{rd('defs.html')}
+<div id="progress"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="wipe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="toast" id="toast" role="status"></div>
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 875 216"><use href="#logofull"/></svg></a>
+    {desktop}
+    <a class="cta-mini interest" href="{FORM}" target="_blank" rel="noopener">Interest Form →</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+{mobile}
+<main>
+{pages_html}
+</main>
+{footer()}
+<script>
+{js}
+</script>
+<script>
+{ROUTER}
+</script>
+</body>
+</html>"""
+    doc = resolve_single(doc)
+    os.makedirs(out_dir, exist_ok=True)
+    open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(doc)
+    return doc
+
 # ---------------------------------------------------------------- write
 if os.path.exists(OUT):
     for n in os.listdir(OUT):
         if n in ('.git', '_build'): continue
         p = os.path.join(OUT, n)
         shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
-os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
-shutil.copy(os.path.join(SRC, 'site.css'), os.path.join(OUT, 'assets', 'site.css'))
-shutil.copy(os.path.join(SRC, 'site.js'), os.path.join(OUT, 'assets', 'site.js'))
-for p in PAGES:
-    d = os.path.join(OUT, p['path'].strip('/'))
-    os.makedirs(d, exist_ok=True)
-    open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(render(p))
-today = datetime.date.today().isoformat()
-sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
-    f'  <url><loc>{SITE}{p["path"]}</loc><lastmod>{next((a["date"] for a in ARTICLES if p["path"] == "/blog/"+a["slug"]+"/"), today)}</lastmod></url>\n' for p in PAGES) + '</urlset>\n'
-open(os.path.join(OUT, 'sitemap.xml'), 'w').write(sm)
+if SINGLE:
+    build_single(OUT)
+else:
+  os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
+  shutil.copy(os.path.join(SRC, 'site.css'), os.path.join(OUT, 'assets', 'site.css'))
+  shutil.copy(os.path.join(SRC, 'site.js'), os.path.join(OUT, 'assets', 'site.js'))
+  for p in PAGES:
+      d = os.path.join(OUT, p['path'].strip('/'))
+      os.makedirs(d, exist_ok=True)
+      open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(render(p))
+  today = datetime.date.today().isoformat()
+  sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
+      f'  <url><loc>{SITE}{p["path"]}</loc><lastmod>{next((a["date"] for a in ARTICLES if p["path"] == "/blog/"+a["slug"]+"/"), today)}</lastmod></url>\n' for p in PAGES) + '</urlset>\n'
+  open(os.path.join(OUT, 'sitemap.xml'), 'w').write(sm)
 open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /_build/\nSitemap: {SITE}/sitemap.xml\n')
 open(os.path.join(OUT, '.nojekyll'), 'w').write('')
 nf = '''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Page not found | Verso Alto Youth Sports</title>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1b3a,#050d22);color:#fbf6ea;padding:24px}h1{font-size:clamp(3rem,12vw,7rem);margin:0;color:#f2b632;font-family:Anton,Impact,sans-serif}a{display:inline-block;margin-top:24px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,#f2b632,#ff8a3d);color:#0b1430;font-weight:800;text-decoration:none}</style></head>
 <body><div><h1>404</h1><p>We couldn't find that page — but the heights are still waiting.</p><a id="home" href="/">Back to home</a></div>
-<script>var b=location.pathname.indexOf('/verso-alto-youth-sports/')===0?'/verso-alto-youth-sports/':'/';document.getElementById('home').href=b;</script></body></html>'''
+<script>var b=location.pathname.indexOf('/verso-alto-youth-sports/')===0?'/verso-alto-youth-sports/':'/';document.getElementById('home').href=b;/*SINGLE*/</script></body></html>'''
+if SINGLE:
+    nf = nf.replace('/*SINGLE*/', "var r=location.pathname.slice(b.length).replace(/\\/+$/,'');if(r&&r.indexOf('.')<0)location.replace(b+'#'+r+location.hash.replace('#','/'));")
+else:
+    nf = nf.replace('/*SINGLE*/', '')
 open(os.path.join(OUT, '404.html'), 'w').write(nf)
 open(os.path.join(OUT, 'README.md'), 'w').write('''# Verso Alto Youth Sports — Website
 
 Static multi-page site. Every page lives in its own folder (e.g. `sports/soccer/index.html`) so URLs read like `versoaltoyouthsports.com/sports/soccer/`.
 
-Built from the `_build/` folder with `python3 _build/build.py .` — edit sources there (pages, articles, cities, CSS, JS) and rebuild.
+Built from the `_build/` folder.\n\n- One-file mode (current, until the domain is connected): `python3 _build/build.py . --single` → everything in `index.html` with `#` links\n- Separate-pages mode (for the real domain): `python3 _build/build.py .` → clean URLs like `/sports/soccer/`\n\nRun it — edit sources there (pages, articles, cities, CSS, JS) and rebuild.
 ''')
-print(f'built {len(PAGES)} pages -> {OUT}')
+print(f'built {len(PAGES)} pages -> {OUT}' + (' (single index.html)' if SINGLE else ''))

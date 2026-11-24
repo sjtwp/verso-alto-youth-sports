@@ -11,7 +11,7 @@ function setPill(){
   const t=tabs.getBoundingClientRect(), r=a.getBoundingClientRect();
   pill.style.left=(r.left-t.left)+'px'; pill.style.width=r.width+'px';
 }
-setPill(); addEventListener('resize',setPill); document.fonts&&document.fonts.ready.then(setPill);
+setPill(); addEventListener("resize",setPill); document.fonts&&document.fonts.ready.then(setPill); window.VA_setPill=setPill;
 
 /* ---------- mobile menu + accordions ---------- */
 const burger=$('#burger');
