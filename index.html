@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#06102a" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%27-10%20-30%20340%20294%27%3E%3Crect%20x%3D%27-10%27%20y%3D%27-30%27%20width%3D%27340%27%20height%3D%27294%27%20rx%3D%2760%27%20fill%3D%27%230b1b3a%27/%3E%3Cpath%20d%3D%27M12%2015H66L138%20219H94Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23fbf6ea%27%20stroke-width%3D%2712%27%20stroke-linejoin%3D%27round%27/%3E%3Cpath%20d%3D%27M180%2015H238L306%20219H246Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23fbf6ea%27%20stroke-width%3D%2712%27%20stroke-linejoin%3D%27round%27/%3E%3Cpath%20d%3D%27M132%2012h46v210h-46zM90%2084h132v56H90z%27%20fill%3D%27%23f2b632%27/%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%2730%2028%20342%20256%27%3E%3Crect%20x%3D%2730%27%20y%3D%2728%27%20width%3D%27342%27%20height%3D%27256%27%20rx%3D%2748%27%20fill%3D%27%230b1b3a%27/%3E%3Cpath%20d%3D%27M120%20126h160v51H120z%27%20fill%3D%27%23f2b632%27/%3E%3Cpath%20d%3D%27M57.7%2056.5H106.3L187.3%20255.5H138.7Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23fbf6ea%27%20stroke-width%3D%279%27/%3E%3Cpath%20d%3D%27M215.7%2056.5H264.3L345.3%20255.5H296.7Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23fbf6ea%27%20stroke-width%3D%279%27/%3E%3Cpath%20d%3D%27M174%2053h51v206h-51z%27%20fill%3D%27%23f2b632%27/%3E%3C/svg%3E" />
 <style>
 :root{
   --deep:#050d22; --navy:#0b1b3a; --navy2:#13285a; --gold:#f2b632; --sun:#ff8a3d;
@@ -37,10 +37,9 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,bac
 header.scrolled{background:rgba(5,13,34,.78);backdrop-filter:blur(14px) saturate(1.4);padding:12px 0;box-shadow:0 10px 40px rgba(0,0,0,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.75rem}
-.brand svg{width:60px;height:44px;transition:transform .6s var(--ease);overflow:visible}
-.brand:hover svg{transform:skewX(-6deg) scale(1.06)}
-.brand b{display:block;font-family:Inter,sans-serif;font-weight:800;font-size:1.22rem;letter-spacing:.03em;line-height:1.05;color:var(--cream)}
-.brand small{display:block;font-size:.72rem;letter-spacing:.16em;color:var(--gold);font-weight:400;text-transform:uppercase;margin-top:2px}
+.brand svg{height:54px;width:auto;aspect-ratio:875/216;transition:transform .5s var(--ease)}
+.brand:hover svg{transform:scale(1.04)}
+@media (max-width:600px){.brand svg{height:40px}}
 .tabs{display:flex;gap:.25rem;position:relative;padding:6px;border-radius:999px;background:rgba(5,13,34,.35);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
 .tabs > a,.tabs .dd > a{position:relative;z-index:1;display:block;padding:.55rem 1.05rem;border-radius:999px;font-weight:600;font-size:.92rem;color:#dbe3f5;transition:color .3s}
 .tabs a:hover{color:#fff}
@@ -348,10 +347,19 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
       <path d="M32 50h36" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
       <path d="M38 43v14M45 43v14M52 43v14M59 43v14" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></g>
     </symbol>
-    <symbol id="logo" viewBox="0 0 320 234">
-      <path d="M12 15H66L138 219H94Z" fill="#13285a" stroke="#fbf6ea" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M180 15H238L306 219H246Z" fill="#13285a" stroke="#fbf6ea" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M132 12h46v210h-46zM90 84h132v56H90z" fill="url(#lg)"/>
+    <symbol id="logo" viewBox="50 48 302 216">
+      <path d="M120 126h160v51H120z" fill="url(#lg)"/>
+      <path d="M57.7 56.5H106.3L187.3 255.5H138.7Z" fill="#13285a" stroke="#fbf6ea" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M215.7 56.5H264.3L345.3 255.5H296.7Z" fill="#13285a" stroke="#fbf6ea" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M174 53h51v206h-51z" fill="url(#lg)"/>
+    </symbol>
+    <symbol id="logofull" viewBox="50 48 875 216">
+      <path d="M120 126h160v51H120z" fill="url(#lg)"/>
+      <path d="M57.7 56.5H106.3L187.3 255.5H138.7Z" fill="#13285a" stroke="#fbf6ea" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M215.7 56.5H264.3L345.3 255.5H296.7Z" fill="#13285a" stroke="#fbf6ea" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M174 53h51v206h-51z" fill="url(#lg)"/>
+      <text x="389" y="152" textLength="531" lengthAdjust="spacingAndGlyphs" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" font-size="78" fill="#fbf6ea">VERSO ALTO</text>
+      <text x="389" y="228" textLength="531" lengthAdjust="spacingAndGlyphs" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="300" font-size="69" fill="#f2b632">YOUTH SPORTS</text>
     </symbol>
     <symbol id="doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z M14 3v5h5 M9 13h6 M9 17h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
@@ -365,10 +373,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
 
 <header id="hdr">
   <div class="wrap nav">
-    <a href="#home" class="brand" data-link>
-      <svg><use href="#logo"/></svg>
-      <span><b>VERSO ALTO</b><small>Youth Sports</small></span>
-    </a>
+    <a href="#home" class="brand" data-link aria-label="Verso Alto Youth Sports — home"><svg viewBox="50 48 875 216"><use href="#logofull"/></svg></a>
     <nav class="tabs" id="tabs">
       <span class="pill"></span>
       <a href="#home" data-link data-tab="home">Home</a>
@@ -816,7 +821,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
   <div class="fbody">
     <div class="wrap fgrid">
       <div>
-        <a href="#home" class="brand" data-link><svg><use href="#logo"/></svg><span><b>VERSO ALTO</b><small>Youth Sports</small></span></a>
+        <a href="#home" class="brand" data-link aria-label="Verso Alto Youth Sports — home"><svg viewBox="50 48 875 216"><use href="#logofull"/></svg></a>
         <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness. To the Heights!</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="#home" data-link>Home</a></li><li><a href="#about" data-link>About</a></li><li><a href="#faq" data-link>FAQ</a></li><li><a href="#support" data-link>Support</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
