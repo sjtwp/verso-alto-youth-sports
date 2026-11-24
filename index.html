@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Verso Alto Youth Sports | Faith · Community · Sports</title>
+<meta name="description" content="A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness. To the Heights!" />
+<meta name="theme-color" content="#06102a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%27-10%20-30%20340%20294%27%3E%3Crect%20x%3D%27-10%27%20y%3D%27-30%27%20width%3D%27340%27%20height%3D%27294%27%20rx%3D%2760%27%20fill%3D%27%230b1b3a%27/%3E%3Cpath%20d%3D%27M12%2015H66L138%20219H94Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23fbf6ea%27%20stroke-width%3D%2712%27%20stroke-linejoin%3D%27round%27/%3E%3Cpath%20d%3D%27M180%2015H238L306%20219H246Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23fbf6ea%27%20stroke-width%3D%2712%27%20stroke-linejoin%3D%27round%27/%3E%3Cpath%20d%3D%27M132%2012h46v210h-46zM90%2084h132v56H90z%27%20fill%3D%27%23f2b632%27/%3E%3C/svg%3E" />
+<style>
+:root{
+  --deep:#050d22; --navy:#0b1b3a; --navy2:#13285a; --gold:#f2b632; --sun:#ff8a3d;
+  --sky:#4a86ff; --grass:#2fbf71; --cream:#fbf6ea; --ink:#0b1430; --muted:#a9b6d6;
+  --radius:22px; --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--deep);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.display{font-family:Anton,Impact,sans-serif;letter-spacing:.01em;text-transform:uppercase;line-height:.92}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.grad{background:linear-gradient(100deg,var(--gold),var(--sun) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--sun));z-index:120}
+
+/* ---------- header ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,backdrop-filter .4s,padding .4s,box-shadow .4s;padding:22px 0}
+header.scrolled{background:rgba(5,13,34,.78);backdrop-filter:blur(14px) saturate(1.4);padding:12px 0;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand svg{width:60px;height:44px;transition:transform .6s var(--ease);overflow:visible}
+.brand:hover svg{transform:skewX(-6deg) scale(1.06)}
+.brand b{display:block;font-family:Inter,sans-serif;font-weight:800;font-size:1.22rem;letter-spacing:.03em;line-height:1.05;color:var(--cream)}
+.brand small{display:block;font-size:.72rem;letter-spacing:.16em;color:var(--gold);font-weight:400;text-transform:uppercase;margin-top:2px}
+.tabs{display:flex;gap:.25rem;position:relative;padding:6px;border-radius:999px;background:rgba(5,13,34,.35);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+.tabs > a,.tabs .dd > a{position:relative;z-index:1;display:block;padding:.55rem 1.05rem;border-radius:999px;font-weight:600;font-size:.92rem;color:#dbe3f5;transition:color .3s}
+.tabs a:hover{color:#fff}
+.tabs a.active{color:var(--ink)}
+.tabs .pill{position:absolute;top:6px;bottom:6px;left:0;width:0;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--sun));transition:left .5s var(--ease),width .5s var(--ease);box-shadow:0 6px 20px rgba(242,182,50,.45)}
+.dd{position:relative}
+.dd > a::after{content:"";display:inline-block;width:6px;height:6px;margin-left:.45rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg)}
+.dd-menu{position:absolute;top:calc(100% + 14px);left:50%;width:250px;transform:translate(-50%,10px);opacity:0;visibility:hidden;transition:.35s var(--ease);background:rgba(11,27,58,.97);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:.5rem;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dd-menu a{display:flex;align-items:center;gap:.8rem;padding:.65rem .8rem;border-radius:12px;font-weight:600;color:#fff;transition:background .25s}
+.dd-menu a:hover{background:rgba(255,255,255,.08)}
+.dd-menu svg{width:28px;height:28px}
+.dd-menu small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dd-menu small.live{color:var(--grass)}
+.cta-mini{padding:.65rem 1.2rem;border-radius:999px;background:var(--cream);color:var(--ink);font-weight:700;font-size:.88rem;transition:transform .3s,box-shadow .3s;white-space:nowrap}
+.cta-mini:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,255,255,.25)}
+.burger{display:none;width:46px;height:46px;border-radius:14px;background:rgba(5,13,34,.4);position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+#mobileMenu{position:fixed;inset:0;z-index:90;background:radial-gradient(circle at 80% 0%,var(--navy2),var(--deep) 70%);display:flex;flex-direction:column;justify-content:center;padding:0 8vw;clip-path:circle(0% at calc(100% - 46px) 46px);transition:clip-path .7s var(--ease)}
+body.menu-open #mobileMenu{clip-path:circle(150% at calc(100% - 46px) 46px)}
+#mobileMenu a{font-family:Anton,sans-serif;font-size:clamp(2.4rem,11vw,4.2rem);text-transform:uppercase;line-height:1.1}
+#mobileMenu a.sub{font-family:Inter;font-size:1.05rem;font-weight:700;text-transform:none;color:var(--muted);padding-left:1.2rem;line-height:1.9}
+#mobileMenu a.active{color:var(--gold)}
+@media (max-width:1060px){.tabs,.cta-mini{display:none}.burger{display:block}}
+
+/* ---------- page transition ---------- */
+#wipe{position:fixed;inset:0;z-index:150;pointer-events:none;display:grid;grid-template-columns:repeat(5,1fr)}
+#wipe i{background:linear-gradient(180deg,var(--gold),var(--sun));transform:scaleY(0);transform-origin:bottom}
+#wipe.in i{animation:wipeIn .45s var(--ease) forwards}
+#wipe.out i{transform:scaleY(1);transform-origin:top;animation:wipeOut .5s var(--ease) forwards}
+#wipe i:nth-child(2){animation-delay:.04s!important}#wipe i:nth-child(3){animation-delay:.08s!important}#wipe i:nth-child(4){animation-delay:.12s!important}#wipe i:nth-child(5){animation-delay:.16s!important}
+@keyframes wipeIn{to{transform:scaleY(1)}}
+@keyframes wipeOut{to{transform:scaleY(0)}}
+.page{display:none}
+.page.active{display:block}
+
+.reveal{opacity:0;transform:translateY(50px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.left{transform:translateX(-60px)}.reveal.right{transform:translateX(60px)}.reveal.zoom{transform:scale(.9)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- HERO: sunrise ---------- */
+.hero{position:relative;height:100vh;min-height:660px;overflow:hidden;
+  background:linear-gradient(180deg,#3d64a8 0%,#7c9fd6 30%,#c9b6c9 52%,#f6b58a 68%,#ffd27a 82%,#ffe7a8 100%)}
+.rays{position:absolute;left:50%;top:78%;width:180vmax;height:180vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(rgba(255,240,200,.16) 0 4deg,transparent 4deg 14deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 0%,transparent 55%);mask:radial-gradient(circle,#000 0%,transparent 55%);animation:spin 120s linear infinite;pointer-events:none}
+.sun-wrap{position:absolute;left:50%;bottom:22%;width:min(36vw,400px);aspect-ratio:1;transform:translateX(-50%);will-change:transform}
+.sun{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fffbe8 0%,#ffe9a3 38%,#ffc85c 62%,rgba(255,170,60,0) 72%);animation:sunrise 3s var(--ease) both}
+.sun::after{content:"";position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(255,214,120,.55),transparent 60%);animation:pulse 6s ease-in-out infinite}
+@keyframes sunrise{from{transform:translateY(55%);filter:saturate(1.6) hue-rotate(-12deg)}}
+@keyframes pulse{50%{transform:scale(1.1);opacity:.7}}
+.cloud{position:absolute;height:38px;border-radius:999px;background:rgba(255,255,255,.75);filter:blur(6px);animation:drift linear infinite}
+.cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:50%}
+.cloud::before{width:55%;height:220%;left:15%;bottom:20%}
+.cloud::after{width:38%;height:170%;right:14%;bottom:25%}
+@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+.mtn{position:absolute;left:-5%;width:110%;bottom:0;will-change:transform}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 4vw 12vh;z-index:5;will-change:transform,opacity}
+.badge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1rem .5rem .55rem;border-radius:999px;background:rgba(11,20,48,.35);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);font-size:.85rem;font-weight:600;margin-bottom:1.6rem}
+.badge em{font-style:normal;background:var(--grass);color:#04210f;font-weight:800;font-size:.7rem;letter-spacing:.12em;padding:.25rem .6rem;border-radius:999px}
+.hero h1{font-size:clamp(3.6rem,13vw,11rem);color:#fff;filter:drop-shadow(0 8px 30px rgba(20,30,80,.35))}
+.hero h1 .line{display:block;overflow:hidden;padding:0 .05em}
+.hero h1 .line span{display:inline-block;transform:translateY(110%);animation:rise 1.2s .2s var(--ease) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.35s;color:var(--ink)}
+@keyframes rise{to{transform:none}}
+.hero .sub{margin-top:1.2rem;font-size:clamp(.95rem,1.8vw,1.25rem);display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);opacity:0;animation:fade 1s .9s forwards}
+.hero .sub i{width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
+@keyframes fade{to{opacity:1}}
+.hero .btns{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade 1s 1.2s forwards}
+.btn{position:relative;display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 1.8rem;border-radius:999px;font-weight:800;letter-spacing:.02em;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink);box-shadow:0 14px 40px rgba(255,138,61,.4)}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:0 14px 40px rgba(11,20,48,.35)}
+.btn-ghost{border:2px solid rgba(255,255,255,.55);color:#fff}
+.btn:hover{transform:translateY(-4px) scale(1.03)}
+.btn::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .7s}
+.btn:hover::after{left:140%}
+.btn svg{width:18px;height:18px;transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+
+section{position:relative}
+.sec{padding:clamp(80px,11vw,140px) 0}
+.sec-head{max-width:760px;margin-bottom:3.2rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(2.6rem,6.5vw,5rem);margin:.8rem 0 1rem}
+.sec-head p{color:var(--muted);font-size:1.12rem}
+
+/* ---------- pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;perspective:1200px}
+.pillar{position:relative;padding:2.4rem 2rem 2.2rem;border-radius:var(--radius);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);overflow:hidden;transform-style:preserve-3d;transition:transform .2s ease-out, border-color .4s}
+.pillar:hover{border-color:rgba(242,182,50,.6)}
+.pillar .glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(242,182,50,.3),transparent 65%);pointer-events:none;transform:translate(-50%,-50%);left:var(--mx,50%);top:var(--my,0%);opacity:0;transition:opacity .4s}
+.pillar:hover .glow{opacity:1}
+.icon{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink);margin-bottom:1.4rem;box-shadow:0 14px 30px rgba(255,138,61,.3)}
+.icon svg{width:34px;height:34px}
+.pillar h3{font-family:Anton;font-weight:400;font-size:2.2rem;text-transform:uppercase}
+.pillar p{color:var(--muted);margin-top:.6rem}
+@media (max-width:900px){.pillars{grid-template-columns:1fr}}
+
+/* ---------- sport cards ---------- */
+.sports-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.sport{position:relative;display:flex;flex-direction:column;min-height:440px;border-radius:28px;overflow:hidden;padding:2rem;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.sport:hover{transform:translateY(-10px)}
+.sport .art{position:absolute;right:-36px;top:-36px;width:190px;height:190px;z-index:-1;opacity:.95;transition:transform 1.2s var(--ease);filter:drop-shadow(0 12px 20px rgba(0,0,0,.3))}
+.sport:hover .art{transform:rotate(200deg) scale(1.08)}
+.sport.soccer{background:linear-gradient(155deg,#2fbf71,#0d4f31)}
+.sport.baseball{background:linear-gradient(155deg,#4a86ff,#13285a)}
+.sport.basketball{background:linear-gradient(155deg,#ff8a3d,#7a2a0e)}
+.sport .status{align-self:flex-start;padding:.35rem .8rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.3);backdrop-filter:blur(6px)}
+.sport .status.live{background:#fff;color:#0d4f31}
+.sport h3{margin-top:auto;font-family:Anton;font-weight:400;font-size:clamp(3rem,5vw,4.2rem);text-transform:uppercase;line-height:.95}
+.sport p{opacity:.88;margin:.6rem 0 1.4rem}
+.sport .go{font-weight:800;display:inline-flex;align-items:center;gap:.5rem}
+.sport .go svg{width:18px;height:18px;transition:transform .3s}
+.sport:hover .go svg{transform:translateX(6px)}
+@media (max-width:900px){.sports-grid{grid-template-columns:1fr}.sport{min-height:340px}}
+
+/* ---------- quote ---------- */
+.quote{padding:clamp(100px,14vw,180px) 0;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,rgba(242,182,50,.22),transparent 60%),var(--deep)}
+.quote blockquote{font-size:clamp(2rem,4.8vw,4rem);line-height:1.15;max-width:1000px;margin:1.4rem auto 0}
+.quote blockquote em{font-style:inherit;color:var(--gold)}
+.quote cite{display:block;margin-top:2rem;font-style:normal;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);font-size:.85rem}
+
+/* ---------- CTA band ---------- */
+.cta-band{position:relative;margin:0 auto;width:min(1200px,92vw);border-radius:36px;overflow:hidden;padding:clamp(50px,8vw,90px) clamp(28px,6vw,80px);background:linear-gradient(120deg,var(--gold),var(--sun));color:var(--ink);display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:center}
+.cta-band h2{font-size:clamp(2.6rem,6vw,5rem)}
+.cta-band p{font-size:1.15rem;font-weight:500;margin-top:1rem;max-width:520px}
+.cta-band .sunburst{position:absolute;right:-20%;top:-60%;width:90%;aspect-ratio:1;background:repeating-conic-gradient(rgba(255,255,255,.18) 0 6deg,transparent 6deg 18deg);border-radius:50%;animation:spin 60s linear infinite;pointer-events:none}
+@media (max-width:800px){.cta-band{grid-template-columns:1fr}}
+
+/* ---------- inner page hero ---------- */
+.phero{position:relative;padding:clamp(160px,22vw,230px) 0 clamp(90px,10vw,130px);overflow:hidden;background:linear-gradient(180deg,#0b1b3a,#13285a)}
+.phero h1{font-size:clamp(3.2rem,10vw,8.5rem)}
+.phero h1 span{display:inline-block;animation:dropIn .9s var(--ease) both}
+@keyframes dropIn{from{transform:translateY(80px) rotate(4deg);opacity:0}}
+.phero p{max-width:660px;color:#c9d3ec;font-size:1.2rem;margin-top:1.2rem;animation:fadeUp 1s .3s var(--ease) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}}
+.phero .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;animation:float 12s ease-in-out infinite}
+@keyframes float{50%{transform:translate(40px,-30px) scale(1.1)}}
+.phero .pmtn{position:absolute;left:0;bottom:-1px;width:100%;height:90px}
+.phero .bigart{position:absolute;right:6vw;top:50%;width:min(30vw,340px);transform:translateY(-40%);opacity:.95;animation:bob 6s ease-in-out infinite}
+.phero .bigart svg{width:100%;height:auto;animation:spin 40s linear infinite}
+@keyframes bob{50%{transform:translateY(-46%)}}
+@media (max-width:900px){.phero .bigart{opacity:.18;right:-10vw}}
+.soon-badge{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;padding:.5rem 1rem;border-radius:999px;border:1px dashed rgba(255,255,255,.4);font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;animation:fadeUp 1s .45s var(--ease) both}
+.soon-badge.live{border-style:solid;border-color:var(--grass);color:var(--grass)}
+
+/* ---------- generic blocks ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.panel{border-radius:var(--radius);padding:clamp(26px,4vw,44px);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12)}
+.lead{font-size:1.2rem;color:#dfe6f7}
+.h2{font-size:clamp(2.4rem,5vw,4rem);margin:.8rem 0 1rem}
+.checks{list-style:none;display:grid;gap:.9rem;margin-top:1.6rem}
+.checks li{display:flex;gap:.9rem;align-items:flex-start}
+.checks li::before{content:"";flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b1430' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/14px no-repeat}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.fact{padding:1.6rem;border-radius:18px;background:var(--navy);border:1px solid rgba(255,255,255,.08)}
+.fact small{display:block;color:var(--gold);font-weight:800;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.fact b{display:block;font-size:1.25rem;margin-top:.4rem}
+@media (max-width:900px){.facts{grid-template-columns:1fr 1fr}}
+.btnrow{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+/* soccer field */
+.field{position:relative;aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;background:repeating-linear-gradient(90deg,#1f9a57 0 10%,#22a95f 10% 20%);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.field svg.lines{position:absolute;inset:0;width:100%;height:100%}
+.field .fball{position:absolute;width:34px;height:34px;left:10%;top:60%;transition:left 1.1s var(--ease),top 1.1s var(--ease)}
+.field .fball svg{width:100%;animation:spin 1.2s linear infinite}
+.field .player{position:absolute;width:22px;height:22px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.4);transition:left 1.4s var(--ease),top 1.4s var(--ease)}
+.field .home{background:var(--gold)}.field .away{background:var(--sky)}
+
+/* skill tiles on sport pages */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.tile{padding:2rem;border-radius:var(--radius);background:var(--navy);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .4s}
+.tile:hover{transform:translateY(-8px);border-color:var(--gold)}
+.tile .n{font-family:Anton;font-size:3rem;line-height:1;color:var(--gold)}
+.tile h3{font-size:1.3rem;margin:.6rem 0 .3rem}
+.tile p{color:var(--muted)}
+@media (max-width:900px){.tiles{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-search{position:relative;margin-bottom:2rem}
+.faq-search input{width:100%;padding:1.2rem 1.4rem 1.2rem 3.4rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:1.05rem;outline:none;transition:border-color .3s,box-shadow .3s}
+.faq-search input:focus{border-color:var(--gold);box-shadow:0 0 0 5px rgba(242,182,50,.15)}
+.faq-search svg{position:absolute;left:1.3rem;top:50%;transform:translateY(-50%);width:20px;color:var(--muted)}
+.faq{border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:1rem;overflow:hidden;transition:background .4s,border-color .4s}
+.faq.open{background:rgba(242,182,50,.07);border-color:rgba(242,182,50,.45)}
+.faq button{width:100%;text-align:left;padding:1.5rem 1.6rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-weight:700;font-size:1.15rem}
+.faq button .pm{flex:0 0 36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);position:relative;transition:transform .5s var(--ease),background .4s}
+.faq button .pm::before,.faq button .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:#fff;transform:translate(-50%,-50%)}
+.faq button .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s}
+.faq.open .pm{background:var(--gold);transform:rotate(180deg)}
+.faq.open .pm::before,.faq.open .pm::after{background:var(--ink)}
+.faq.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.faq.open .ans{grid-template-rows:1fr}
+.faq .ans > div{overflow:hidden}
+.faq .ans p{padding:0 1.6rem 1.6rem;color:#d4dcf0}
+.faq mark{background:var(--gold);color:var(--ink);border-radius:4px;padding:0 2px}
+.noresults{display:none;color:var(--muted);text-align:center;padding:2rem}
+
+/* support */
+.ways{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem}
+@media (max-width:1100px){.ways{grid-template-columns:repeat(2,1fr)}}@media (max-width:600px){.ways{grid-template-columns:1fr}}
+.way{position:relative;padding:2.2rem 1.8rem;border-radius:var(--radius);background:var(--navy);border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:transform .5s var(--ease)}
+.way:hover{transform:translateY(-10px)}
+.way::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--gold),var(--sun));clip-path:circle(0% at 100% 0%);transition:clip-path .7s var(--ease);z-index:0}
+.way:hover::before{clip-path:circle(150% at 100% 0%)}
+.way > *{position:relative;z-index:1;transition:color .4s}
+.way:hover > *{color:var(--ink)}
+.way .em{font-size:2.6rem;margin-bottom:1rem;display:block}
+.way h3{font-family:Anton;font-weight:400;font-size:1.9rem;text-transform:uppercase}
+.way p{color:var(--muted);margin:.5rem 0 1.4rem}
+.way a.link{font-weight:800;display:inline-flex;gap:.4rem;align-items:center;color:var(--gold)}
+.note{margin-top:2rem;color:var(--muted);font-size:.92rem;text-align:center}
+
+/* contact */
+.contact-cards{display:grid;gap:1rem}
+.cc{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;border-radius:20px;background:var(--navy);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .4s}
+.cc:hover{transform:translateX(10px);border-color:var(--gold)}
+.cc .ic{flex:0 0 56px;height:56px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink)}
+.cc .ic svg{width:26px;height:26px}
+.cc small{display:block;color:var(--muted);font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.cc b{font-size:1.1rem;word-break:break-all}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:600px){form .row{grid-template-columns:1fr}}
+.fld{position:relative;margin-bottom:1rem}
+.fld input,.fld textarea,.fld select{width:100%;padding:1.5rem 1.1rem .6rem;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:#fff;font:inherit;outline:none;transition:border-color .3s,background .3s}
+.fld select{appearance:none}
+.fld select option{color:#000}
+.fld textarea{min-height:150px;resize:vertical}
+.fld label{position:absolute;left:1.1rem;top:1.05rem;color:var(--muted);pointer-events:none;transition:.25s var(--ease)}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--gold);background:rgba(255,255,255,.08)}
+.fld input:focus+label,.fld input:not(:placeholder-shown)+label,.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label,.fld select+label{top:.45rem;font-size:.72rem;color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+/* policies */
+.pol-list{display:grid;gap:1rem}
+.pol{display:flex;align-items:center;gap:1.2rem;padding:1.5rem 1.6rem;border-radius:20px;background:var(--navy);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .4s}
+.pol:hover{transform:translateX(10px);border-color:var(--gold)}
+.pol .ic{flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(242,182,50,.14);color:var(--gold)}
+.pol .ic svg{width:24px;height:24px}
+.pol b{font-size:1.15rem;display:block}
+.pol span.d{color:var(--muted);font-size:.92rem}
+.pol .arr{margin-left:auto;color:var(--gold);font-weight:800}
+.doc{max-width:820px;margin:0 auto}
+.doc h2{font-family:Anton;font-weight:400;text-transform:uppercase;font-size:1.8rem;margin:2.4rem 0 .8rem;color:#fff}
+.doc p,.doc li{color:#d4dcf0;margin-bottom:1rem}
+.doc ul{padding-left:1.3rem}
+.doc .meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.doc .pending{padding:1.6rem;border-radius:18px;border:1px dashed rgba(242,182,50,.55);background:rgba(242,182,50,.07)}
+.back{display:inline-flex;gap:.5rem;align-items:center;color:var(--gold);font-weight:800;margin-bottom:2rem}
+
+/* footer */
+footer{position:relative;margin-top:clamp(80px,10vw,130px);overflow:hidden}
+footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
+.fbody{background:#0b1b3a;padding-bottom:30px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-top:40px}
+.fgrid h4{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.fgrid ul{list-style:none;display:grid;gap:.55rem}
+.fgrid a{color:var(--muted);transition:color .3s}
+.fgrid a:hover{color:#fff}
+.fbig{font-family:Anton;font-size:clamp(3.4rem,13vw,12rem);line-height:.85;text-transform:uppercase;text-align:center;margin-top:60px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.fbottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;margin-top:10px}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:200}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,150%);opacity:0;visibility:hidden;background:var(--cream);color:var(--ink);padding:1rem 1.4rem;border-radius:14px;font-weight:700;z-index:210;transition:.5s var(--ease);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2b632"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
+    <symbol id="ball" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="47" fill="#fff" stroke="#0b1430" stroke-width="4"/>
+      <polygon points="50,30 69,44 62,66 38,66 31,44" fill="#0b1430"/>
+      <path d="M50 30V5M69 44l22-8M62 66l14 20M38 66L24 86M31 44L9 36" stroke="#0b1430" stroke-width="4"/>
+      <path d="M38 6l12 -1 12 1 -12 9zM88 28l5 12-1 12-10-8zM84 80l-10 9-11 4 3-12zM37 93l-11-4-10-9 13 1zM8 52l-1-12 5-12 4 12z" fill="#0b1430"/>
+    </symbol>
+    <symbol id="baseball" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="47" fill="#fdfbf4" stroke="#0b1430" stroke-width="4"/>
+      <path d="M22 14c14 18 14 54 0 72M78 14c-14 18-14 54 0 72" fill="none" stroke="#d23a2e" stroke-width="3.5"/>
+      <path d="M20 24l8-3M23 34l9-2M24 44h9M24 56h9M23 66l9 2M20 76l8 3M80 24l-8-3M77 34l-9-2M76 44h-9M76 56h-9M77 66l-9 2M80 76l-8 3" stroke="#d23a2e" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="basketball" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="47" fill="#f07a2b" stroke="#0b1430" stroke-width="4"/>
+      <path d="M50 3v94M3 50h94M18 16c16 14 16 54 0 68M82 16c-16 14-16 54 0 68" fill="none" stroke="#0b1430" stroke-width="4"/>
+    </symbol>
+    <symbol id="logo" viewBox="0 0 320 234">
+      <path d="M12 15H66L138 219H94Z" fill="#13285a" stroke="#fbf6ea" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M180 15H238L306 219H246Z" fill="#13285a" stroke="#fbf6ea" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M132 12h46v210h-46zM90 84h132v56H90z" fill="url(#lg)"/>
+    </symbol>
+    <symbol id="doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z M14 3v5h5 M9 13h6 M9 17h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
+  </defs>
+</svg>
+
+<div id="progress"></div>
+<canvas id="confetti"></canvas>
+<div id="wipe"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="toast" id="toast"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#home" class="brand" data-link>
+      <svg><use href="#logo"/></svg>
+      <span><b>VERSO ALTO</b><small>Youth Sports</small></span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <span class="pill"></span>
+      <a href="#home" data-link data-tab="home">Home</a>
+      <div class="dd">
+        <a href="#sports" data-link data-tab="sports">Sports</a>
+        <div class="dd-menu">
+          <a href="#soccer" data-link><svg><use href="#ball"/></svg><span>Soccer<small class="live">Spring 2027</small></span></a>
+          <a href="#baseball" data-link><svg><use href="#baseball"/></svg><span>Baseball<small>Coming soon</small></span></a>
+          <a href="#basketball" data-link><svg><use href="#basketball"/></svg><span>Basketball<small>Coming soon</small></span></a>
+        </div>
+      </div>
+      <a href="#about" data-link data-tab="about">About</a>
+      <a href="#faq" data-link data-tab="faq">FAQ</a>
+      <a href="#support" data-link data-tab="support">Support</a>
+      <a href="#contact" data-link data-tab="contact">Contact</a>
+    </nav>
+    <a class="cta-mini interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form →</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav id="mobileMenu">
+  <a href="#home" data-link data-tab="home">Home</a>
+  <a href="#sports" data-link data-tab="sports">Sports</a>
+  <a href="#soccer" data-link class="sub">⚽ Soccer — Spring 2027</a>
+  <a href="#baseball" data-link class="sub">⚾ Baseball — coming soon</a>
+  <a href="#basketball" data-link class="sub">🏀 Basketball — coming soon</a>
+  <a href="#about" data-link data-tab="about">About</a>
+  <a href="#faq" data-link data-tab="faq">FAQ</a>
+  <a href="#support" data-link data-tab="support">Support</a>
+  <a href="#contact" data-link data-tab="contact">Contact</a>
+</nav>
+
+<!-- ======================= HOME ======================= -->
+<main class="page" id="page-home">
+  <section class="hero" id="hero">
+    <div class="rays"></div>
+    <div class="sun-wrap" data-sun><div class="sun"></div></div>
+    <div class="cloud" style="top:14%;width:180px;animation-duration:90s;animation-delay:-20s"></div>
+    <div class="cloud" style="top:26%;width:120px;opacity:.6;animation-duration:120s;animation-delay:-70s"></div>
+    <div class="cloud" style="top:9%;width:240px;opacity:.5;animation-duration:150s;animation-delay:-110s"></div>
+    <svg class="mtn" data-depth="0.30" data-mx="10" viewBox="0 0 1440 500" preserveAspectRatio="none" style="height:52%"><path fill="#a99bc4" opacity=".75" d="M0 500V300l120-90 90 60 160-170 140 130 110-80 170 190 130-110 150 120 120-150 150 160 100-60v300z"/></svg>
+    <svg class="mtn" data-depth="0.18" data-mx="22" viewBox="0 0 1440 500" preserveAspectRatio="none" style="height:40%"><path fill="#5d5f99" d="M0 500V330l170-150 110 90 190-200 120 120 90-60 200 220 160-150 140 110 130-90 130 120v160z"/></svg>
+    <svg class="mtn" data-depth="0.08" data-mx="36" viewBox="0 0 1440 500" preserveAspectRatio="none" style="height:28%"><path fill="#26335f" d="M0 500V360l140-80 130 70 160-150 140 120 180-170 160 160 120-60 150 110 120-70 140 90v180z"/></svg>
+    <svg class="mtn" viewBox="0 0 1440 120" preserveAspectRatio="none" style="height:70px"><path fill="#050d22" d="M0 120V60c240-40 480-40 720 0s480 40 720 0v60z"/></svg>
+    <div class="hero-content" id="heroContent">
+      <div class="badge"><em>SOON</em> Spring 2027 soccer registration is coming!</div>
+      <h1 class="display"><span class="line"><span>To The</span></span><span class="line"><span>Heights</span></span></h1>
+      <div class="sub">Faith <i></i> Community <i></i> Sports</div>
+      <div class="btns">
+        <a class="btn btn-dark interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Join the Interest List <svg><use href="#arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#sports" data-link style="border-color:var(--ink);color:var(--ink)">Explore Sports</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Who we are</span>
+        <h2 class="display">Faith. Community. <span class="grad">Sports.</span></h2>
+        <p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar tilt reveal"><span class="glow"></span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2v20M5 8h14"/></svg></div>
+          <h3>Faith</h3><p>Christ-centered sports that help kids grow in body, mind, and spirit — on the field and off it.</p></article>
+        <article class="pillar tilt reveal" style="transition-delay:.12s"><span class="glow"></span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.8-3.6 3.5-5.5 6.5-5.5s5.7 1.9 6.5 5.5M15 14.6c3 0 5.6 1.6 6.4 5.4"/></svg></div>
+          <h3>Community</h3><p>Families cheering side by side. Friendships that start on Saturday mornings and last for years.</p></article>
+        <article class="pillar tilt reveal" style="transition-delay:.24s"><span class="glow"></span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg></div>
+          <h3>Sports</h3><p>Fun, affordable, skill-building play with no tryouts. Every kid gets in the game and strives for greatness.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Our sports</span>
+        <h2 class="display">One league. <span class="grad">Many sports.</span></h2>
+        <p>We're starting with soccer in Spring 2027, with baseball and basketball on the way.</p>
+      </div>
+      <div class="sports-grid" data-sportcards></div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap reveal">
+      <span class="eyebrow" style="justify-content:center">The meaning behind the name</span>
+      <blockquote class="serif"><em>Verso l'alto</em> means <em>"to the heights"</em> — the call of St. Pier Giorgio Frassati to strive for something greater.</blockquote>
+      <cite>Inspired by St. Pier Giorgio Frassati</cite>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:20px">
+    <div class="cta-band reveal zoom">
+      <div class="sunburst"></div>
+      <div style="position:relative">
+        <span class="eyebrow" style="color:var(--ink)">Spring 2027</span>
+        <h2 class="display">Lace up. <br/>Look up.</h2>
+        <p>Soccer registration is coming soon. Fill out the interest form and be the first to know when spots open.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:1rem;align-items:flex-start">
+        <a class="btn btn-dark interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">I'm interested! <svg><use href="#arrow"/></svg></a>
+        <a href="#faq" data-link style="font-weight:700;border-bottom:2px solid">Have questions? Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= SPORTS HUB ======================= -->
+<main class="page" id="page-sports">
+  <section class="phero">
+    <div class="orb" style="width:400px;height:400px;background:var(--gold);right:-100px;top:60px"></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">Sports</span>
+      <h1 class="display"><span>Choose your</span><br/><span class="grad" style="animation-delay:.12s">sport</span></h1>
+      <p>Verso Alto is an all-sport league. We kick off with co-ed soccer in Spring 2027, and baseball and basketball are on the way.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap">
+      <div class="sports-grid" data-sportcards></div>
+      <p class="note reveal">Every sport shares the same focus: faith, character, teamwork, and fun. Want to hear first when a new sport opens? <a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">Join the interest list.</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= SOCCER ======================= -->
+<main class="page" id="page-soccer">
+  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#0e4a33)">
+    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#ball"/></svg></div>
+    <div class="wrap" style="position:relative">
+      <a href="#sports" data-link class="back">← All sports</a><br/>
+      <span class="eyebrow">Soccer · Co-ed · Ages 3–8</span>
+      <h1 class="display"><span>Spring</span> <span class="grad" style="animation-delay:.1s">2027</span><br/><span style="animation-delay:.2s">Soccer</span></h1>
+      <p>A six-week, co-ed recreational soccer program for kids ages 3 to 8. No tryouts — just great soccer, great families.</p>
+      <span class="soon-badge live">● Our first season · Registration coming soon</span>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="reveal left">
+        <span class="eyebrow">Co-ed soccer</span>
+        <h2 class="display h2">More than a <span class="grad">game</span></h2>
+        <p class="lead">Kids build real soccer skills while they grow in faith and character.</p>
+        <ul class="checks">
+          <li>Six-week recreational season — Saturday mornings anticipated</li>
+          <li>Co-ed teams for ages 3–4, 5–6, and 7–8</li>
+          <li>No tryouts — every child plays</li>
+          <li>Fields in the East Valley (location to be announced)</li>
+          <li>Arizona ESA funds accepted</li>
+        </ul>
+        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <div class="field reveal right" id="field">
+        <svg class="lines" viewBox="0 0 300 200" preserveAspectRatio="none" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5">
+          <rect x="8" y="8" width="284" height="184"/><line x1="150" y1="8" x2="150" y2="192"/><circle cx="150" cy="100" r="26"/>
+          <rect x="8" y="60" width="34" height="80"/><rect x="258" y="60" width="34" height="80"/>
+          <rect x="2" y="84" width="6" height="32" fill="rgba(255,255,255,.4)"/><rect x="292" y="84" width="6" height="32" fill="rgba(255,255,255,.4)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Divisions</span><h2 class="display">Three age <span class="grad">groups</span></h2></div>
+      <div class="tiles">
+        <div class="tile reveal"><div class="n">3–4</div><h3>Ages 3–4</h3><p>A joyful first taste of soccer — movement, coordination, and playing as a team.</p></div>
+        <div class="tile reveal" style="transition-delay:.1s"><div class="n">5–6</div><h3>Ages 5–6</h3><p>Fundamentals take shape: dribbling, passing, and the thrill of a first goal.</p></div>
+        <div class="tile reveal" style="transition-delay:.2s"><div class="n">7–8</div><h3>Ages 7–8</h3><p>Game-ready players learn positions, sportsmanship, and how to strive higher.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= BASEBALL ======================= -->
+<main class="page" id="page-baseball">
+  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#1d3f8a)">
+    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#baseball"/></svg></div>
+    <div class="wrap" style="position:relative">
+      <a href="#sports" data-link class="back">← All sports</a><br/>
+      <span class="eyebrow">Baseball</span>
+      <h1 class="display"><span>Batter</span> <span class="grad" style="animation-delay:.1s">up</span></h1>
+      <p>Baseball is coming to Verso Alto. We're building a program where young players learn the game the right way — with faith, character, and plenty of fun.</p>
+      <span class="soon-badge">⏳ Coming soon · Details to be announced</span>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="reveal left">
+        <span class="eyebrow">What to expect</span>
+        <h2 class="display h2">America's pastime, <span class="grad">our way</span></h2>
+        <p class="lead">Our baseball program will focus on the fundamentals — hitting, throwing, catching, and running the bases — in a positive, encouraging setting where every child gets a turn at bat.</p>
+        <ul class="checks">
+          <li>Skill-building for beginners and growing players</li>
+          <li>Teamwork, patience, and good sportsmanship</li>
+          <li>The same affordable, faith-centered approach as all our sports</li>
+        </ul>
+        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Get notified <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <div class="panel reveal right">
+        <span class="eyebrow">Status</span>
+        <h3 class="display" style="font-size:2.4rem;margin:.8rem 0">Coming soon</h3>
+        <p style="color:var(--muted)">Age groups, season dates, and locations for baseball haven't been announced yet. Join the interest list and we'll let you know as soon as details are ready.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= BASKETBALL ======================= -->
+<main class="page" id="page-basketball">
+  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#7a2a0e)">
+    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#basketball"/></svg></div>
+    <div class="wrap" style="position:relative">
+      <a href="#sports" data-link class="back">← All sports</a><br/>
+      <span class="eyebrow">Basketball</span>
+      <h1 class="display"><span>Nothing</span> <span class="grad" style="animation-delay:.1s">but net</span></h1>
+      <p>Basketball is coming to Verso Alto. We're building a program where kids develop their skills on the court and grow in faith and character along the way.</p>
+      <span class="soon-badge">⏳ Coming soon · Details to be announced</span>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="reveal left">
+        <span class="eyebrow">What to expect</span>
+        <h2 class="display h2">Fun on the <span class="grad">court</span></h2>
+        <p class="lead">Our basketball program will teach the fundamentals — dribbling, passing, shooting, and defense — in a fun, encouraging setting where every player gets on the court.</p>
+        <ul class="checks">
+          <li>Skill-building for beginners and growing players</li>
+          <li>Teamwork, hustle, and good sportsmanship</li>
+          <li>The same affordable, faith-centered approach as all our sports</li>
+        </ul>
+        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Get notified <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <div class="panel reveal right">
+        <span class="eyebrow">Status</span>
+        <h3 class="display" style="font-size:2.4rem;margin:.8rem 0">Coming soon</h3>
+        <p style="color:var(--muted)">Age groups, season dates, and locations for basketball haven't been announced yet. Join the interest list and we'll let you know as soon as details are ready.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= ABOUT ======================= -->
+<main class="page" id="page-about">
+  <section class="phero">
+    <div class="orb" style="width:420px;height:420px;background:var(--sun);right:-120px;top:40px"></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">About us</span>
+      <h1 class="display"><span>Faith.</span> <span style="animation-delay:.1s">Family.</span><br/><span class="grad" style="animation-delay:.2s">Greatness.</span></h1>
+      <p>Verso Alto Youth Sports gives Catholic families affordable, Christ-centered youth sports.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="reveal left">
+        <span class="eyebrow">Our mission</span>
+        <h2 class="display h2">Body, mind <span class="grad">&amp; spirit</span></h2>
+        <p class="lead">Our mission is to provide Catholic families with affordable, Christ-centered youth sports — developing young athletes in body, mind, and spirit while strengthening families and communities.</p>
+        <p style="color:var(--muted);margin-top:1rem">We pursue excellence in sport, faith, character, and service. Children and families of all faiths are welcome.</p>
+      </div>
+      <div class="panel reveal right" style="text-align:center">
+        <span class="eyebrow" style="justify-content:center">Our name</span>
+        <div class="display grad" style="font-size:clamp(3rem,8vw,6rem);margin:1rem 0">Verso l'Alto</div>
+        <p class="serif" style="font-size:1.8rem">"To the heights"</p>
+        <p style="color:var(--muted);margin-top:1rem">Our name draws on St. Pier Giorgio Frassati's call to strive for something greater — in sport and in life.</p>
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">At a glance</span><h2 class="display">The <span class="grad">facts</span></h2></div>
+      <div class="facts">
+        <div class="fact reveal"><small>Organization</small><b>Verso Alto Youth Sports, Inc.</b></div>
+        <div class="fact reveal" style="transition-delay:.1s"><small>Type</small><b>Arizona nonprofit corporation</b></div>
+        <div class="fact reveal" style="transition-delay:.2s"><small>Status</small><b>501(c)(3) tax-exempt</b></div>
+        <div class="fact reveal" style="transition-delay:.3s"><small>Founded</small><b>2026</b></div>
+      </div>
+    </div>
+  </section>
+  <section class="quote" style="padding:clamp(80px,10vw,140px) 0">
+    <div class="wrap reveal zoom">
+      <p class="serif" style="font-size:clamp(2rem,5vw,4rem);line-height:1.15">St. Pier Giorgio Frassati,<br/><span class="grad">pray for us.</span></p>
+      <p class="display" style="font-size:clamp(2.4rem,6vw,4.5rem);margin-top:1.5rem">Verso l'Alto!</p>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= FAQ ======================= -->
+<main class="page" id="page-faq">
+  <section class="phero">
+    <div class="orb" style="width:380px;height:380px;background:var(--sky);right:-80px;top:60px"></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">FAQ</span>
+      <h1 class="display"><span>Got</span> <span class="grad" style="animation-delay:.1s">questions?</span></h1>
+      <p>We've got answers. Can't find yours? Reach out — we're happy to help.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap" style="max-width:880px">
+      <div class="faq-search reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="faqSearch" type="search" placeholder="Search questions… (try “cost” or “ESA”)" />
+      </div>
+      <div id="faqList">
+        <div class="faq reveal"><button><span>Will soccer be the only sport?</span><i class="pm"></i></button><div class="ans"><div><p>No! Verso Alto is an all-sport league. We're starting with soccer in Spring 2027, and baseball and basketball are on the way — always with our focus on faith, character, teamwork, and fun. Stay tuned for future announcements.</p></div></div></div>
+        <div class="faq reveal"><button><span>How much will it cost?</span><i class="pm"></i></button><div class="ans"><div><p>As a Catholic nonprofit, we are committed to keeping youth sports affordable. Registration costs for the Spring 2027 season are still being finalized, and pricing will be announced once complete.</p></div></div></div>
+        <div class="faq reveal"><button><span>Do you accept ESA (Empowerment Scholarship Account) funds?</span><i class="pm"></i></button><div class="ans"><div><p>Yes. We are an approved Arizona ESA vendor. Choose ESA as your payment method during registration, and you'll receive an invoice with instructions for paying or seeking reimbursement through ClassWallet.</p></div></div></div>
+        <div class="faq reveal"><button><span>Do I have to be Catholic to join?</span><i class="pm"></i></button><div class="ans"><div><p>No. Children and families of all faiths are welcome. Our programs are rooted in the Catholic faith, but participation does not require it.</p></div></div></div>
+        <div class="faq reveal"><button><span>When will the season begin?</span><i class="pm"></i></button><div class="ans"><div><p>Our first season is planned for Spring 2027. The exact start date will be announced once the field location and schedule are finalized. We anticipate a six-week season on Saturday mornings.</p></div></div></div>
+        <div class="faq reveal"><button><span>Where will the games be played?</span><i class="pm"></i></button><div class="ans"><div><p>We are exploring fields in the East Valley. The exact location will be announced once finalized.</p></div></div></div>
+      </div>
+      <p class="noresults" id="noRes">No matches — <a href="#contact" data-link style="color:var(--gold);font-weight:700">ask us directly</a>.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= SUPPORT ======================= -->
+<main class="page" id="page-support">
+  <section class="phero">
+    <div class="orb" style="width:420px;height:420px;background:var(--gold);right:-100px;top:40px"></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">Support</span>
+      <h1 class="display"><span>Support our</span><br/><span class="grad" style="animation-delay:.12s">mission</span></h1>
+      <p>Help us bring affordable, Christ-centered sports to families across the East Valley. Every hand lifts us higher.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap">
+      <div class="ways">
+        <div class="way reveal"><span class="em">🙏</span><h3>Pray</h3><p>Lift up our players, families, and coaches. Prayer is the foundation of everything we do.</p><a class="link" href="#about" data-link>Our mission →</a></div>
+        <div class="way reveal" style="transition-delay:.08s"><span class="em">📣</span><h3>Coach</h3><p>Share your love of the game and help young athletes grow in skill and character.</p><a class="link" href="#contact" data-link data-topic="Coaching">I want to coach →</a></div>
+        <div class="way reveal" style="transition-delay:.16s"><span class="em">🙌</span><h3>Volunteer</h3><p>Game-day help, field setup, events — there's a spot on the team for everyone.</p><a class="link" href="#contact" data-link data-topic="Volunteering">Volunteer →</a></div>
+        <div class="way reveal" style="transition-delay:.24s"><span class="em">🤝</span><h3>Partner</h3><p>Parishes, schools, and local businesses — let's build something great together.</p><a class="link" href="#contact" data-link data-topic="Partnering">Become a partner →</a></div>
+        <div class="way reveal" style="transition-delay:.32s"><span class="em">💛</span><h3>Give</h3><p>Gifts help keep registration affordable for every family. Reach out to learn how to give.</p><a class="link" href="#contact" data-link data-topic="Giving">Ask about giving →</a></div>
+      </div>
+      <p class="note reveal">Verso Alto Youth Sports, Inc. is an Arizona nonprofit corporation and a 501(c)(3) tax-exempt organization.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= CONTACT ======================= -->
+<main class="page" id="page-contact">
+  <section class="phero">
+    <div class="orb" style="width:400px;height:400px;background:var(--grass);right:-80px;top:50px"></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">Contact</span>
+      <h1 class="display"><span>Let's</span> <span class="grad" style="animation-delay:.1s">talk</span></h1>
+      <p>Have a question about Spring 2027 soccer, volunteering, coaching, or partnering with Verso Alto Youth Sports? We'd love to hear from you.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap split" style="align-items:start">
+      <div class="contact-cards reveal left">
+        <a class="cc" href="mailto:Shostutler@versoaltoyouthsports.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><b>Shostutler@versoaltoyouthsports.com</b></span></a>
+        <a class="cc" href="tel:+14804930639"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span><span><small>Phone</small><b>(480) 493-0639</b></span></a>
+        <a class="cc interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span><small>Spring 2027</small><b>Fill out the Interest Form</b></span></a>
+        <a class="cc" href="#policies" data-link><span class="ic"><svg><use href="#doc"/></svg></span><span><small>Families &amp; coaches</small><b>Policies &amp; Forms</b></span></a>
+      </div>
+      <form class="panel reveal right" id="cform">
+        <div class="row">
+          <div class="fld"><input id="fn" placeholder=" " required/><label for="fn">Your name</label></div>
+          <div class="fld"><input id="fe" type="email" placeholder=" " required/><label for="fe">Email</label></div>
+        </div>
+        <div class="fld"><select id="ft"><option>Spring 2027 Soccer</option><option>Baseball</option><option>Basketball</option><option>Volunteering</option><option>Coaching</option><option>Partnering</option><option>Giving</option><option>Something else</option></select><label for="ft">Topic</label></div>
+        <div class="fld"><textarea id="fm" placeholder=" " required></textarea><label for="fm">Message</label></div>
+        <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Send message <svg><use href="#arrow"/></svg></button>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:.8rem;text-align:center">Opens your email app with your message ready to send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= POLICIES HUB ======================= -->
+<main class="page" id="page-policies">
+  <section class="phero">
+    <div class="orb" style="width:380px;height:380px;background:var(--sky);right:-80px;top:60px"></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">Policies &amp; Forms</span>
+      <h1 class="display"><span>Policies</span> <span class="grad" style="animation-delay:.1s">&amp; forms</span></h1>
+      <p>Important information for our families, coaches, and volunteers.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap" style="max-width:880px"><div class="pol-list" id="polList"></div></div>
+  </section>
+</main>
+
+<!-- ======================= SINGLE POLICY ======================= -->
+<main class="page" id="page-policy">
+  <section class="phero">
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">Policies &amp; Forms</span>
+      <h1 class="display" id="polTitle" style="font-size:clamp(2.6rem,7vw,6rem)"></h1>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap doc">
+      <a href="#policies" data-link class="back">← All policies &amp; forms</a>
+      <div id="polBody"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="fmtn" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#0b1b3a" d="M0 120V70l160-50 140 40 180-60 160 70 200-60 160 50 180-40 260 60v40z"/></svg>
+  <div class="fbody">
+    <div class="wrap fgrid">
+      <div>
+        <a href="#home" class="brand" data-link><svg><use href="#logo"/></svg><span><b>VERSO ALTO</b><small>Youth Sports</small></span></a>
+        <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness. To the Heights!</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#home" data-link>Home</a></li><li><a href="#about" data-link>About</a></li><li><a href="#faq" data-link>FAQ</a></li><li><a href="#support" data-link>Support</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
+      <div><h4>Sports</h4><ul><li><a href="#soccer" data-link>Soccer</a></li><li><a href="#baseball" data-link>Baseball (coming soon)</a></li><li><a href="#basketball" data-link>Basketball (coming soon)</a></li><li><a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
+      <div><h4>Families</h4><ul><li><a href="#policies" data-link>Policies &amp; Forms</a></li><li><a href="#privacy" data-link>Privacy Policy</a></li><li><a href="#refund" data-link>Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
+    </div>
+    <div class="wrap"><div class="fbig">Verso l'Alto</div>
+      <div class="fbottom"><span>© <span id="yr"></span> Verso Alto Youth Sports, Inc. · Arizona 501(c)(3) nonprofit</span><a href="#privacy" data-link>Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FORM='https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform';
+$('#yr').textContent=new Date().getFullYear();
+
+/* ---------------- sports (shared cards) ---------------- */
+const SPORTS=[
+  {key:'soccer',name:'Soccer',icon:'ball',status:'Spring 2027',live:true,desc:'Co-ed recreational soccer for ages 3–8. Six weeks of Saturday-morning fun. No tryouts.'},
+  {key:'baseball',name:'Baseball',icon:'baseball',status:'Coming soon',desc:'Hitting, throwing, catching, and running the bases — with faith and fun at the core.'},
+  {key:'basketball',name:'Basketball',icon:'basketball',status:'Coming soon',desc:'Dribbling, passing, shooting, and teamwork on the court. Details to be announced.'}
+];
+$$('[data-sportcards]').forEach(g=>g.innerHTML=SPORTS.map((s,i)=>`
+  <a class="sport ${s.key} reveal" style="transition-delay:${i*.12}s" href="#${s.key}" data-link>
+    <svg class="art" viewBox="0 0 100 100"><use href="#${s.icon}"/></svg>
+    <span class="status ${s.live?'live':''}">${s.live?'● ':''}${s.status}</span>
+    <h3>${s.name}</h3><p>${s.desc}</p>
+    <span class="go">${s.live?'See the details':'Learn more'} <svg><use href="#arrow"/></svg></span>
+  </a>`).join(''));
+
+/* ---------------- policies ---------------- */
+const POLICIES={
+  privacy:{title:'Privacy Policy',d:'How we collect, use, and protect your family’s information.'},
+  refund:{title:'Refund Policy',d:'Our policy on registration refunds and credits.'},
+  waiver:{title:'Parent/Guardian Participation Agreement & Waiver',d:'The agreement every parent or guardian completes at registration.'},
+  concussion:{title:'Concussion Awareness & Player Safety Policy',d:'How we keep players safe and respond to head injuries.'},
+  'child-protection':{title:'Child Protection & Safe Environment Policy',d:'Our commitment to a safe environment for every child.'}
+};
+$('#polList').innerHTML=Object.entries(POLICIES).map(([k,p],i)=>`
+  <a class="pol reveal" style="transition-delay:${i*.07}s" href="#${k}" data-link><span class="ic"><svg><use href="#doc"/></svg></span>
+  <span><b>${p.title}</b><span class="d">${p.d}</span></span><span class="arr">→</span></a>`).join('');
+function renderPolicy(k){
+  const p=POLICIES[k]; $('#polTitle').textContent=p.title;
+  $('#polBody').innerHTML = p.html || `<p class="meta">Verso Alto Youth Sports, Inc.</p>
+    <div class="pending"><p style="margin:0">The full ${p.title} is being added to this page. For a copy in the meantime, email <a href="mailto:Shostutler@versoaltoyouthsports.com" style="color:var(--gold);font-weight:700">Shostutler@versoaltoyouthsports.com</a> or call <a href="tel:+14804930639" style="color:var(--gold);font-weight:700">(480) 493-0639</a>.</p></div>`;
+}
+
+/* ---------------- routing ---------------- */
+const PAGES=['home','sports','soccer','baseball','basketball','about','faq','support','contact','policies'];
+const TAB_OF={soccer:'sports',baseball:'sports',basketball:'sports'};
+let current=null, io=null;
+function setPill(){
+  const a=$('#tabs a.active[data-tab]'), pill=$('#tabs .pill');
+  if(!a){pill.style.width=0;return}
+  const t=$('#tabs').getBoundingClientRect(), r=a.getBoundingClientRect();
+  pill.style.left=(r.left-t.left)+'px'; pill.style.width=r.width+'px';
+}
+function show(route){
+  let page=route;
+  if(POLICIES[route]){page='policy';renderPolicy(route)}
+  else if(!PAGES.includes(route)){route=page='home'}
+  $$('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));
+  const tab=TAB_OF[route]||route;
+  $$('[data-tab]').forEach(a=>a.classList.toggle('active',a.dataset.tab===tab));
+  $$('#mobileMenu a.sub').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));
+  current=route; window.scrollTo(0,0); setPill(); initReveals(); onScroll();
+  const names={home:'Faith · Community · Sports'};
+  const label=POLICIES[route]?POLICIES[route].title:(route.charAt(0).toUpperCase()+route.slice(1));
+  document.title = route==='home' ? 'Verso Alto Youth Sports | '+names.home : label+' | Verso Alto Youth Sports';
+}
+function go(route,topic){
+  document.body.classList.remove('menu-open');
+  if(topic){ const s=$('#ft'); [...s.options].forEach(o=>{if(o.text===topic)s.value=o.text}); }
+  if(route===current){window.scrollTo({top:0,behavior:'smooth'});return}
+  if(reduce){history.pushState(null,'','#'+route);show(route);return}
+  const w=$('#wipe'); w.className='in';
+  setTimeout(()=>{history.pushState(null,'','#'+route);show(route);w.className='out';setTimeout(()=>w.className='',700)},620);
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-link]'); if(!a) return;
+  e.preventDefault(); go(a.getAttribute('href').slice(1),a.dataset.topic);
+});
+addEventListener('popstate',()=>show(location.hash.slice(1)||'home'));
+addEventListener('resize',setPill);
+$('#burger').onclick=()=>document.body.classList.toggle('menu-open');
+
+/* ---------------- reveals ---------------- */
+function initReveals(){
+  io&&io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)} }),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  $$('.page.active .reveal').forEach(el=>{el.classList.remove('in');io.observe(el)});
+}
+
+/* ---------------- tilt cards ---------------- */
+document.addEventListener('mousemove',e=>{
+  const card=e.target.closest('.tilt'); $$('.tilt').forEach(c=>{if(c!==card)c.style.transform=''});
+  if(!card||reduce) return;
+  const r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+  card.style.transform=`rotateY(${(x-.5)*10}deg) rotateX(${(.5-y)*10}deg) translateY(-6px)`;
+  card.style.setProperty('--mx',x*100+'%'); card.style.setProperty('--my',y*100+'%');
+});
+
+/* ---------------- hero parallax ---------------- */
+let mx=0;
+addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5; if(current==='home'&&scrollY<innerHeight) parallax()});
+function parallax(){
+  if(reduce) return;
+  const y=scrollY;
+  $$('#hero .mtn[data-depth]').forEach(l=>{l.style.transform=`translate3d(${-mx*(+l.dataset.mx)}px,${y*(+l.dataset.depth)}px,0)`});
+  $('[data-sun]').style.transform=`translateX(-50%) translateY(${-y*.35}px) scale(${1+y/1800})`;
+  const hc=$('#heroContent'); hc.style.transform=`translate3d(0,${y*.4}px,0)`; hc.style.opacity=Math.max(0,1-y/(innerHeight*.75));
+}
+function onScroll(){
+  const y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
+  $('#progress').style.width=(h>0?y/h*100:0)+'%';
+  $('#hdr').classList.toggle('scrolled',y>40);
+  if(current==='home' && y<innerHeight*1.1) parallax();
+}
+let ticking=false; addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{onScroll();ticking=false})}},{passive:true});
+
+/* ---------------- soccer field animation ---------------- */
+const field=$('#field');
+const ball=document.createElement('div'); ball.className='fball'; ball.innerHTML='<svg viewBox="0 0 100 100"><use href="#ball"/></svg>'; field.append(ball);
+const players=[...Array(6)].map((_,i)=>{const p=document.createElement('div'); p.className='player '+(i<3?'home':'away'); field.append(p); return p});
+setInterval(()=>{ if(current!=='soccer') return;
+  const bx=8+Math.random()*80, by=12+Math.random()*70; ball.style.left=bx+'%'; ball.style.top=by+'%';
+  players.forEach((p,i)=>{const near=i%3===0; p.style.left=(near?bx+(Math.random()*10-5):10+Math.random()*78)+'%'; p.style.top=(near?by+(Math.random()*10-5):10+Math.random()*75)+'%'});
+},1500);
+
+/* ---------------- FAQ ---------------- */
+$$('.faq button').forEach(b=>b.onclick=()=>{const f=b.parentElement, open=!f.classList.contains('open'); $$('.faq').forEach(x=>x.classList.remove('open')); if(open) f.classList.add('open')});
+$$('.faq').forEach(f=>{f.dataset.q=$('button span',f).textContent; f.dataset.a=$('.ans p',f).textContent});
+$('#faqSearch').addEventListener('input',e=>{
+  const v=e.target.value.trim().toLowerCase(); let shown=0;
+  const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  $$('.faq').forEach(f=>{const hit=!v||(f.dataset.q+' '+f.dataset.a).toLowerCase().includes(v);
+    f.style.display=hit?'':'none'; if(hit)shown++;
+    const hl=t=>v?t.replace(new RegExp('('+esc(v)+')','ig'),'<mark>$1</mark>'):t;
+    $('button span',f).innerHTML=hl(f.dataset.q); $('.ans p',f).innerHTML=hl(f.dataset.a);
+    f.classList.toggle('open',!!v&&hit&&shown===1)});
+  $('#noRes').style.display=shown?'none':'block';
+});
+
+/* ---------------- contact form -> mailto ---------------- */
+$('#cform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const subj=`[${$('#ft').value}] Message from ${$('#fn').value}`;
+  const body=`${$('#fm').value}\n\n— ${$('#fn').value} (${$('#fe').value})`;
+  location.href=`mailto:Shostutler@versoaltoyouthsports.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+  burst(innerWidth/2,innerHeight*.6); toast('Opening your email app… Verso l\'alto!');
+});
+
+/* ---------------- confetti on interest-form clicks ---------------- */
+const cv=$('#confetti'), cx=cv.getContext('2d'); let parts=[];
+function sizeC(){cv.width=innerWidth;cv.height=innerHeight} sizeC(); addEventListener('resize',sizeC);
+function burst(x,y){ if(reduce) return; const cols=['#f2b632','#ff8a3d','#ffffff','#4a86ff','#2fbf71']; const fresh=!parts.length;
+  for(let i=0;i<120;i++){const a=Math.random()*6.28, s=Math.random()*12+4; parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:Math.random()*6+3,c:cols[i%5],rot:Math.random()*6,vr:Math.random()*.3-.15,life:110})}
+  if(fresh) loop();
+}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);
+  parts.forEach(p=>{p.vy+=.35;p.vx*=.98;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life--; cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.globalAlpha=Math.max(0,p.life/110);cx.fillStyle=p.c;cx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);cx.restore()});
+  parts=parts.filter(p=>p.life>0); if(parts.length) requestAnimationFrame(loop); else cx.clearRect(0,0,cv.width,cv.height)}
+document.addEventListener('click',e=>{const a=e.target.closest('.interest'); if(a){const r=a.getBoundingClientRect(); burst(r.left+r.width/2,r.top+r.height/2)}});
+function toast(t){const el=$('#toast'); el.textContent=t; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),3200)}
+
+/* inner-page mountain edge */
+$$('.phero').forEach(ph=>ph.insertAdjacentHTML('beforeend','<svg class="pmtn" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" opacity=".07" d="M0 120V60l180-50 160 50 200-55 180 60 220-50 180 45 160-35 160 40v115z"/><path fill="#050d22" d="M0 120V85l140-35 170 40 190-45 160 45 210-40 170 35 200-30 200 40v65z"/></svg>'));
+
+show(location.hash.slice(1)||'home');
+document.fonts && document.fonts.ready.then(setPill);
+})();
+</script>
+</body>
+</html>
