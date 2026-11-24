@@ -287,7 +287,7 @@ form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 footer{position:relative;margin-top:clamp(80px,10vw,130px);overflow:hidden}
 footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
 .fbody{background:#0b1b3a;padding-bottom:30px}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-top:40px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1.1fr 1fr 1fr;gap:2.4rem;padding-top:40px}
 .fgrid h4{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .fgrid ul{list-style:none;display:grid;gap:.55rem}
 .fgrid a{color:var(--muted);transition:color .3s}
@@ -429,3 +429,11 @@ a.city{display:block}
 .qa h3:first-child{margin-top:0}
 .qa p{color:#d4dcf0}
 @media (max-width:520px){.facts-list li{grid-template-columns:1fr;gap:.2rem}}
+
+/* text wordmark (logo removed until final logo is chosen) */
+.wordmark span{display:block;line-height:1}
+.wordmark b{display:block;font-family:Inter,sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:.06em;color:var(--cream)}
+.wordmark small{display:block;font-family:Inter,sans-serif;font-weight:300;font-size:.86rem;letter-spacing:.28em;color:var(--gold);margin-top:4px}
+.wordmark:hover b{color:#fff}
+.fword b{font-size:1.6rem}.fword small{font-size:.95rem}
+@media (max-width:600px){.wordmark b{font-size:1.15rem}.wordmark small{font-size:.74rem}}

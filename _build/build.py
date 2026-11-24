@@ -89,7 +89,7 @@ def sport_cards():
     <h3>{s['name']}</h3><p>{s['desc']}</p>
     <span class="go">{'See the details' if s.get('live') else 'Learn more'} {ARROW}</span></a>''' for i, s in enumerate(SPORTS))
 
-TAG_ICON = {'News': 'logo', 'Faith': 'logo', 'Safety': 'ball', 'Soccer': 'ball', 'Families': 'ball', 'Sports': 'football', 'Community': 'basketball'}
+TAG_ICON = {'News': 'ball', 'Faith': 'baseball', 'Safety': 'ball', 'Soccer': 'ball', 'Families': 'ball', 'Sports': 'football', 'Community': 'basketball'}
 def post_card(a, i=0):
     ic = TAG_ICON.get(a['tag'], 'ball')
     vb = '0 0 1680 1085' if ic == 'logo' else '0 0 100 100'
@@ -155,7 +155,7 @@ def footer():
   <div class="fbody">
     <div class="wrap fgrid">
       <div>
-        <a href="@/" class="brand fbrand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 1660 1640"><use href="#logostack"/></svg></a>
+        <a href="@/" class="brand wordmark fword" aria-label="Verso Alto Youth Sports — home"><span><b>VERSO ALTO</b><small>YOUTH SPORTS</small></span></a>
         <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic, nonprofit youth sports league serving families in Gilbert, Mesa, Chandler, Queen Creek and across Arizona's East Valley. Faith · Community · Sports. To the Heights!</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="@/">Home</a></li><li><a href="@/about/">About</a></li><li><a href="@/blog/">Blog</a></li><li><a href="@/faq/">FAQ</a></li><li><a href="@/support/">Support</a></li><li><a href="@/contact/">Contact</a></li></ul></div>
@@ -226,7 +226,7 @@ def render(p):
 <div class="toast" id="toast" role="status"></div>
 <header id="hdr">
   <div class="wrap nav">
-    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 4450 1085"><use href="#logofull"/></svg></a>
+    <a href="@/" class="brand wordmark" aria-label="Verso Alto Youth Sports — home"><span><b>VERSO ALTO</b><small>YOUTH SPORTS</small></span></a>
     {desktop}
     <a class="cta-mini interest" href="{FORM}" target="_blank" rel="noopener">Interest Form →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -664,7 +664,7 @@ def build_single(out_dir):
 <div class="toast" id="toast" role="status"></div>
 <header id="hdr">
   <div class="wrap nav">
-    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 4450 1085"><use href="#logofull"/></svg></a>
+    <a href="@/" class="brand wordmark" aria-label="Verso Alto Youth Sports — home"><span><b>VERSO ALTO</b><small>YOUTH SPORTS</small></span></a>
     {desktop}
     <a class="cta-mini interest" href="{FORM}" target="_blank" rel="noopener">Interest Form →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
