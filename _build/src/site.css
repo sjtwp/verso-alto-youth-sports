@@ -25,9 +25,10 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,bac
 header.scrolled{background:rgba(5,13,34,.78);backdrop-filter:blur(14px) saturate(1.4);padding:12px 0;box-shadow:0 10px 40px rgba(0,0,0,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.75rem}
-.brand svg{height:54px;width:auto;aspect-ratio:875/216;transition:transform .5s var(--ease)}
+.brand svg{height:54px;width:auto;aspect-ratio:4400/1085;transition:transform .5s var(--ease)}
 .brand:hover svg{transform:scale(1.04)}
 @media (max-width:600px){.brand svg{height:40px}}
+.fbrand svg{height:150px;aspect-ratio:1580/1640}
 .tabs{display:flex;gap:.25rem;position:relative;padding:6px;border-radius:999px;background:rgba(5,13,34,.35);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
 .tabs > a,.tabs .dd > a{position:relative;z-index:1;display:block;padding:.55rem 1.05rem;border-radius:999px;font-weight:600;font-size:.92rem;color:#dbe3f5;transition:color .3s}
 .tabs a:hover{color:#fff}
