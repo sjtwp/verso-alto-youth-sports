@@ -293,6 +293,7 @@ form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .doc h2{font-family:Anton;font-weight:400;text-transform:uppercase;font-size:1.8rem;margin:2.4rem 0 .8rem;color:#fff}
 .doc p,.doc li{color:#d4dcf0;margin-bottom:1rem}
 .doc ul{padding-left:1.3rem}
+.doc strong{color:#fff}
 .doc .meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
 .doc .pending{padding:1.6rem;border-radius:18px;border:1px dashed rgba(242,182,50,.55);background:rgba(242,182,50,.07)}
 .back{display:inline-flex;gap:.5rem;align-items:center;color:var(--gold);font-weight:800;margin-bottom:2rem}
@@ -859,7 +860,29 @@ $$('[data-sportcards]').forEach(g=>g.innerHTML=SPORTS.map((s,i)=>`
 /* ---------------- policies ---------------- */
 const POLICIES={
   privacy:{title:'Privacy Policy',d:'How we collect, use, and protect your family’s information.'},
-  refund:{title:'Refund Policy',d:'Our policy on registration refunds and credits.'},
+  refund:{title:'Refund Policy',d:'Withdrawals, program cancellations, weather, and ESA refunds.',html:`<p class="meta">Verso Alto Youth Sports</p>
+<h2>Registration &amp; Refund Policy</h2>
+<p>Verso Alto Youth Sports is committed to providing an affordable, organized, and enjoyable youth sports experience. Registration fees help cover field rentals, equipment, uniforms, insurance, and other program expenses.</p>
+<h2>Participant Withdrawal &amp; Refunds</h2>
+<p>Refunds for participant withdrawals are determined by when a written cancellation request is received:</p>
+<ul>
+<li><strong>Before the registration deadline:</strong> A full refund will be issued.</li>
+<li><strong>After the registration deadline, but before the season begins:</strong> A 50% refund will be issued.</li>
+<li><strong>Once the season has begun:</strong> No refunds will be issued.</li>
+</ul>
+<p>All cancellation requests must be submitted in writing to <a href="mailto:shostutler@versoaltoyouthsports.com" style="color:var(--gold);font-weight:700">shostutler@versoaltoyouthsports.com</a>.</p>
+<h2>Program Cancellation</h2>
+<p>If Verso Alto Youth Sports cancels an entire program or season, registered families will receive a full refund.</p>
+<h2>Missed Games or Practices</h2>
+<p>Refunds will not be provided for individual games or practices missed due to personal scheduling conflicts, illness, or other participant absences.</p>
+<h2>Weather &amp; Unforeseen Circumstances</h2>
+<p>Games or practices may be canceled or rescheduled due to weather, field conditions, or circumstances beyond the organization's control.</p>
+<p>Verso Alto Youth Sports will make reasonable efforts to provide makeup opportunities when possible. Refunds will not be issued for individual cancellations when reasonable efforts have been made to accommodate the schedule.</p>
+<h2>ESA Payments</h2>
+<p>Registrations paid through an Education Savings Account (ESA) will be refunded in accordance with applicable ESA program requirements and payment processing procedures.</p>
+<h2>Policy Administration</h2>
+<p>Refund requests will be reviewed and processed in accordance with this policy and the organization's financial procedures.</p>
+<p>Verso Alto Youth Sports reserves the right to consider exceptional circumstances on a case-by-case basis, consistent with applicable requirements.</p>`},
   waiver:{title:'Parent/Guardian Participation Agreement & Waiver',d:'The agreement every parent or guardian completes at registration.'},
   concussion:{title:'Concussion Awareness & Player Safety Policy',d:'How we keep players safe and respond to head injuries.'},
   'child-protection':{title:'Child Protection & Safe Environment Policy',d:'Our commitment to a safe environment for every child.'}
