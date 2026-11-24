@@ -148,7 +148,7 @@ def footer():
   <div class="fbody">
     <div class="wrap fgrid">
       <div>
-        <a href="@/" class="brand fbrand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 1600 1640"><use href="#logostack"/></svg></a>
+        <a href="@/" class="brand fbrand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 1660 1640"><use href="#logostack"/></svg></a>
         <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic, nonprofit youth sports league serving families in Gilbert, Mesa, Chandler, Queen Creek and across Arizona's East Valley. Faith · Community · Sports. To the Heights!</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="@/">Home</a></li><li><a href="@/about/">About</a></li><li><a href="@/blog/">Blog</a></li><li><a href="@/faq/">FAQ</a></li><li><a href="@/support/">Support</a></li><li><a href="@/contact/">Contact</a></li></ul></div>
@@ -218,7 +218,7 @@ def render(p):
 <div class="toast" id="toast" role="status"></div>
 <header id="hdr">
   <div class="wrap nav">
-    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 4420 1085"><use href="#logofull"/></svg></a>
+    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 4450 1085"><use href="#logofull"/></svg></a>
     {desktop}
     <a class="cta-mini interest" href="{FORM}" target="_blank" rel="noopener">Interest Form →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -579,7 +579,7 @@ def build_single(out_dir):
 <div class="toast" id="toast" role="status"></div>
 <header id="hdr">
   <div class="wrap nav">
-    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 4420 1085"><use href="#logofull"/></svg></a>
+    <a href="@/" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 4450 1085"><use href="#logofull"/></svg></a>
     {desktop}
     <a class="cta-mini interest" href="{FORM}" target="_blank" rel="noopener">Interest Form →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
