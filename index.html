@@ -3,328 +3,26 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Verso Alto Youth Sports | Faith · Community · Sports</title>
-<meta name="description" content="A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness. To the Heights!" />
+<title>Verso Alto Youth Sports | Catholic Youth Soccer &amp; Sports in Gilbert, Mesa &amp; the East Valley AZ</title>
+<meta name="description" content="Verso Alto Youth Sports is a Catholic, nonprofit youth sports league in Arizona&#x27;s East Valley. Co-ed soccer for ages 3–8 in Spring 2027 for Gilbert, Mesa, Chandler &amp; Queen Creek families. ESA accepted." />
+<link rel="canonical" href="https://www.versoaltoyouthsports.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Verso Alto Youth Sports" />
+<meta property="og:title" content="Verso Alto Youth Sports | Catholic Youth Soccer &amp; Sports in Gilbert, Mesa &amp; the East Valley AZ" />
+<meta property="og:description" content="Verso Alto Youth Sports is a Catholic, nonprofit youth sports league in Arizona&#x27;s East Valley. Co-ed soccer for ages 3–8 in Spring 2027 for Gilbert, Mesa, Chandler &amp; Queen Creek families. ESA accepted." />
+<meta property="og:url" content="https://www.versoaltoyouthsports.com/" />
+<meta name="twitter:card" content="summary" />
+<meta name="geo.region" content="US-AZ" /><meta name="geo.placename" content="Gilbert, Arizona" />
 <meta name="theme-color" content="#06102a" />
+<script>(function(){var m={"sports": "sports/", "soccer": "sports/soccer/", "baseball": "sports/baseball/", "basketball": "sports/basketball/", "football": "sports/football/", "about": "about/", "service-area": "service-area/", "blog": "blog/", "faq": "faq/", "policies": "policies/", "privacy": "policies/privacy/", "refund": "policies/refund/", "waiver": "policies/waiver/", "concussion": "policies/concussion/", "child-protection": "policies/child-protection/", "support": "support/", "contact": "contact/"};var h=location.hash.slice(1);if(m[h])location.replace(m[h]);})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%2730%2028%20342%20256%27%3E%3Crect%20x%3D%2730%27%20y%3D%2728%27%20width%3D%27342%27%20height%3D%27256%27%20rx%3D%2748%27%20fill%3D%27%230b1b3a%27/%3E%3Cpath%20d%3D%27M120%20126h160v51H120z%27%20fill%3D%27%23f2b632%27/%3E%3Cpath%20d%3D%27M57.7%2056.5H106.3L187.3%20255.5H138.7Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23ff9a3a%27%20stroke-width%3D%279%27/%3E%3Cpath%20d%3D%27M215.7%2056.5H264.3L345.3%20255.5H296.7Z%27%20fill%3D%27%2313285a%27%20stroke%3D%27%23ff9a3a%27%20stroke-width%3D%279%27/%3E%3Cpath%20d%3D%27M174%2053h51v206h-51z%27%20fill%3D%27%23f2b632%27/%3E%3C/svg%3E" />
-<style>
-:root{
-  --deep:#050d22; --navy:#0b1b3a; --navy2:#13285a; --gold:#f2b632; --sun:#ff8a3d;
-  --sky:#4a86ff; --grass:#2fbf71; --cream:#fbf6ea; --ink:#0b1430; --muted:#a9b6d6;
-  --radius:22px; --ease:cubic-bezier(.2,.8,.2,1);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,sans-serif;background:var(--deep);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
-a{color:inherit;text-decoration:none}
-img,svg{display:block}
-button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.display{font-family:Anton,Impact,sans-serif;letter-spacing:.01em;text-transform:uppercase;line-height:.92}
-.serif{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic}
-.wrap{width:min(1200px,92vw);margin-inline:auto}
-.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
-.grad{background:linear-gradient(100deg,var(--gold),var(--sun) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
-@keyframes shine{to{background-position:-200% 0}}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--sun));z-index:120}
-
-/* ---------- header ---------- */
-header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,backdrop-filter .4s,padding .4s,box-shadow .4s;padding:22px 0}
-header.scrolled{background:rgba(5,13,34,.78);backdrop-filter:blur(14px) saturate(1.4);padding:12px 0;box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.75rem}
-.brand svg{height:54px;width:auto;aspect-ratio:875/216;transition:transform .5s var(--ease)}
-.brand:hover svg{transform:scale(1.04)}
-@media (max-width:600px){.brand svg{height:40px}}
-.tabs{display:flex;gap:.25rem;position:relative;padding:6px;border-radius:999px;background:rgba(5,13,34,.35);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}
-.tabs > a,.tabs .dd > a{position:relative;z-index:1;display:block;padding:.55rem 1.05rem;border-radius:999px;font-weight:600;font-size:.92rem;color:#dbe3f5;transition:color .3s}
-.tabs a:hover{color:#fff}
-.tabs a.active{color:var(--ink)}
-.tabs .pill{position:absolute;top:6px;bottom:6px;left:0;width:0;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--sun));transition:left .5s var(--ease),width .5s var(--ease);box-shadow:0 6px 20px rgba(242,182,50,.45)}
-.dd{position:relative}
-.dd > a::after{content:"";display:inline-block;width:6px;height:6px;margin-left:.45rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg)}
-.dd-menu{position:absolute;top:calc(100% + 14px);left:50%;width:250px;transform:translate(-50%,10px);opacity:0;visibility:hidden;transition:.35s var(--ease);background:rgba(11,27,58,.97);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:.5rem;box-shadow:0 20px 50px rgba(0,0,0,.45)}
-.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
-.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
-.dd-menu a{display:flex;align-items:center;gap:.8rem;padding:.65rem .8rem;border-radius:12px;font-weight:600;color:#fff;transition:background .25s}
-.dd-menu a:hover{background:rgba(255,255,255,.08)}
-.dd-menu svg{width:28px;height:28px}
-.dd-menu small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.dd-menu small.live{color:var(--grass)}
-.cta-mini{padding:.65rem 1.2rem;border-radius:999px;background:var(--cream);color:var(--ink);font-weight:700;font-size:.88rem;transition:transform .3s,box-shadow .3s;white-space:nowrap}
-.cta-mini:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,255,255,.25)}
-.burger{display:none;width:46px;height:46px;border-radius:14px;background:rgba(5,13,34,.4);position:relative}
-.burger span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:transform .4s var(--ease),opacity .3s}
-.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
-body.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-body.menu-open .burger span:nth-child(2){opacity:0}
-body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-#mobileMenu{position:fixed;inset:0;z-index:90;background:radial-gradient(circle at 80% 0%,var(--navy2),var(--deep) 70%);display:flex;flex-direction:column;justify-content:center;padding:0 8vw;clip-path:circle(0% at calc(100% - 46px) 46px);transition:clip-path .7s var(--ease)}
-body.menu-open #mobileMenu{clip-path:circle(150% at calc(100% - 46px) 46px)}
-#mobileMenu a{font-family:Anton,sans-serif;font-size:clamp(2.4rem,11vw,4.2rem);text-transform:uppercase;line-height:1.1}
-#mobileMenu a.sub{font-family:Inter;font-size:1.05rem;font-weight:700;text-transform:none;color:var(--muted);padding-left:1.2rem;line-height:1.9}
-#mobileMenu a.active{color:var(--gold)}
-@media (max-width:1060px){.tabs,.cta-mini{display:none}.burger{display:block}}
-
-/* ---------- page transition ---------- */
-#wipe{position:fixed;inset:0;z-index:150;pointer-events:none;display:grid;grid-template-columns:repeat(5,1fr)}
-#wipe i{background:linear-gradient(180deg,var(--gold),var(--sun));transform:scaleY(0);transform-origin:bottom}
-#wipe.in i{animation:wipeIn .45s var(--ease) forwards}
-#wipe.out i{transform:scaleY(1);transform-origin:top;animation:wipeOut .5s var(--ease) forwards}
-#wipe i:nth-child(2){animation-delay:.04s!important}#wipe i:nth-child(3){animation-delay:.08s!important}#wipe i:nth-child(4){animation-delay:.12s!important}#wipe i:nth-child(5){animation-delay:.16s!important}
-@keyframes wipeIn{to{transform:scaleY(1)}}
-@keyframes wipeOut{to{transform:scaleY(0)}}
-.page{display:none}
-.page.active{display:block}
-
-.reveal{opacity:0;transform:translateY(50px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.reveal.left{transform:translateX(-60px)}.reveal.right{transform:translateX(60px)}.reveal.zoom{transform:scale(.9)}
-.reveal.in{opacity:1;transform:none}
-
-/* ---------- HERO: sunrise ---------- */
-.hero{position:relative;height:100vh;min-height:660px;overflow:hidden;
-  background:linear-gradient(180deg,#3d64a8 0%,#7c9fd6 30%,#c9b6c9 52%,#f6b58a 68%,#ffd27a 82%,#ffe7a8 100%)}
-.rays{position:absolute;left:50%;top:78%;width:180vmax;height:180vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(rgba(255,240,200,.16) 0 4deg,transparent 4deg 14deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 0%,transparent 55%);mask:radial-gradient(circle,#000 0%,transparent 55%);animation:spin 120s linear infinite;pointer-events:none}
-.sun-wrap{position:absolute;left:50%;bottom:22%;width:min(36vw,400px);aspect-ratio:1;transform:translateX(-50%);will-change:transform}
-.sun{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fffbe8 0%,#ffe9a3 38%,#ffc85c 62%,rgba(255,170,60,0) 72%);animation:sunrise 3s var(--ease) both}
-.sun::after{content:"";position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(255,214,120,.55),transparent 60%);animation:pulse 6s ease-in-out infinite}
-@keyframes sunrise{from{transform:translateY(55%);filter:saturate(1.6) hue-rotate(-12deg)}}
-@keyframes pulse{50%{transform:scale(1.1);opacity:.7}}
-.cloud{position:absolute;height:38px;border-radius:999px;background:rgba(255,255,255,.75);filter:blur(6px);animation:drift linear infinite}
-.cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:50%}
-.cloud::before{width:55%;height:220%;left:15%;bottom:20%}
-.cloud::after{width:38%;height:170%;right:14%;bottom:25%}
-@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
-.mtn{position:absolute;left:-5%;width:110%;bottom:0;will-change:transform}
-.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 4vw 12vh;z-index:5;will-change:transform,opacity}
-.badge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1rem .5rem .55rem;border-radius:999px;background:rgba(11,20,48,.35);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);font-size:.85rem;font-weight:600;margin-bottom:1.6rem}
-.badge em{font-style:normal;background:var(--grass);color:#04210f;font-weight:800;font-size:.7rem;letter-spacing:.12em;padding:.25rem .6rem;border-radius:999px}
-.hero h1{font-size:clamp(3.6rem,13vw,11rem);color:#fff;filter:drop-shadow(0 8px 30px rgba(20,30,80,.35))}
-.hero h1 .line{display:block;overflow:hidden;padding:0 .05em}
-.hero h1 .line span{display:inline-block;transform:translateY(110%);animation:rise 1.2s .2s var(--ease) forwards}
-.hero h1 .line:nth-child(2) span{animation-delay:.35s;color:var(--ink)}
-@keyframes rise{to{transform:none}}
-.hero .sub{margin-top:1.2rem;font-size:clamp(.95rem,1.8vw,1.25rem);display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);opacity:0;animation:fade 1s .9s forwards}
-.hero .sub i{width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
-@keyframes fade{to{opacity:1}}
-.hero .btns{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade 1s 1.2s forwards}
-.btn{position:relative;display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 1.8rem;border-radius:999px;font-weight:800;letter-spacing:.02em;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink);box-shadow:0 14px 40px rgba(255,138,61,.4)}
-.btn-dark{background:var(--ink);color:#fff;box-shadow:0 14px 40px rgba(11,20,48,.35)}
-.btn-ghost{border:2px solid rgba(255,255,255,.55);color:#fff}
-.btn:hover{transform:translateY(-4px) scale(1.03)}
-.btn::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .7s}
-.btn:hover::after{left:140%}
-.btn svg{width:18px;height:18px;transition:transform .3s}
-.btn:hover svg{transform:translateX(4px)}
-
-section{position:relative}
-.sec{padding:clamp(80px,11vw,140px) 0}
-.sec-head{max-width:760px;margin-bottom:3.2rem}
-.sec-head.center{margin-inline:auto;text-align:center}
-.sec-head h2{font-size:clamp(2.6rem,6.5vw,5rem);margin:.8rem 0 1rem}
-.sec-head p{color:var(--muted);font-size:1.12rem}
-
-/* ---------- pillars ---------- */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;perspective:1200px}
-.pillar{position:relative;padding:2.4rem 2rem 2.2rem;border-radius:var(--radius);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);overflow:hidden;transform-style:preserve-3d;transition:transform .2s ease-out, border-color .4s}
-.pillar:hover{border-color:rgba(242,182,50,.6)}
-.pillar .glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(242,182,50,.3),transparent 65%);pointer-events:none;transform:translate(-50%,-50%);left:var(--mx,50%);top:var(--my,0%);opacity:0;transition:opacity .4s}
-.pillar:hover .glow{opacity:1}
-.icon{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink);margin-bottom:1.4rem;box-shadow:0 14px 30px rgba(255,138,61,.3)}
-.icon svg{width:34px;height:34px}
-.pillar h3{font-family:Anton;font-weight:400;font-size:2.2rem;text-transform:uppercase}
-.pillar p{color:var(--muted);margin-top:.6rem}
-@media (max-width:900px){.pillars{grid-template-columns:1fr}}
-
-/* ---------- sport cards ---------- */
-.sports-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem}
-@media (max-width:1150px){.sports-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.sport{position:relative;display:flex;flex-direction:column;min-height:440px;border-radius:28px;overflow:hidden;padding:2rem;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 24px 50px rgba(0,0,0,.35)}
-.sport:hover{transform:translateY(-10px)}
-.sport .art{position:absolute;right:-36px;top:-36px;width:190px;height:190px;z-index:-1;opacity:.95;transition:transform 1.2s var(--ease);filter:drop-shadow(0 12px 20px rgba(0,0,0,.3))}
-.sport:hover .art{transform:rotate(200deg) scale(1.08)}
-.sport.soccer{background:linear-gradient(155deg,#2fbf71,#0d4f31)}
-.sport.baseball{background:linear-gradient(155deg,#4a86ff,#13285a)}
-.sport.basketball{background:linear-gradient(155deg,#ff8a3d,#7a2a0e)}
-.sport.football{background:linear-gradient(155deg,#9b5de5,#3a1c6b)}
-.sport .status{align-self:flex-start;padding:.35rem .8rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.3);backdrop-filter:blur(6px)}
-.sport .status.live{background:#fff;color:#0d4f31}
-.sport h3{margin-top:auto;font-family:Anton;font-weight:400;font-size:clamp(2.2rem,2.8vw,2.9rem);text-transform:uppercase;line-height:.95}
-@media (max-width:1150px){.sport h3{font-size:clamp(2.6rem,6vw,3.6rem)}}
-.sport p{opacity:.88;margin:.6rem 0 1.4rem}
-.sport .go{font-weight:800;display:inline-flex;align-items:center;gap:.5rem}
-.sport .go svg{width:18px;height:18px;transition:transform .3s}
-.sport:hover .go svg{transform:translateX(6px)}
-@media (max-width:640px){.sports-grid{grid-template-columns:1fr}.sport{min-height:320px}}
-
-/* ---------- quote ---------- */
-.quote{padding:clamp(100px,14vw,180px) 0;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,rgba(242,182,50,.22),transparent 60%),var(--deep)}
-.quote blockquote{font-size:clamp(2rem,4.8vw,4rem);line-height:1.15;max-width:1000px;margin:1.4rem auto 0}
-.quote blockquote em{font-style:inherit;color:var(--gold)}
-.quote cite{display:block;margin-top:2rem;font-style:normal;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);font-size:.85rem}
-
-/* ---------- CTA band ---------- */
-.cta-band{position:relative;margin:0 auto;width:min(1200px,92vw);border-radius:36px;overflow:hidden;padding:clamp(50px,8vw,90px) clamp(28px,6vw,80px);background:linear-gradient(120deg,var(--gold),var(--sun));color:var(--ink);display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:center}
-.cta-band h2{font-size:clamp(2.6rem,6vw,5rem)}
-.cta-band p{font-size:1.15rem;font-weight:500;margin-top:1rem;max-width:520px}
-.cta-band .sunburst{position:absolute;right:-20%;top:-60%;width:90%;aspect-ratio:1;background:repeating-conic-gradient(rgba(255,255,255,.18) 0 6deg,transparent 6deg 18deg);border-radius:50%;animation:spin 60s linear infinite;pointer-events:none}
-@media (max-width:800px){.cta-band{grid-template-columns:1fr}}
-
-/* ---------- inner page hero ---------- */
-.phero{position:relative;padding:clamp(160px,22vw,230px) 0 clamp(90px,10vw,130px);overflow:hidden;background:linear-gradient(180deg,#0b1b3a,#13285a)}
-.phero h1{font-size:clamp(3.2rem,10vw,8.5rem)}
-.phero h1 span{display:inline-block;animation:dropIn .9s var(--ease) both}
-@keyframes dropIn{from{transform:translateY(80px) rotate(4deg);opacity:0}}
-.phero p{max-width:660px;color:#c9d3ec;font-size:1.2rem;margin-top:1.2rem;animation:fadeUp 1s .3s var(--ease) both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}}
-.phero .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;animation:float 12s ease-in-out infinite}
-@keyframes float{50%{transform:translate(40px,-30px) scale(1.1)}}
-.phero .pmtn{position:absolute;left:0;bottom:-1px;width:100%;height:90px}
-.phero .bigart{position:absolute;right:6vw;top:50%;width:min(30vw,340px);transform:translateY(-40%);opacity:.95;animation:bob 6s ease-in-out infinite}
-.phero .bigart svg{width:100%;height:auto;animation:spin 40s linear infinite}
-@keyframes bob{50%{transform:translateY(-46%)}}
-@media (max-width:900px){.phero .bigart{opacity:.18;right:-10vw}}
-.soon-badge{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;padding:.5rem 1rem;border-radius:999px;border:1px dashed rgba(255,255,255,.4);font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;animation:fadeUp 1s .45s var(--ease) both}
-.soon-badge.live{border-style:solid;border-color:var(--grass);color:var(--grass)}
-
-/* ---------- generic blocks ---------- */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
-@media (max-width:900px){.split{grid-template-columns:1fr}}
-.panel{border-radius:var(--radius);padding:clamp(26px,4vw,44px);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12)}
-.lead{font-size:1.2rem;color:#dfe6f7}
-.h2{font-size:clamp(2.4rem,5vw,4rem);margin:.8rem 0 1rem}
-.checks{list-style:none;display:grid;gap:.9rem;margin-top:1.6rem}
-.checks li{display:flex;gap:.9rem;align-items:flex-start}
-.checks li::before{content:"";flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b1430' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/14px no-repeat}
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.fact{padding:1.6rem;border-radius:18px;background:var(--navy);border:1px solid rgba(255,255,255,.08)}
-.fact small{display:block;color:var(--gold);font-weight:800;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
-.fact b{display:block;font-size:1.25rem;margin-top:.4rem}
-@media (max-width:900px){.facts{grid-template-columns:1fr 1fr}}
-.btnrow{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
-
-/* soccer field */
-.field{position:relative;aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;background:repeating-linear-gradient(90deg,#1f9a57 0 10%,#22a95f 10% 20%);box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.field svg.lines{position:absolute;inset:0;width:100%;height:100%}
-.field .fball{position:absolute;width:34px;height:34px;left:10%;top:60%;transition:left 1.1s var(--ease),top 1.1s var(--ease)}
-.field .fball svg{width:100%;animation:spin 1.2s linear infinite}
-.field .player{position:absolute;width:22px;height:22px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.4);transition:left 1.4s var(--ease),top 1.4s var(--ease)}
-.field .home{background:var(--gold)}.field .away{background:var(--sky)}
-
-/* skill tiles on sport pages */
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.tile{padding:2rem;border-radius:var(--radius);background:var(--navy);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .4s}
-.tile:hover{transform:translateY(-8px);border-color:var(--gold)}
-.tile .n{font-family:Anton;font-size:3rem;line-height:1;color:var(--gold)}
-.tile h3{font-size:1.3rem;margin:.6rem 0 .3rem}
-.tile p{color:var(--muted)}
-@media (max-width:900px){.tiles{grid-template-columns:1fr}}
-
-/* FAQ */
-.faq-search{position:relative;margin-bottom:2rem}
-.faq-search input{width:100%;padding:1.2rem 1.4rem 1.2rem 3.4rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:1.05rem;outline:none;transition:border-color .3s,box-shadow .3s}
-.faq-search input:focus{border-color:var(--gold);box-shadow:0 0 0 5px rgba(242,182,50,.15)}
-.faq-search svg{position:absolute;left:1.3rem;top:50%;transform:translateY(-50%);width:20px;color:var(--muted)}
-.faq{border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:1rem;overflow:hidden;transition:background .4s,border-color .4s}
-.faq.open{background:rgba(242,182,50,.07);border-color:rgba(242,182,50,.45)}
-.faq button{width:100%;text-align:left;padding:1.5rem 1.6rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-weight:700;font-size:1.15rem}
-.faq button .pm{flex:0 0 36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);position:relative;transition:transform .5s var(--ease),background .4s}
-.faq button .pm::before,.faq button .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:#fff;transform:translate(-50%,-50%)}
-.faq button .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s}
-.faq.open .pm{background:var(--gold);transform:rotate(180deg)}
-.faq.open .pm::before,.faq.open .pm::after{background:var(--ink)}
-.faq.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
-.faq .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
-.faq.open .ans{grid-template-rows:1fr}
-.faq .ans > div{overflow:hidden}
-.faq .ans p{padding:0 1.6rem 1.6rem;color:#d4dcf0}
-.faq mark{background:var(--gold);color:var(--ink);border-radius:4px;padding:0 2px}
-.noresults{display:none;color:var(--muted);text-align:center;padding:2rem}
-
-/* support */
-.ways{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem}
-@media (max-width:1100px){.ways{grid-template-columns:repeat(2,1fr)}}@media (max-width:600px){.ways{grid-template-columns:1fr}}
-.way{position:relative;padding:2.2rem 1.8rem;border-radius:var(--radius);background:var(--navy);border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:transform .5s var(--ease)}
-.way:hover{transform:translateY(-10px)}
-.way::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--gold),var(--sun));clip-path:circle(0% at 100% 0%);transition:clip-path .7s var(--ease);z-index:0}
-.way:hover::before{clip-path:circle(150% at 100% 0%)}
-.way > *{position:relative;z-index:1;transition:color .4s}
-.way:hover > *{color:var(--ink)}
-.way .em{font-size:2.6rem;margin-bottom:1rem;display:block}
-.way h3{font-family:Anton;font-weight:400;font-size:1.9rem;text-transform:uppercase}
-.way p{color:var(--muted);margin:.5rem 0 1.4rem}
-.way a.link{font-weight:800;display:inline-flex;gap:.4rem;align-items:center;color:var(--gold)}
-.note{margin-top:2rem;color:var(--muted);font-size:.92rem;text-align:center}
-
-/* contact */
-.contact-cards{display:grid;gap:1rem}
-.cc{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;border-radius:20px;background:var(--navy);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .4s}
-.cc:hover{transform:translateX(10px);border-color:var(--gold)}
-.cc .ic{flex:0 0 56px;height:56px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink)}
-.cc .ic svg{width:26px;height:26px}
-.cc small{display:block;color:var(--muted);font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
-.cc b{font-size:1.1rem;word-break:break-all}
-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media (max-width:600px){form .row{grid-template-columns:1fr}}
-.fld{position:relative;margin-bottom:1rem}
-.fld input,.fld textarea,.fld select{width:100%;padding:1.5rem 1.1rem .6rem;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:#fff;font:inherit;outline:none;transition:border-color .3s,background .3s}
-.fld select{appearance:none}
-.fld select option{color:#000}
-.fld textarea{min-height:150px;resize:vertical}
-.fld label{position:absolute;left:1.1rem;top:1.05rem;color:var(--muted);pointer-events:none;transition:.25s var(--ease)}
-.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--gold);background:rgba(255,255,255,.08)}
-.fld input:focus+label,.fld input:not(:placeholder-shown)+label,.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label,.fld select+label{top:.45rem;font-size:.72rem;color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-
-/* policies */
-.pol-list{display:grid;gap:1rem}
-.pol{display:flex;align-items:center;gap:1.2rem;padding:1.5rem 1.6rem;border-radius:20px;background:var(--navy);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .4s}
-.pol:hover{transform:translateX(10px);border-color:var(--gold)}
-.pol .ic{flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(242,182,50,.14);color:var(--gold)}
-.pol .ic svg{width:24px;height:24px}
-.pol b{font-size:1.15rem;display:block}
-.pol span.d{color:var(--muted);font-size:.92rem}
-.pol .arr{margin-left:auto;color:var(--gold);font-weight:800}
-.doc{max-width:820px;margin:0 auto}
-.doc h2{font-family:Anton;font-weight:400;text-transform:uppercase;font-size:1.8rem;margin:2.4rem 0 .8rem;color:#fff}
-.doc p,.doc li{color:#d4dcf0;margin-bottom:1rem}
-.doc ul{padding-left:1.3rem}
-.doc h3{font-size:1.15rem;color:var(--gold);margin:1.6rem 0 .6rem}
-.doc strong{color:#fff}
-.doc .meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
-.doc .pending{padding:1.6rem;border-radius:18px;border:1px dashed rgba(242,182,50,.55);background:rgba(242,182,50,.07)}
-.back{display:inline-flex;gap:.5rem;align-items:center;color:var(--gold);font-weight:800;margin-bottom:2rem}
-
-/* footer */
-footer{position:relative;margin-top:clamp(80px,10vw,130px);overflow:hidden}
-footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
-.fbody{background:#0b1b3a;padding-bottom:30px}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-top:40px}
-.fgrid h4{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.fgrid ul{list-style:none;display:grid;gap:.55rem}
-.fgrid a{color:var(--muted);transition:color .3s}
-.fgrid a:hover{color:#fff}
-.fbig{font-family:Anton;font-size:clamp(3.4rem,13vw,12rem);line-height:.85;text-transform:uppercase;text-align:center;margin-top:60px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
-.fbottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;margin-top:10px}
-@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
-
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:200}
-.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,150%);opacity:0;visibility:hidden;background:var(--cream);color:var(--ink);padding:1rem 1.4rem;border-radius:14px;font-weight:700;z-index:210;transition:.5s var(--ease);box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible}
-
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
-  .reveal{opacity:1;transform:none}
-}
-</style>
+<link rel="stylesheet" href="assets/site.css" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsOrganization", "name": "Verso Alto Youth Sports, Inc.", "alternateName": "Verso Alto Youth Sports", "url": "https://www.versoaltoyouthsports.com/", "email": "shostutler@versoaltoyouthsports.com", "telephone": "+1-480-493-0639", "sport": ["Soccer", "Baseball", "Basketball", "Football"], "description": "Catholic, nonprofit youth sports league for kids in Arizona's East Valley — Gilbert, Mesa, Chandler, Queen Creek and beyond.", "address": {"@type": "PostalAddress", "addressLocality": "Gilbert", "addressRegion": "AZ", "addressCountry": "US"}, "areaServed": [{"@type": "City", "name": "Gilbert, AZ"}, {"@type": "City", "name": "Mesa, AZ"}, {"@type": "City", "name": "Chandler, AZ"}, {"@type": "City", "name": "Queen Creek, AZ"}, {"@type": "City", "name": "Tempe, AZ"}, {"@type": "City", "name": "Apache Junction, AZ"}, {"@type": "City", "name": "Phoenix, AZ"}, {"@type": "City", "name": "Scottsdale, AZ"}, {"@type": "State", "name": "Arizona"}], "nonprofitStatus": "Nonprofit501c3"}</script>
 </head>
 <body>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2b632"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
@@ -367,51 +65,36 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
   </defs>
 </svg>
-
 <div id="progress"></div>
-<canvas id="confetti"></canvas>
-<div id="wipe"><i></i><i></i><i></i><i></i><i></i></div>
-<div class="toast" id="toast"></div>
-
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="wipe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="toast" id="toast" role="status"></div>
 <header id="hdr">
   <div class="wrap nav">
-    <a href="#home" class="brand" data-link aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 875 216"><use href="#logofull"/></svg></a>
-    <nav class="tabs" id="tabs">
-      <span class="pill"></span>
-      <a href="#home" data-link data-tab="home">Home</a>
-      <div class="dd">
-        <a href="#sports" data-link data-tab="sports">Sports</a>
-        <div class="dd-menu">
-          <a href="#soccer" data-link><svg><use href="#ball"/></svg><span>Soccer<small class="live">Spring 2027</small></span></a>
-          <a href="#baseball" data-link><svg><use href="#baseball"/></svg><span>Baseball<small>Coming soon</small></span></a>
-          <a href="#basketball" data-link><svg><use href="#basketball"/></svg><span>Basketball<small>Coming soon</small></span></a>
-          <a href="#football" data-link><svg><use href="#football"/></svg><span>Football<small>Coming soon</small></span></a>
-        </div>
-      </div>
-      <a href="#about" data-link data-tab="about">About</a>
-      <a href="#faq" data-link data-tab="faq">FAQ</a>
-      <a href="#support" data-link data-tab="support">Support</a>
-      <a href="#contact" data-link data-tab="contact">Contact</a>
+    <a href="./" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 875 216"><use href="#logofull"/></svg></a>
+    <nav class="tabs" id="tabs" aria-label="Main"><span class="pill"></span>
+      <a href="./" data-tab class="active">Home</a><div class="dd"><a href="sports/" data-tab class="">Sports</a><div class="dd-menu"><a href="sports/soccer/"><svg><use href="#ball"/></svg><span>Soccer<small class="live">Spring 2027</small></span></a><a href="sports/baseball/"><svg><use href="#baseball"/></svg><span>Baseball<small class="">Coming soon</small></span></a><a href="sports/basketball/"><svg><use href="#basketball"/></svg><span>Basketball<small class="">Coming soon</small></span></a><a href="sports/football/"><svg><use href="#football"/></svg><span>Football<small class="">Coming soon</small></span></a><hr/><a class="plain" href="sports/">All sports →</a></div></div><div class="dd"><a href="about/" data-tab class="">About</a><div class="dd-menu"><a class="plain" href="about/">About us</a><a class="plain" href="service-area/">Service area</a><a class="plain" href="blog/">Blog</a></div></div><a href="blog/" data-tab class="">Blog</a><div class="dd"><a href="faq/" data-tab class="">FAQ</a><div class="dd-menu"><a class="plain" href="faq/">FAQ</a><a class="plain" href="policies/">Policies &amp; Forms</a><a class="plain" href="policies/privacy/">Privacy Policy</a><a class="plain" href="policies/refund/">Refund Policy</a></div></div><div class="dd"><a href="support/" data-tab class="">Support</a><div class="dd-menu"><a class="plain" href="support/#give-once">One-time gift</a><a class="plain" href="support/#monthly">Monthly giving</a><a class="plain" href="support/#sponsors">Sponsors</a><a class="plain" href="support/#other-ways">Other ways to help</a></div></div><a href="contact/" data-tab class="">Contact</a>
     </nav>
     <a class="cta-mini interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form →</a>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav id="mobileMenu">
-  <a href="#home" data-link data-tab="home">Home</a>
-  <a href="#sports" data-link data-tab="sports">Sports</a>
-  <a href="#soccer" data-link class="sub">⚽ Soccer — Spring 2027</a>
-  <a href="#baseball" data-link class="sub">⚾ Baseball — coming soon</a>
-  <a href="#basketball" data-link class="sub">🏀 Basketball — coming soon</a>
-  <a href="#football" data-link class="sub">🏈 Football — coming soon</a>
-  <a href="#about" data-link data-tab="about">About</a>
-  <a href="#faq" data-link data-tab="faq">FAQ</a>
-  <a href="#support" data-link data-tab="support">Support</a>
-  <a href="#contact" data-link data-tab="contact">Contact</a>
+<nav id="mobileMenu" aria-label="Mobile">
+  <div class="mm-item"><a href="./" class="active">Home</a></div>
+  <div class="mm-group"><div class="mm-row"><a href="sports/">Sports</a><button class="mm-toggle" aria-expanded="false" aria-label="Show Sports pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button></div>
+      <div class="mm-sub"><div><a href="sports/" class=""><span>All sports</span></a><a href="sports/soccer/" class=""><svg><use href="#ball"/></svg><span>Soccer</span><small class="live">Spring 2027</small></a><a href="sports/baseball/" class=""><svg><use href="#baseball"/></svg><span>Baseball</span><small class="">Coming soon</small></a><a href="sports/basketball/" class=""><svg><use href="#basketball"/></svg><span>Basketball</span><small class="">Coming soon</small></a><a href="sports/football/" class=""><svg><use href="#football"/></svg><span>Football</span><small class="">Coming soon</small></a></div></div></div>
+  <div class="mm-group"><div class="mm-row"><a href="about/">About</a><button class="mm-toggle" aria-expanded="false" aria-label="Show About pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button></div>
+      <div class="mm-sub"><div><a href="about/" class="">About us</a><a href="service-area/" class="">Service area</a><a href="blog/" class="">Blog</a></div></div></div>
+  <div class="mm-item"><a href="blog/" class="">Blog</a></div>
+  <div class="mm-group"><div class="mm-row"><a href="faq/">FAQ</a><button class="mm-toggle" aria-expanded="false" aria-label="Show FAQ pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button></div>
+      <div class="mm-sub"><div><a href="faq/" class="">FAQ</a><a href="policies/" class="">Policies &amp; Forms</a><a href="policies/privacy/" class="">Privacy Policy</a><a href="policies/refund/" class="">Refund Policy</a></div></div></div>
+  <div class="mm-group"><div class="mm-row"><a href="support/">Support</a><button class="mm-toggle" aria-expanded="false" aria-label="Show Support pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button></div>
+      <div class="mm-sub"><div><a href="support/" class="">Ways to give</a><a href="support/#give-once" class="">One-time gift</a><a href="support/#monthly" class="">Monthly giving</a><a href="support/#sponsors" class="">Sponsors</a></div></div></div>
+  <div class="mm-item"><a href="contact/" class="">Contact</a></div>
+  <a class="mm-cta interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Join the Interest List →</a>
 </nav>
+<main>
 
-<!-- ======================= HOME ======================= -->
-<main class="page" id="page-home">
   <section class="hero" id="hero">
     <div class="rays"></div>
     <div class="sun-wrap" data-sun><div class="sun"></div></div>
@@ -428,7 +111,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
       <div class="sub">Faith <i></i> Community <i></i> Sports</div>
       <div class="btns">
         <a class="btn btn-dark interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Join the Interest List <svg><use href="#arrow"/></svg></a>
-        <a class="btn btn-ghost" href="#sports" data-link style="border-color:var(--ink);color:var(--ink)">Explore Sports</a>
+        <a class="btn btn-ghost" href="sports/" style="border-color:var(--ink);color:var(--ink)">Explore Sports</a>
       </div>
     </div>
   </section>
@@ -438,7 +121,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
       <div class="sec-head reveal">
         <span class="eyebrow">Who we are</span>
         <h2 class="display">Faith. Community. <span class="grad">Sports.</span></h2>
-        <p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness.</p>
+        <p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness — right here in Arizona's East Valley.</p>
       </div>
       <div class="pillars">
         <article class="pillar tilt reveal"><span class="glow"></span>
@@ -461,10 +144,50 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
         <h2 class="display">One league. <span class="grad">Many sports.</span></h2>
         <p>We're starting with soccer in Spring 2027, with baseball, basketball, and football on the way.</p>
       </div>
-      <div class="sports-grid" data-sportcards></div>
+      <div class="sports-grid"><a class="sport soccer reveal" style="transition-delay:0.0s" href="sports/soccer/">
+    <svg class="art" viewBox="0 0 100 100" aria-hidden="true"><use href="#ball"/></svg>
+    <span class="status live">● Spring 2027</span>
+    <h3>Soccer</h3><p>Co-ed recreational soccer for ages 3–8 in the East Valley. Six weeks of Saturday-morning fun. No tryouts.</p>
+    <span class="go">See the details <svg><use href="#arrow"/></svg></span></a><a class="sport baseball reveal" style="transition-delay:0.1s" href="sports/baseball/">
+    <svg class="art" viewBox="0 0 100 100" aria-hidden="true"><use href="#baseball"/></svg>
+    <span class="status ">Coming soon</span>
+    <h3>Baseball</h3><p>Hitting, throwing, catching, and running the bases — with faith and fun at the core.</p>
+    <span class="go">Learn more <svg><use href="#arrow"/></svg></span></a><a class="sport basketball reveal" style="transition-delay:0.2s" href="sports/basketball/">
+    <svg class="art" viewBox="0 0 100 100" aria-hidden="true"><use href="#basketball"/></svg>
+    <span class="status ">Coming soon</span>
+    <h3>Basketball</h3><p>Dribbling, passing, shooting, and teamwork on the court. Details to be announced.</p>
+    <span class="go">Learn more <svg><use href="#arrow"/></svg></span></a><a class="sport football reveal" style="transition-delay:0.3s" href="sports/football/">
+    <svg class="art" viewBox="0 0 100 100" aria-hidden="true"><use href="#football"/></svg>
+    <span class="status ">Coming soon</span>
+    <h3>Football</h3><p>Throwing, catching, running routes, and playing as a team. Details to be announced.</p>
+    <span class="go">Learn more <svg><use href="#arrow"/></svg></span></a></div>
     </div>
   </section>
 
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" style="justify-content:center">Serving the East Valley</span>
+        <h2 class="display">Close to <span class="grad">home</span></h2>
+        <p>Saturday-morning youth soccer for families in Gilbert, Mesa, Chandler, Queen Creek, Tempe and neighboring Arizona communities.</p>
+      </div>
+      <div class="city-strip reveal"><a class="chip" href="service-area/#gilbert">Gilbert</a><a class="chip" href="service-area/#mesa">Mesa</a><a class="chip" href="service-area/#chandler">Chandler</a><a class="chip" href="service-area/#queen-creek">Queen Creek</a><a class="chip" href="service-area/#tempe">Tempe</a><a class="chip" href="service-area/#apache-junction">Apache Junction</a><a class="chip" href="service-area/#fountain-hills">Fountain Hills</a><a class="chip" href="service-area/#guadalupe">Guadalupe</a><a class="chip" href="service-area/#florence">Florence</a><a class="chip" href="service-area/">All Arizona cities →</a></div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">From the blog</span><h2 class="display">Tips for Arizona <span class="grad">sports families</span></h2><p>Heat safety, ESA how-tos, faith at home, and everything you need for game day.</p></div>
+      <div class="posts"><a class="post-card reveal" style="transition-delay:0.00s" data-tag="News" href="blog/spring-2027-soccer-season-preview/">
+  <div class="post-art t-News"><svg class="big" viewBox="0 0 302 216" aria-hidden="true"><use href="#logo"/></svg><span class="tagpill">News</span></div>
+  <div class="post-body"><time datetime="2026-11-17">November 17, 2026</time><h3>Spring 2027 Soccer Season Preview: What East Valley Families Need to Know</h3><p>Everything we know so far about Verso Alto&#x27;s first season: co-ed soccer for ages 3–8, Saturday mornings in the East Valley, ESA accepted, and how to join.</p><span class="more">Read article →</span></div></a><a class="post-card reveal" style="transition-delay:0.08s" data-tag="Soccer" href="blog/choosing-soccer-cleats-and-shin-guards/">
+  <div class="post-art t-Soccer"><svg class="big" viewBox="0 0 100 100" aria-hidden="true"><use href="#ball"/></svg><span class="tagpill">Soccer</span></div>
+  <div class="post-body"><time datetime="2026-11-10">November 10, 2026</time><h3>Choosing Soccer Cleats and Shin Guards for Young Kids</h3><p>A simple gear guide for East Valley soccer parents: how to choose cleats and shin guards for ages 3–8 without overspending.</p><span class="more">Read article →</span></div></a><a class="post-card reveal" style="transition-delay:0.16s" data-tag="Soccer" href="blog/what-to-expect-first-season-ages-3-4/">
+  <div class="post-art t-Soccer"><svg class="big" viewBox="0 0 100 100" aria-hidden="true"><use href="#ball"/></svg><span class="tagpill">Soccer</span></div>
+  <div class="post-body"><time datetime="2026-11-03">November 3, 2026</time><h3>What to Expect: Your Child&#x27;s First Soccer Season (Ages 3–4)</h3><p>A parent&#x27;s guide to the first youth soccer season for 3- and 4-year-olds in the East Valley: practices, games, and keeping it fun.</p><span class="more">Read article →</span></div></a></div>
+      <p class="note reveal"><a href="blog/" style="color:var(--gold);font-weight:800">See all articles →</a></p>
+    </div>
+  </section>
   <section class="quote">
     <div class="wrap reveal">
       <span class="eyebrow" style="justify-content:center">The meaning behind the name</span>
@@ -483,948 +206,30 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
       </div>
       <div style="position:relative;display:flex;flex-direction:column;gap:1rem;align-items:flex-start">
         <a class="btn btn-dark interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">I'm interested! <svg><use href="#arrow"/></svg></a>
-        <a href="#faq" data-link style="font-weight:700;border-bottom:2px solid">Have questions? Read the FAQ</a>
+        <a href="faq/" style="font-weight:700;border-bottom:2px solid">Have questions? Read the FAQ</a>
       </div>
     </div>
   </section>
-</main>
 
-<!-- ======================= SPORTS HUB ======================= -->
-<main class="page" id="page-sports">
-  <section class="phero">
-    <div class="orb" style="width:400px;height:400px;background:var(--gold);right:-100px;top:60px"></div>
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">Sports</span>
-      <h1 class="display"><span>Choose your</span><br/><span class="grad" style="animation-delay:.12s">sport</span></h1>
-      <p>Verso Alto is an all-sport league. We kick off with co-ed soccer in Spring 2027, and baseball, basketball, and football are on the way.</p>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap">
-      <div class="sports-grid" data-sportcards></div>
-      <p class="note reveal">Every sport shares the same focus: faith, character, teamwork, and fun. Want to hear first when a new sport opens? <a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">Join the interest list.</a></p>
-    </div>
-  </section>
 </main>
-
-<!-- ======================= SOCCER ======================= -->
-<main class="page" id="page-soccer">
-  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#0e4a33)">
-    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#ball"/></svg></div>
-    <div class="wrap" style="position:relative">
-      <a href="#sports" data-link class="back">← All sports</a><br/>
-      <span class="eyebrow">Soccer · Co-ed · Ages 3–8</span>
-      <h1 class="display"><span>Spring</span> <span class="grad" style="animation-delay:.1s">2027</span><br/><span style="animation-delay:.2s">Soccer</span></h1>
-      <p>A six-week, co-ed recreational soccer program for kids ages 3 to 8. No tryouts — just great soccer, great families.</p>
-      <span class="soon-badge live">● Our first season · Registration coming soon</span>
-    </div>
-  </section>
-  <section class="sec">
-    <div class="wrap split">
-      <div class="reveal left">
-        <span class="eyebrow">Co-ed soccer</span>
-        <h2 class="display h2">More than a <span class="grad">game</span></h2>
-        <p class="lead">Kids build real soccer skills while they grow in faith and character.</p>
-        <ul class="checks">
-          <li>Six-week recreational season — Saturday mornings anticipated</li>
-          <li>Co-ed teams for ages 3–4, 5–6, and 7–8</li>
-          <li>No tryouts — every child plays</li>
-          <li>Fields in the East Valley (location to be announced)</li>
-          <li>Arizona ESA funds accepted</li>
-        </ul>
-        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form <svg><use href="#arrow"/></svg></a></div>
-      </div>
-      <div class="field reveal right" id="field">
-        <svg class="lines" viewBox="0 0 300 200" preserveAspectRatio="none" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.5">
-          <rect x="8" y="8" width="284" height="184"/><line x1="150" y1="8" x2="150" y2="192"/><circle cx="150" cy="100" r="26"/>
-          <rect x="8" y="60" width="34" height="80"/><rect x="258" y="60" width="34" height="80"/>
-          <rect x="2" y="84" width="6" height="32" fill="rgba(255,255,255,.4)"/><rect x="292" y="84" width="6" height="32" fill="rgba(255,255,255,.4)"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow">Divisions</span><h2 class="display">Three age <span class="grad">groups</span></h2></div>
-      <div class="tiles">
-        <div class="tile reveal"><div class="n">3–4</div><h3>Ages 3–4</h3><p>A joyful first taste of soccer — movement, coordination, and playing as a team.</p></div>
-        <div class="tile reveal" style="transition-delay:.1s"><div class="n">5–6</div><h3>Ages 5–6</h3><p>Fundamentals take shape: dribbling, passing, and the thrill of a first goal.</p></div>
-        <div class="tile reveal" style="transition-delay:.2s"><div class="n">7–8</div><h3>Ages 7–8</h3><p>Game-ready players learn positions, sportsmanship, and how to strive higher.</p></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= BASEBALL ======================= -->
-<main class="page" id="page-baseball">
-  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#1d3f8a)">
-    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#baseball"/></svg></div>
-    <div class="wrap" style="position:relative">
-      <a href="#sports" data-link class="back">← All sports</a><br/>
-      <span class="eyebrow">Baseball</span>
-      <h1 class="display"><span>Batter</span> <span class="grad" style="animation-delay:.1s">up</span></h1>
-      <p>Baseball is coming to Verso Alto. We're building a program where young players learn the game the right way — with faith, character, and plenty of fun.</p>
-      <span class="soon-badge">⏳ Coming soon · Details to be announced</span>
-    </div>
-  </section>
-  <section class="sec">
-    <div class="wrap split">
-      <div class="reveal left">
-        <span class="eyebrow">What to expect</span>
-        <h2 class="display h2">America's pastime, <span class="grad">our way</span></h2>
-        <p class="lead">Our baseball program will focus on the fundamentals — hitting, throwing, catching, and running the bases — in a positive, encouraging setting where every child gets a turn at bat.</p>
-        <ul class="checks">
-          <li>Skill-building for beginners and growing players</li>
-          <li>Teamwork, patience, and good sportsmanship</li>
-          <li>The same affordable, faith-centered approach as all our sports</li>
-        </ul>
-        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Get notified <svg><use href="#arrow"/></svg></a></div>
-      </div>
-      <div class="panel reveal right">
-        <span class="eyebrow">Status</span>
-        <h3 class="display" style="font-size:2.4rem;margin:.8rem 0">Coming soon</h3>
-        <p style="color:var(--muted)">Age groups, season dates, and locations for baseball haven't been announced yet. Join the interest list and we'll let you know as soon as details are ready.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= BASKETBALL ======================= -->
-<main class="page" id="page-basketball">
-  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#7a2a0e)">
-    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#basketball"/></svg></div>
-    <div class="wrap" style="position:relative">
-      <a href="#sports" data-link class="back">← All sports</a><br/>
-      <span class="eyebrow">Basketball</span>
-      <h1 class="display"><span>Nothing</span> <span class="grad" style="animation-delay:.1s">but net</span></h1>
-      <p>Basketball is coming to Verso Alto. We're building a program where kids develop their skills on the court and grow in faith and character along the way.</p>
-      <span class="soon-badge">⏳ Coming soon · Details to be announced</span>
-    </div>
-  </section>
-  <section class="sec">
-    <div class="wrap split">
-      <div class="reveal left">
-        <span class="eyebrow">What to expect</span>
-        <h2 class="display h2">Fun on the <span class="grad">court</span></h2>
-        <p class="lead">Our basketball program will teach the fundamentals — dribbling, passing, shooting, and defense — in a fun, encouraging setting where every player gets on the court.</p>
-        <ul class="checks">
-          <li>Skill-building for beginners and growing players</li>
-          <li>Teamwork, hustle, and good sportsmanship</li>
-          <li>The same affordable, faith-centered approach as all our sports</li>
-        </ul>
-        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Get notified <svg><use href="#arrow"/></svg></a></div>
-      </div>
-      <div class="panel reveal right">
-        <span class="eyebrow">Status</span>
-        <h3 class="display" style="font-size:2.4rem;margin:.8rem 0">Coming soon</h3>
-        <p style="color:var(--muted)">Age groups, season dates, and locations for basketball haven't been announced yet. Join the interest list and we'll let you know as soon as details are ready.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= FOOTBALL ======================= -->
-<main class="page" id="page-football">
-  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#3a1c6b)">
-    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#football"/></svg></div>
-    <div class="wrap" style="position:relative">
-      <a href="#sports" data-link class="back">← All sports</a><br/>
-      <span class="eyebrow">Football</span>
-      <h1 class="display"><span>Ready,</span> <span class="grad" style="animation-delay:.1s">hike!</span></h1>
-      <p>Football is coming to Verso Alto. We're building a program where kids learn the game, build friendships, and grow in faith and character along the way.</p>
-      <span class="soon-badge">⏳ Coming soon · Details to be announced</span>
-    </div>
-  </section>
-  <section class="sec">
-    <div class="wrap split">
-      <div class="reveal left">
-        <span class="eyebrow">What to expect</span>
-        <h2 class="display h2">Teamwork on <span class="grad">every play</span></h2>
-        <p class="lead">Our football program will teach the fundamentals — throwing, catching, running routes, and playing as a team — in a fun, encouraging setting where every player gets in the game.</p>
-        <ul class="checks">
-          <li>Skill-building for beginners and growing players</li>
-          <li>Teamwork, discipline, and good sportsmanship</li>
-          <li>The same affordable, faith-centered approach as all our sports</li>
-        </ul>
-        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Get notified <svg><use href="#arrow"/></svg></a></div>
-      </div>
-      <div class="panel reveal right">
-        <span class="eyebrow">Status</span>
-        <h3 class="display" style="font-size:2.4rem;margin:.8rem 0">Coming soon</h3>
-        <p style="color:var(--muted)">Age groups, season dates, and locations for football haven't been announced yet. Join the interest list and we'll let you know as soon as details are ready.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= ABOUT ======================= -->
-<main class="page" id="page-about">
-  <section class="phero">
-    <div class="orb" style="width:420px;height:420px;background:var(--sun);right:-120px;top:40px"></div>
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">About us</span>
-      <h1 class="display"><span>Faith.</span> <span style="animation-delay:.1s">Family.</span><br/><span class="grad" style="animation-delay:.2s">Greatness.</span></h1>
-      <p>Verso Alto Youth Sports gives Catholic families affordable, Christ-centered youth sports.</p>
-    </div>
-  </section>
-  <section class="sec">
-    <div class="wrap split">
-      <div class="reveal left">
-        <span class="eyebrow">Our mission</span>
-        <h2 class="display h2">Body, mind <span class="grad">&amp; spirit</span></h2>
-        <p class="lead">Our mission is to provide Catholic families with affordable, Christ-centered youth sports — developing young athletes in body, mind, and spirit while strengthening families and communities.</p>
-        <p style="color:var(--muted);margin-top:1rem">We pursue excellence in sport, faith, character, and service. Children and families of all faiths are welcome.</p>
-      </div>
-      <div class="panel reveal right" style="text-align:center">
-        <span class="eyebrow" style="justify-content:center">Our name</span>
-        <div class="display grad" style="font-size:clamp(3rem,8vw,6rem);margin:1rem 0">Verso l'Alto</div>
-        <p class="serif" style="font-size:1.8rem">"To the heights"</p>
-        <p style="color:var(--muted);margin-top:1rem">Our name draws on St. Pier Giorgio Frassati's call to strive for something greater — in sport and in life.</p>
-      </div>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow">At a glance</span><h2 class="display">The <span class="grad">facts</span></h2></div>
-      <div class="facts">
-        <div class="fact reveal"><small>Organization</small><b>Verso Alto Youth Sports, Inc.</b></div>
-        <div class="fact reveal" style="transition-delay:.1s"><small>Type</small><b>Arizona nonprofit corporation</b></div>
-        <div class="fact reveal" style="transition-delay:.2s"><small>Status</small><b>501(c)(3) tax-exempt</b></div>
-        <div class="fact reveal" style="transition-delay:.3s"><small>Founded</small><b>2026</b></div>
-      </div>
-    </div>
-  </section>
-  <section class="quote" style="padding:clamp(80px,10vw,140px) 0">
-    <div class="wrap reveal zoom">
-      <p class="serif" style="font-size:clamp(2rem,5vw,4rem);line-height:1.15">St. Pier Giorgio Frassati,<br/><span class="grad">pray for us.</span></p>
-      <p class="display" style="font-size:clamp(2.4rem,6vw,4.5rem);margin-top:1.5rem">Verso l'Alto!</p>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= FAQ ======================= -->
-<main class="page" id="page-faq">
-  <section class="phero">
-    <div class="orb" style="width:380px;height:380px;background:var(--sky);right:-80px;top:60px"></div>
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">FAQ</span>
-      <h1 class="display"><span>Got</span> <span class="grad" style="animation-delay:.1s">questions?</span></h1>
-      <p>We've got answers. Can't find yours? Reach out — we're happy to help.</p>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap" style="max-width:880px">
-      <div class="faq-search reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        <input id="faqSearch" type="search" placeholder="Search questions… (try “cost” or “ESA”)" />
-      </div>
-      <div id="faqList">
-        <div class="faq reveal"><button><span>Will soccer be the only sport?</span><i class="pm"></i></button><div class="ans"><div><p>No! Verso Alto is an all-sport league. We're starting with soccer in Spring 2027, and baseball, basketball, and football are on the way — always with our focus on faith, character, teamwork, and fun. Stay tuned for future announcements.</p></div></div></div>
-        <div class="faq reveal"><button><span>How much will it cost?</span><i class="pm"></i></button><div class="ans"><div><p>As a Catholic nonprofit, we are committed to keeping youth sports affordable. Registration costs for the Spring 2027 season are still being finalized, and pricing will be announced once complete.</p></div></div></div>
-        <div class="faq reveal"><button><span>Do you accept ESA (Empowerment Scholarship Account) funds?</span><i class="pm"></i></button><div class="ans"><div><p>Yes. We are an approved Arizona ESA vendor. Choose ESA as your payment method during registration, and you'll receive an invoice with instructions for paying or seeking reimbursement through ClassWallet.</p></div></div></div>
-        <div class="faq reveal"><button><span>Do I have to be Catholic to join?</span><i class="pm"></i></button><div class="ans"><div><p>No. Children and families of all faiths are welcome. Our programs are rooted in the Catholic faith, but participation does not require it.</p></div></div></div>
-        <div class="faq reveal"><button><span>When will the season begin?</span><i class="pm"></i></button><div class="ans"><div><p>Our first season is planned for Spring 2027. The exact start date will be announced once the field location and schedule are finalized. We anticipate a six-week season on Saturday mornings.</p></div></div></div>
-        <div class="faq reveal"><button><span>Where will the games be played?</span><i class="pm"></i></button><div class="ans"><div><p>We are exploring fields in the East Valley. The exact location will be announced once finalized.</p></div></div></div>
-      </div>
-      <p class="noresults" id="noRes">No matches — <a href="#contact" data-link style="color:var(--gold);font-weight:700">ask us directly</a>.</p>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= SUPPORT ======================= -->
-<main class="page" id="page-support">
-  <section class="phero">
-    <div class="orb" style="width:420px;height:420px;background:var(--gold);right:-100px;top:40px"></div>
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">Support</span>
-      <h1 class="display"><span>Support our</span><br/><span class="grad" style="animation-delay:.12s">mission</span></h1>
-      <p>Help us bring affordable, Christ-centered sports to families across the East Valley. Every hand lifts us higher.</p>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap">
-      <div class="ways">
-        <div class="way reveal"><span class="em">🙏</span><h3>Pray</h3><p>Lift up our players, families, and coaches. Prayer is the foundation of everything we do.</p><a class="link" href="#about" data-link>Our mission →</a></div>
-        <div class="way reveal" style="transition-delay:.08s"><span class="em">📣</span><h3>Coach</h3><p>Share your love of the game and help young athletes grow in skill and character.</p><a class="link" href="#contact" data-link data-topic="Coaching">I want to coach →</a></div>
-        <div class="way reveal" style="transition-delay:.16s"><span class="em">🙌</span><h3>Volunteer</h3><p>Game-day help, field setup, events — there's a spot on the team for everyone.</p><a class="link" href="#contact" data-link data-topic="Volunteering">Volunteer →</a></div>
-        <div class="way reveal" style="transition-delay:.24s"><span class="em">🤝</span><h3>Partner</h3><p>Parishes, schools, and local businesses — let's build something great together.</p><a class="link" href="#contact" data-link data-topic="Partnering">Become a partner →</a></div>
-        <div class="way reveal" style="transition-delay:.32s"><span class="em">💛</span><h3>Give</h3><p>Gifts help keep registration affordable for every family. Reach out to learn how to give.</p><a class="link" href="#contact" data-link data-topic="Giving">Ask about giving →</a></div>
-      </div>
-      <p class="note reveal">Verso Alto Youth Sports, Inc. is an Arizona nonprofit corporation and a 501(c)(3) tax-exempt organization.</p>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= CONTACT ======================= -->
-<main class="page" id="page-contact">
-  <section class="phero">
-    <div class="orb" style="width:400px;height:400px;background:var(--grass);right:-80px;top:50px"></div>
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">Contact</span>
-      <h1 class="display"><span>Let's</span> <span class="grad" style="animation-delay:.1s">talk</span></h1>
-      <p>Have a question about Spring 2027 soccer, volunteering, coaching, or partnering with Verso Alto Youth Sports? We'd love to hear from you.</p>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap split" style="align-items:start">
-      <div class="contact-cards reveal left">
-        <a class="cc" href="mailto:Shostutler@versoaltoyouthsports.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><b>Shostutler@versoaltoyouthsports.com</b></span></a>
-        <a class="cc" href="tel:+14804930639"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span><span><small>Phone</small><b>(480) 493-0639</b></span></a>
-        <a class="cc interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span><small>Spring 2027</small><b>Fill out the Interest Form</b></span></a>
-        <a class="cc" href="#policies" data-link><span class="ic"><svg><use href="#doc"/></svg></span><span><small>Families &amp; coaches</small><b>Policies &amp; Forms</b></span></a>
-      </div>
-      <form class="panel reveal right" id="cform">
-        <div class="row">
-          <div class="fld"><input id="fn" placeholder=" " required/><label for="fn">Your name</label></div>
-          <div class="fld"><input id="fe" type="email" placeholder=" " required/><label for="fe">Email</label></div>
-        </div>
-        <div class="fld"><select id="ft"><option>Spring 2027 Soccer</option><option>Baseball</option><option>Basketball</option><option>Football</option><option>Volunteering</option><option>Coaching</option><option>Partnering</option><option>Giving</option><option>Something else</option></select><label for="ft">Topic</label></div>
-        <div class="fld"><textarea id="fm" placeholder=" " required></textarea><label for="fm">Message</label></div>
-        <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Send message <svg><use href="#arrow"/></svg></button>
-        <p style="color:var(--muted);font-size:.82rem;margin-top:.8rem;text-align:center">Opens your email app with your message ready to send.</p>
-      </form>
-    </div>
-  </section>
-</main>
-
-<!-- ======================= POLICIES HUB ======================= -->
-<main class="page" id="page-policies">
-  <section class="phero">
-    <div class="orb" style="width:380px;height:380px;background:var(--sky);right:-80px;top:60px"></div>
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">Policies &amp; Forms</span>
-      <h1 class="display"><span>Policies</span> <span class="grad" style="animation-delay:.1s">&amp; forms</span></h1>
-      <p>Important information for our families, coaches, and volunteers.</p>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap" style="max-width:880px"><div class="pol-list" id="polList"></div></div>
-  </section>
-</main>
-
-<!-- ======================= SINGLE POLICY ======================= -->
-<main class="page" id="page-policy">
-  <section class="phero">
-    <div class="wrap" style="position:relative">
-      <span class="eyebrow">Policies &amp; Forms</span>
-      <h1 class="display" id="polTitle" style="font-size:clamp(2.6rem,7vw,6rem)"></h1>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap doc">
-      <a href="#policies" data-link class="back">← All policies &amp; forms</a>
-      <div id="polBody"></div>
-    </div>
-  </section>
-</main>
-
 <footer>
-  <svg class="fmtn" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#0b1b3a" d="M0 120V70l160-50 140 40 180-60 160 70 200-60 160 50 180-40 260 60v40z"/></svg>
+  <svg class="fmtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#0b1b3a" d="M0 120V70l160-50 140 40 180-60 160 70 200-60 160 50 180-40 260 60v40z"/></svg>
   <div class="fbody">
     <div class="wrap fgrid">
       <div>
-        <a href="#home" class="brand" data-link aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 875 216"><use href="#logofull"/></svg></a>
-        <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness. To the Heights!</p>
+        <a href="./" class="brand" aria-label="Verso Alto Youth Sports — home"><svg viewBox="0 0 875 216"><use href="#logofull"/></svg></a>
+        <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic, nonprofit youth sports league serving families in Gilbert, Mesa, Chandler, Queen Creek and across Arizona's East Valley. Faith · Community · Sports. To the Heights!</p>
       </div>
-      <div><h4>Explore</h4><ul><li><a href="#home" data-link>Home</a></li><li><a href="#about" data-link>About</a></li><li><a href="#faq" data-link>FAQ</a></li><li><a href="#support" data-link>Support</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
-      <div><h4>Sports</h4><ul><li><a href="#soccer" data-link>Soccer</a></li><li><a href="#baseball" data-link>Baseball (coming soon)</a></li><li><a href="#basketball" data-link>Basketball (coming soon)</a></li><li><a href="#football" data-link>Football (coming soon)</a></li><li><a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
-      <div><h4>Families</h4><ul><li><a href="#policies" data-link>Policies &amp; Forms</a></li><li><a href="#privacy" data-link>Privacy Policy</a></li><li><a href="#refund" data-link>Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="./">Home</a></li><li><a href="about/">About</a></li><li><a href="blog/">Blog</a></li><li><a href="faq/">FAQ</a></li><li><a href="support/">Support</a></li><li><a href="contact/">Contact</a></li></ul></div>
+      <div><h4>Sports</h4><ul><li><a href="sports/soccer/">Youth Soccer</a></li><li><a href="sports/baseball/">Baseball (coming soon)</a></li><li><a href="sports/basketball/">Basketball (coming soon)</a></li><li><a href="sports/football/">Football (coming soon)</a></li><li><a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
+      <div><h4>Serving</h4><ul><li><a href="service-area/#gilbert">Gilbert</a></li><li><a href="service-area/#mesa">Mesa</a></li><li><a href="service-area/#chandler">Chandler</a></li><li><a href="service-area/#queen-creek">Queen Creek</a></li><li><a href="service-area/#tempe">Tempe</a></li><li><a href="service-area/#apache-junction">Apache Junction</a></li><li><a href="service-area/">All Arizona cities →</a></li></ul></div>
+      <div><h4>Families</h4><ul><li><a href="policies/">Policies &amp; Forms</a></li><li><a href="policies/privacy/">Privacy Policy</a></li><li><a href="policies/refund/">Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
     </div>
     <div class="wrap"><div class="fbig">Verso l'Alto</div>
-      <div class="fbottom"><span>© <span id="yr"></span> Verso Alto Youth Sports, Inc. · Arizona 501(c)(3) nonprofit</span><a href="#privacy" data-link>Privacy Policy</a></div>
+      <div class="fbottom"><span>© <span id="yr"></span> Verso Alto Youth Sports, Inc. · Arizona 501(c)(3) nonprofit · East Valley, AZ</span><a href="policies/privacy/">Privacy Policy</a></div>
     </div>
   </div>
 </footer>
-
-<script>
-(()=>{
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const FORM='https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform';
-$('#yr').textContent=new Date().getFullYear();
-
-/* ---------------- sports (shared cards) ---------------- */
-const SPORTS=[
-  {key:'soccer',name:'Soccer',icon:'ball',status:'Spring 2027',live:true,desc:'Co-ed recreational soccer for ages 3–8. Six weeks of Saturday-morning fun. No tryouts.'},
-  {key:'baseball',name:'Baseball',icon:'baseball',status:'Coming soon',desc:'Hitting, throwing, catching, and running the bases — with faith and fun at the core.'},
-  {key:'basketball',name:'Basketball',icon:'basketball',status:'Coming soon',desc:'Dribbling, passing, shooting, and teamwork on the court. Details to be announced.'},
-  {key:'football',name:'Football',icon:'football',status:'Coming soon',desc:'Throwing, catching, running routes, and playing as a team. Details to be announced.'}
-];
-$$('[data-sportcards]').forEach(g=>g.innerHTML=SPORTS.map((s,i)=>`
-  <a class="sport ${s.key} reveal" style="transition-delay:${i*.12}s" href="#${s.key}" data-link>
-    <svg class="art" viewBox="0 0 100 100"><use href="#${s.icon}"/></svg>
-    <span class="status ${s.live?'live':''}">${s.live?'● ':''}${s.status}</span>
-    <h3>${s.name}</h3><p>${s.desc}</p>
-    <span class="go">${s.live?'See the details':'Learn more'} <svg><use href="#arrow"/></svg></span>
-  </a>`).join(''));
-
-/* ---------------- policies ---------------- */
-const POLICIES={
-  privacy:{title:'Privacy Policy',d:'How we collect, use, and protect your family’s information.',html:`<p class="meta">Verso Alto Youth Sports, Inc. · Last Updated: November 14, 2026</p>
-<h2>1. Introduction</h2>
-<p>Verso Alto Youth Sports, Inc. (“Verso Alto Youth Sports,” “we,” “us,” or “our”) is a nonprofit organization dedicated to providing affordable, faith-centered youth sports programs that foster faith, family, teamwork, and sportsmanship.</p>
-<p>We respect the privacy of our participants and their families and are committed to protecting the personal information entrusted to us.</p>
-<p>This Privacy Policy explains how we collect, use, store, share, and protect information obtained through our website, registration forms, payment systems, and league activities.</p>
-<h2>2. Information We Collect</h2>
-<p>We may collect the following information when families register for programs, volunteer, make donations, or communicate with Verso Alto Youth Sports.</p>
-<h3>Parent and Guardian Information</h3>
-<ul>
-<li>Full name</li>
-<li>Email address</li>
-<li>Phone number</li>
-<li>Mailing address, when necessary</li>
-<li>Emergency contact information</li>
-<li>Registration and communication preferences</li>
-</ul>
-<h3>Participant Information</h3>
-<ul>
-<li>Child's full name</li>
-<li>Date of birth</li>
-<li>Age and applicable program division</li>
-<li>Relevant medical conditions, food allergies, or other safety considerations</li>
-<li>Emergency contact information</li>
-<li>Parent or guardian authorizations and acknowledgments</li>
-</ul>
-<h3>Registration and Payment Information</h3>
-<ul>
-<li>Program registrations and associated fees</li>
-<li>Payment status and transaction records</li>
-<li>Donation information</li>
-<li>Information necessary for Arizona Empowerment Scholarship Account (ESA) transactions, invoices, or receipts</li>
-</ul>
-<p>Payments may be processed through third-party payment providers, including Stripe. Verso Alto Youth Sports does not intentionally collect or store complete payment card numbers through its registration records.</p>
-<h3>Volunteer Information</h3>
-<p>For coaches and other volunteers, we may collect contact information, volunteer preferences, training acknowledgments, and information necessary to administer background screening requirements.</p>
-<h3>Photographs and Videos</h3>
-<p>Photographs and videos may be captured during league activities for authorized organizational, promotional, and communication purposes, consistent with applicable parent/guardian acknowledgments and restrictions.</p>
-<h2>3. How We Use Information</h2>
-<p>Information collected by Verso Alto Youth Sports may be used to:</p>
-<ul>
-<li>Process registrations and administer youth sports programs.</li>
-<li>Organize teams, schedules, rosters, and league communications.</li>
-<li>Contact parents and guardians regarding activities, schedule changes, and important announcements.</li>
-<li>Maintain participant safety and respond to medical emergencies.</li>
-<li>Process payments, donations, refunds, and ESA-related documentation.</li>
-<li>Coordinate coaches, volunteers, and background screening requirements.</li>
-<li>Maintain organizational, accounting, and compliance records.</li>
-<li>Share authorized photographs, videos, and organizational updates.</li>
-<li>Improve the operation and accessibility of our programs.</li>
-</ul>
-<p>We will not use children's personal information for unrelated commercial marketing.</p>
-<h2>4. Children's Privacy</h2>
-<p>Verso Alto Youth Sports serves children and recognizes the importance of protecting their personal information.</p>
-<p>All program registrations must be completed by a parent or legal guardian.</p>
-<p>Our website and registration services are intended for use by adults, not for independent submission of personal information by children under age 13.</p>
-<p>We collect children's information from parents or guardians for legitimate registration, program administration, and safety purposes.</p>
-<p>Parents and guardians may contact Verso Alto Youth Sports to request access to, correction of, or deletion of their child's information, subject to applicable legal, safety, accounting, and recordkeeping requirements.</p>
-<h2>5. Sharing of Information</h2>
-<p>Verso Alto Youth Sports does not sell or rent personal information.</p>
-<p>We may share limited information when reasonably necessary with:</p>
-<ul>
-<li>Authorized coaches and volunteers who require information to perform their responsibilities.</li>
-<li>Payment processors, including Stripe.</li>
-<li>Technology providers supporting registration, communication, recordkeeping, and website operations.</li>
-<li>Background screening providers for applicable volunteer screening.</li>
-<li>ESA administrators or payment platforms when necessary to process eligible transactions.</li>
-<li>Medical professionals or emergency responders when necessary to protect a participant's health or safety.</li>
-<li>Government authorities, insurers, or other parties when required by law or reasonably necessary for legal compliance and organizational protection.</li>
-</ul>
-<p>Access to participant information will be limited to individuals with a legitimate organizational need.</p>
-<h2>6. Medical and Sensitive Information</h2>
-<p>Information regarding allergies, medical conditions, emergency contacts, and other participant safety concerns is collected to help provide a safe environment.</p>
-<p>Such information will be shared only with authorized individuals who reasonably need it for participant supervision, emergency response, or program administration.</p>
-<p>Verso Alto Youth Sports will take reasonable measures to safeguard sensitive participant information and will not publicly disclose medical information without appropriate authorization or another lawful basis.</p>
-<h2>7. Payment Processing and Donations</h2>
-<p>Verso Alto Youth Sports may use third-party services, including Stripe, to process registration payments, donations, and recurring contributions.</p>
-<p>Payment providers maintain their own privacy and security practices.</p>
-<p>Families and donors are encouraged to review the applicable provider's privacy policies.</p>
-<p>Verso Alto Youth Sports may retain payment confirmations, transaction identifiers, donation records, invoices, and other information necessary for financial administration and compliance.</p>
-<h2>8. Photography and Video</h2>
-<p>Verso Alto Youth Sports may photograph or record league activities for purposes such as program updates, website content, social media, and community outreach.</p>
-<p>Photography and video practices will follow the organization's applicable registration acknowledgments and media policies.</p>
-<p>Parents or guardians with questions or concerns regarding the use of their child's image may contact Verso Alto Youth Sports.</p>
-<p>We will review reasonable requests regarding identifiable images of children, subject to applicable permissions, existing publications, and practical limitations.</p>
-<h2>9. Data Storage and Security</h2>
-<p>Verso Alto Youth Sports uses reasonable administrative, technical, and organizational safeguards intended to protect personal information against unauthorized access, disclosure, alteration, or loss.</p>
-<p>These measures may include restricted account access, password protection, and the use of established third-party technology providers.</p>
-<p>No electronic system or internet transmission can be guaranteed completely secure.</p>
-<h2>10. Data Retention</h2>
-<p>Verso Alto Youth Sports retains personal information only as long as reasonably necessary for program administration, participant safety, financial recordkeeping, legal compliance, insurance requirements, or other legitimate organizational purposes.</p>
-<p>Information that is no longer reasonably necessary will be deleted, anonymized, or securely disposed of when practical and consistent with applicable retention obligations.</p>
-<h2>11. Website Services and Third-Party Links</h2>
-<p>Our website may use services provided by Google and other third-party technology providers.</p>
-<p>Our website may also contain links to external websites, including payment processors and other service providers.</p>
-<p>Verso Alto Youth Sports is not responsible for the privacy practices of independently operated third-party websites.</p>
-<p>Those services may collect information according to their own privacy policies.</p>
-<h2>12. Parent and Guardian Rights</h2>
-<p>Parents and legal guardians may contact Verso Alto Youth Sports to:</p>
-<ul>
-<li>Request access to personal information submitted about themselves or their children.</li>
-<li>Request corrections to inaccurate information.</li>
-<li>Request deletion of information, where permitted.</li>
-<li>Ask questions about information sharing or privacy practices.</li>
-<li>Raise concerns regarding the use of photographs or videos.</li>
-</ul>
-<p>Verso Alto Youth Sports may request reasonable verification of parental or guardian authority before responding to requests involving a child's information.</p>
-<h2>13. Changes to This Privacy Policy</h2>
-<p>Verso Alto Youth Sports may update this Privacy Policy periodically to reflect changes in organizational practices, technology, legal requirements, or program operations.</p>
-<p>Updated versions will be posted on our website with a revised effective or last-updated date.</p>
-<h2>14. Contact Information</h2>
-<p>For questions or concerns regarding this Privacy Policy, please contact:</p>
-<p><strong>Verso Alto Youth Sports, Inc.</strong><br/>Gilbert, Arizona<br/>Email: <a href="mailto:shostutler@versoaltoyouthsports.com" style="color:var(--gold);font-weight:700">shostutler@versoaltoyouthsports.com</a><br/>Website: www.versoaltoyouthsports.com</p>`},
-  refund:{title:'Refund Policy',d:'Withdrawals, program cancellations, weather, and ESA refunds.',html:`<p class="meta">Verso Alto Youth Sports</p>
-<h2>Registration &amp; Refund Policy</h2>
-<p>Verso Alto Youth Sports is committed to providing an affordable, organized, and enjoyable youth sports experience. Registration fees help cover field rentals, equipment, uniforms, insurance, and other program expenses.</p>
-<h2>Participant Withdrawal &amp; Refunds</h2>
-<p>Refunds for participant withdrawals are determined by when a written cancellation request is received:</p>
-<ul>
-<li><strong>Before the registration deadline:</strong> A full refund will be issued.</li>
-<li><strong>After the registration deadline, but before the season begins:</strong> A 50% refund will be issued.</li>
-<li><strong>Once the season has begun:</strong> No refunds will be issued.</li>
-</ul>
-<p>All cancellation requests must be submitted in writing to <a href="mailto:shostutler@versoaltoyouthsports.com" style="color:var(--gold);font-weight:700">shostutler@versoaltoyouthsports.com</a>.</p>
-<h2>Program Cancellation</h2>
-<p>If Verso Alto Youth Sports cancels an entire program or season, registered families will receive a full refund.</p>
-<h2>Missed Games or Practices</h2>
-<p>Refunds will not be provided for individual games or practices missed due to personal scheduling conflicts, illness, or other participant absences.</p>
-<h2>Weather &amp; Unforeseen Circumstances</h2>
-<p>Games or practices may be canceled or rescheduled due to weather, field conditions, or circumstances beyond the organization's control.</p>
-<p>Verso Alto Youth Sports will make reasonable efforts to provide makeup opportunities when possible. Refunds will not be issued for individual cancellations when reasonable efforts have been made to accommodate the schedule.</p>
-<h2>ESA Payments</h2>
-<p>Registrations paid through an Education Savings Account (ESA) will be refunded in accordance with applicable ESA program requirements and payment processing procedures.</p>
-<h2>Policy Administration</h2>
-<p>Refund requests will be reviewed and processed in accordance with this policy and the organization's financial procedures.</p>
-<p>Verso Alto Youth Sports reserves the right to consider exceptional circumstances on a case-by-case basis, consistent with applicable requirements.</p>`},
-  waiver:{title:'Parent/Guardian Participation Agreement, Waiver & Release of Liability',d:'The agreement every parent or guardian accepts at registration.',html:`<p class="meta">Verso Alto Youth Sports, Inc. · Version 1.0 · Effective November 13th, 2026</p>
-<p>By registering my child or children to participate in programs offered by Verso Alto Youth Sports, Inc. (“Verso Alto Youth Sports”), I acknowledge and agree to the following terms on behalf of myself and, to the extent permitted by applicable law, my participating child or children.</p>
-<h2>1. Voluntary Participation and Assumption of Risk</h2>
-<p>I understand that participation in youth sports and recreational activities involves inherent risks, including but not limited to falls, collisions, physical contact, equipment-related injuries, weather conditions, heat-related illness, and other risks that may result in injury.</p>
-<p>I voluntarily authorize my child to participate in Verso Alto Youth Sports programs, including practices, games, training sessions, and related league activities. I acknowledge these risks and understand that Verso Alto Youth Sports cannot guarantee an injury-free environment.</p>
-<h2>2. Medical Authorization and Emergency Care</h2>
-<p>I certify that my child is physically able to participate, subject to any medical conditions, limitations, or accommodations I have disclosed to Verso Alto Youth Sports.</p>
-<p>In the event of an injury or medical emergency, I authorize Verso Alto Youth Sports' coaches, volunteers, and representatives to seek appropriate emergency medical assistance for my child if I cannot be reached promptly.</p>
-<p>I understand that Verso Alto Youth Sports does not guarantee the availability of medical personnel during activities and that I am responsible for medical expenses incurred on behalf of my child, except as otherwise required by law.</p>
-<p>I agree to provide accurate emergency contact information and notify Verso Alto Youth Sports of relevant medical restrictions or accommodations.</p>
-<h2>3. Release of Liability</h2>
-<p>To the fullest extent permitted by Arizona law, I release and agree not to hold liable Verso Alto Youth Sports, Inc., its directors, officers, employees, coaches, volunteers, representatives, and participating facilities for claims arising from ordinary negligence in connection with participation in league activities.</p>
-<p>This release applies to claims belonging to me as the parent or legal guardian. Any purported release of claims belonging independently to my minor child applies only to the extent enforceable under applicable law.</p>
-<p>Nothing in this agreement is intended to release liability for gross negligence, reckless conduct, intentional misconduct, or any liability that cannot legally be waived.</p>
-<h2>4. Parent/Guardian Responsibilities and Code of Conduct</h2>
-<p>I agree to:</p>
-<ul>
-<li>Encourage good sportsmanship, teamwork, respect, and positive behavior.</li>
-<li>Treat coaches, officials, volunteers, participants, and other families respectfully.</li>
-<li>Follow league rules, safety procedures, and instructions.</li>
-<li>Ensure my child is appropriately supervised before and after scheduled activities.</li>
-<li>Promptly communicate safety concerns, injuries, or relevant changes in my child's participation needs.</li>
-<li>Refrain from abusive, threatening, discriminatory, or disruptive behavior.</li>
-</ul>
-<p>I understand that Verso Alto Youth Sports may take reasonable disciplinary action, including suspension or removal from activities, for serious or repeated violations of league policies.</p>
-<h2>5. Faith-Based Mission</h2>
-<p>I understand that Verso Alto Youth Sports is a Catholic youth sports organization committed to fostering faith, family, sportsmanship, teamwork, and character development.</p>
-<p>League activities may include prayer, Christian teachings, and age-appropriate expressions of Catholic values.</p>
-<p>Participation is open to children and families of all faith backgrounds, and being Catholic is not a requirement for participation.</p>
-<h2>6. Snacks, Food Allergies, and Dietary Restrictions</h2>
-<p>I understand that snacks, beverages, or other food items may be provided or shared by parents, guardians, coaches, volunteers, or other participants during league activities.</p>
-<p>I agree to disclose any known food allergies, dietary restrictions, or related medical conditions affecting my child during registration and to promptly notify Verso Alto Youth Sports of any changes.</p>
-<p>I understand that:</p>
-<ul>
-<li>Verso Alto Youth Sports will make reasonable efforts to communicate known food allergies and relevant safety precautions to appropriate coaches and volunteers.</li>
-<li>Parents and guardians are responsible for ensuring that food and beverages consumed by their children are appropriate for their individual dietary and medical needs.</li>
-<li>Food items may contain allergens or come into contact with allergens during preparation, packaging, or distribution.</li>
-<li>Verso Alto Youth Sports cannot guarantee an allergen-free environment.</li>
-<li>Parents and guardians of children with severe allergies are responsible for communicating necessary precautions and providing prescribed emergency medication, together with appropriate instructions and arrangements for its availability and administration.</li>
-</ul>
-<p>I understand that allergic reactions and other food-related incidents may occur despite reasonable precautions. In the event of a suspected serious allergic reaction or medical emergency, Verso Alto Youth Sports representatives may seek emergency medical assistance in accordance with Section 2 of this agreement.</p>
-<h2>7. League Policies and Program Changes</h2>
-<p>I understand that Verso Alto Youth Sports may modify schedules, locations, team assignments, program activities, or other arrangements due to weather, facility availability, enrollment, safety considerations, or circumstances beyond its control.</p>
-<p>I agree to follow applicable league policies and understand that refunds, cancellations, and credits are governed by the organization's separately communicated <a href="#refund" data-link style="color:var(--gold);font-weight:700">refund policy</a>.</p>
-<h2>8. Photography and Video</h2>
-<p>I understand that permission to photograph or record my child is requested separately during registration.</p>
-<p>My decision to grant or decline photo and video consent does not affect my child's eligibility to participate.</p>
-<h2>9. Acknowledgment and Electronic Consent</h2>
-<p>By electronically acknowledging and signing the accompanying registration form, I confirm that:</p>
-<ul>
-<li>I am the parent or legal guardian of the child or children being registered, or otherwise have legal authority to provide consent.</li>
-<li>I have read and understand this agreement in its entirety.</li>
-<li>I understand that participation in youth sports involves inherent risks.</li>
-<li>I voluntarily authorize my child or children to participate in Verso Alto Youth Sports programs.</li>
-<li>I understand that this agreement includes a release of certain legal claims.</li>
-<li>I agree to the terms outlined above.</li>
-</ul>
-<p>This agreement applies to all children identified in the accompanying registration submission. My electronic acknowledgment and signature on that submission constitute my acceptance of this agreement.</p>
-<p class="meta" style="margin-top:2rem">Version 1.0 | Effective November 13th, 2026</p>`},
-  concussion:{title:'Concussion Awareness & Player Safety Policy',d:'How we keep players safe and respond to head injuries.',html:`<p class="meta">Verso Alto Youth Sports, Inc.</p>
-<p><strong>Applies To:</strong> All participants, parents/guardians, coaches, volunteers, and athletic programs operated by Verso Alto Youth Sports, Inc.</p>
-<h2>1. Purpose</h2>
-<p>Verso Alto Youth Sports, Inc. (“Verso Alto Youth Sports”) is committed to providing a safe, positive, and faith-centered athletic environment for all children.</p>
-<p>The purpose of this policy is to promote concussion awareness, establish appropriate procedures for responding to suspected head injuries, and prioritize the health and well-being of every participant.</p>
-<h2>2. Understanding Concussions</h2>
-<p>A concussion is a traumatic brain injury caused by a bump, blow, or jolt to the head or body that causes the brain to move rapidly within the skull.</p>
-<p>Concussions may occur without a loss of consciousness, and symptoms may not appear immediately.</p>
-<p>Possible signs and symptoms include:</p>
-<ul>
-<li>Headache or pressure in the head</li>
-<li>Dizziness, balance difficulties, or unusual clumsiness</li>
-<li>Confusion, memory problems, or difficulty concentrating</li>
-<li>Nausea or vomiting</li>
-<li>Blurred vision or sensitivity to light or noise</li>
-<li>Unusual fatigue, irritability, or changes in behavior</li>
-<li>Appearing dazed, stunned, or unusually quiet</li>
-</ul>
-<p>For younger children who may have difficulty describing symptoms, coaches and parents should watch for unusual crying, changes in behavior, loss of interest in activities, or difficulty walking or maintaining balance.</p>
-<h2>3. Immediate Removal From Play</h2>
-<p>Any participant who exhibits signs or symptoms of a concussion, or who is suspected of sustaining a concussion, must be immediately removed from all athletic activities.</p>
-<p>The participant may not return to practice, competition, or other athletic activities on the same day, even if symptoms appear to resolve.</p>
-<p>Coaches and volunteers must prioritize player safety over athletic participation.</p>
-<p>When in doubt, the participant will be removed from play.</p>
-<h2>4. Parent/Guardian Notification</h2>
-<p>When a concussion is suspected, a coach or authorized league representative will:</p>
-<ul>
-<li>Immediately remove the participant from athletic activity.</li>
-<li>Notify the participant's parent or legal guardian as soon as reasonably possible.</li>
-<li>Recommend prompt evaluation by an appropriate licensed healthcare professional.</li>
-<li>Document the incident and notify Verso Alto Youth Sports leadership.</li>
-</ul>
-<p>A participant with a suspected concussion must not be left unattended while awaiting appropriate care or transfer to a parent/guardian or medical professional.</p>
-<h2>5. Emergency Medical Situations</h2>
-<p>Emergency medical services (911) must be contacted when a participant experiences potentially serious symptoms, including:</p>
-<ul>
-<li>Loss of consciousness or difficulty waking</li>
-<li>Seizures or convulsions</li>
-<li>Repeated vomiting</li>
-<li>Increasing confusion, agitation, or unusual behavior</li>
-<li>A worsening or severe headache</li>
-<li>Weakness, numbness, or difficulty speaking</li>
-<li>Unequal pupils or double vision</li>
-<li>Significant difficulty walking or maintaining balance</li>
-</ul>
-<p>Coaches and volunteers should not attempt to move a participant when a serious neck or spinal injury is suspected, except when necessary to prevent immediate danger.</p>
-<h2>6. Medical Evaluation and Return to Play</h2>
-<p>Any participant removed from activity because of a suspected concussion must receive an appropriate medical evaluation before returning to athletic participation.</p>
-<p>A participant may return to athletic activity only when:</p>
-<ul>
-<li>The participant has been evaluated by an appropriate licensed healthcare professional.</li>
-<li>Written medical clearance authorizing a return to athletic participation has been provided to Verso Alto Youth Sports.</li>
-<li>The participant has completed any recommended recovery or graduated return-to-play process.</li>
-<li>The parent or legal guardian has been informed of and supports the participant's return.</li>
-</ul>
-<p>A parent or guardian's permission alone does not replace required medical clearance.</p>
-<p>Verso Alto Youth Sports reserves the right to delay a participant's return if additional safety concerns remain.</p>
-<h2>7. Coach and Volunteer Responsibilities</h2>
-<p>Coaches and volunteers are expected to:</p>
-<ul>
-<li>Maintain awareness of concussion signs and symptoms.</li>
-<li>Promptly remove participants with suspected concussions.</li>
-<li>Notify parents/guardians and league leadership of suspected injuries.</li>
-<li>Follow established emergency procedures.</li>
-<li>Never pressure or encourage an injured participant to continue playing.</li>
-<li>Follow applicable league safety requirements and age-appropriate rules.</li>
-</ul>
-<p>Coaches and volunteers are not expected to diagnose concussions or provide medical treatment beyond their training.</p>
-<h2>8. Parent/Guardian Responsibilities</h2>
-<p>Parents and legal guardians are expected to:</p>
-<ul>
-<li>Inform coaches of known injuries, concussions, or relevant medical restrictions.</li>
-<li>Monitor their children for symptoms following a suspected head injury.</li>
-<li>Seek appropriate medical evaluation when a concussion is suspected.</li>
-<li>Follow medical recommendations regarding recovery and activity restrictions.</li>
-<li>Provide required written medical clearance before their child returns to play.</li>
-</ul>
-<h2>9. Age-Appropriate Safety Measures</h2>
-<p>Verso Alto Youth Sports recognizes that younger children may be particularly vulnerable to injury and may have difficulty communicating symptoms.</p>
-<p>The organization will promote age-appropriate instruction, safe playing environments, appropriate supervision, and rules designed to reduce unnecessary head contact.</p>
-<p>For youth soccer, deliberate heading will not be taught or permitted for participants age 10 and younger.</p>
-<p>Coaches should emphasize safe play, proper technique, and good sportsmanship.</p>
-<h2>10. Incident Documentation</h2>
-<p>Suspected concussions and significant head injuries must be reported to Verso Alto Youth Sports leadership and documented in an incident report.</p>
-<p>Incident documentation should include the date, location, circumstances of the injury, observed symptoms, actions taken, and parent/guardian notification.</p>
-<p>Medical information and incident records will be handled confidentially and shared only as reasonably necessary for participant safety, administration, insurance, or legal compliance.</p>
-<h2>11. Policy Compliance</h2>
-<p>All coaches, volunteers, parents, and participants are expected to cooperate with this policy.</p>
-<p>Verso Alto may restrict participation when necessary to protect the health and safety of a participant.</p>
-<p>The organization may update this policy to reflect changes in applicable laws, medical guidance, insurance requirements, or league operations.</p>`},
-  'child-protection':{title:'Child Protection & Safe Environment Policy',d:'Our commitment to a safe environment for every child.',html:`<p class="meta">Verso Alto Youth Sports, Inc.</p>
-<p><strong>Applies To:</strong> All directors, officers, coaches, assistant coaches, volunteers, employees, contractors, and other individuals serving in roles involving contact with minors through Verso Alto Youth Sports, Inc.</p>
-<h2>1. Purpose</h2>
-<p>Verso Alto Youth Sports, Inc. (“Verso Alto Youth Sports”) is committed to providing a safe, welcoming, and faith-centered environment where children can grow in character, friendship, sportsmanship, and love of God.</p>
-<p>The safety, dignity, and well-being of every child entrusted to our programs are of the highest importance.</p>
-<p>This policy establishes standards and procedures intended to prevent abuse, neglect, misconduct, and inappropriate behavior while promoting accountability among all individuals involved in Verso Alto Youth Sports activities.</p>
-<p>Verso Alto Youth Sports maintains a zero-tolerance policy toward child abuse, exploitation, harassment, and intentional misconduct involving minors.</p>
-<h2>2. Scope and Responsibilities</h2>
-<p>This policy applies to all Verso Alto Youth Sports-sponsored practices, games, events, meetings, and other activities involving minors.</p>
-<p>All covered individuals are responsible for:</p>
-<ul>
-<li>Protecting the physical and emotional well-being of participants.</li>
-<li>Maintaining appropriate boundaries with minors.</li>
-<li>Following established supervision and safety procedures.</li>
-<li>Promptly reporting suspected abuse, neglect, or misconduct.</li>
-<li>Cooperating with investigations and corrective actions.</li>
-<li>Treating all participants and families with dignity and respect.</li>
-</ul>
-<h2>3. Background Checks and Volunteer Screening</h2>
-<p>All adult coaches, assistant coaches, and other adults serving in positions involving regular interaction with or responsibility for minors must complete an approved criminal background screening before beginning their duties.</p>
-<p>Verso Alto Youth Sports may require background checks for additional positions based on the nature of the individual's responsibilities.</p>
-<p>Screening requirements include:</p>
-<ul>
-<li>Completion of a volunteer application or registration.</li>
-<li>Disclosure of relevant criminal history or disqualifying circumstances.</li>
-<li>Successful completion of an organization-approved background check.</li>
-<li>Agreement to follow Verso Alto Youth Sports policies and standards of conduct.</li>
-</ul>
-<p>Background checks must be renewed at least every two years, or more frequently if required by law, insurance, or an applicable governing organization.</p>
-<p>Verso Alto Youth Sports reserves the right to deny, suspend, or terminate volunteer participation based on screening results or other credible safety concerns.</p>
-<p>A background check does not replace ongoing supervision or adherence to this policy.</p>
-<h2>4. Safe Environment Training</h2>
-<p>Verso Alto Youth Sports may require all adult coaches and volunteers who supervise or regularly interact with minors to complete child protection and safe environment training approved by Verso Alto Youth Sports before assuming their responsibilities.</p>
-<p>Training should address:</p>
-<ul>
-<li>Recognizing signs of child abuse and neglect.</li>
-<li>Appropriate adult-child boundaries.</li>
-<li>Safe supervision practices.</li>
-<li>Responding to suspected abuse or misconduct.</li>
-<li>Reporting responsibilities.</li>
-<li>Appropriate communication with minors and families.</li>
-</ul>
-<p>Verso Alto Youth Sports may recognize equivalent training completed through a Catholic diocese, parish, school, or other approved youth-serving organization, provided it meets the organization's requirements.</p>
-<p>Training must be renewed as determined by Verso Alto Youth Sports and any applicable governing requirements.</p>
-<h2>5. Adult Supervision and the Two-Adult Standard</h2>
-<p>Verso Alto Youth Sports will make reasonable efforts to ensure that at least two screened and approved adults are present during organized activities involving minors.</p>
-<p>Adults must avoid isolated, one-on-one situations with unrelated minors.</p>
-<p>When two approved adults are not available:</p>
-<ul>
-<li>Activities should remain in open, observable areas.</li>
-<li>Parents or guardians should remain nearby or be asked to assist with supervision.</li>
-<li>Coaches must avoid private or secluded interactions with children.</li>
-<li>The activity may be modified, delayed, or canceled when adequate supervision cannot be maintained.</li>
-</ul>
-<p>An adult must never arrange a private, isolated meeting with an unrelated minor through a Verso Alto program.</p>
-<h2>6. Appropriate Conduct and Physical Contact</h2>
-<p>Coaches and volunteers must model Christian values, good sportsmanship, patience, and respect.</p>
-<p>Appropriate conduct includes:</p>
-<ul>
-<li>Using encouraging and age-appropriate language.</li>
-<li>Treating children fairly and respectfully.</li>
-<li>Providing instruction without humiliation or intimidation.</li>
-<li>Maintaining professional and appropriate physical boundaries.</li>
-<li>Using physical contact only when reasonably necessary for safety, instruction, or age-appropriate encouragement.</li>
-</ul>
-<p>Prohibited conduct includes:</p>
-<ul>
-<li>Physical, sexual, or emotional abuse.</li>
-<li>Corporal punishment or physical discipline.</li>
-<li>Bullying, hazing, harassment, threats, or intimidation.</li>
-<li>Sexualized language, jokes, gestures, or inappropriate conversations.</li>
-<li>Unnecessary or inappropriate touching.</li>
-<li>Favoritism intended to create secrecy, dependence, or inappropriate relationships.</li>
-<li>Possession or use of alcohol, illegal drugs, or impairing substances while supervising children.</li>
-<li>Any behavior that places a participant at unreasonable risk.</li>
-</ul>
-<h2>7. Restrooms, Changing Areas, and Personal Assistance</h2>
-<p>Coaches and volunteers should encourage children to use restroom facilities with assistance from their own parent or legal guardian whenever practical.</p>
-<p>Adults must not enter a restroom or changing area alone with an unrelated child except when an immediate safety concern requires intervention.</p>
-<p>When assistance is necessary:</p>
-<ul>
-<li>A parent or guardian should be contacted whenever practical.</li>
-<li>Another approved adult should be present or within sight or hearing.</li>
-<li>The child's privacy and dignity must be respected.</li>
-<li>Assistance should be limited to what is reasonably necessary.</li>
-</ul>
-<p>Verso Alto Youth Sports does not permit adults to photograph or record children in restrooms or changing areas.</p>
-<h2>8. Transportation and Release of Participants</h2>
-<p>Parents and legal guardians are generally responsible for transporting their children to and from Verso Alto Youth Sports activities.</p>
-<p>Coaches and volunteers should not transport unrelated minors individually in personal vehicles as part of league activities without prior authorization from Verso Alto Youth Sports leadership and the child's parent or guardian.</p>
-<p>Children must be released only to their parent, legal guardian, or another individual authorized by the parent or guardian.</p>
-<p>Coaches must not knowingly leave a child unattended following an organized activity.</p>
-<h2>9. Communication With Minors</h2>
-<p>Communication regarding Verso Alto Youth Sports activities should ordinarily occur directly with parents or legal guardians.</p>
-<p>Coaches and volunteers should use organization-approved communication channels whenever available.</p>
-<p>Private electronic communication between an adult volunteer and an unrelated minor is prohibited unless necessary for an immediate safety concern.</p>
-<p>When communication with a minor is necessary, a parent or guardian or another approved adult should be included.</p>
-<p>Coaches and volunteers must not establish inappropriate private relationships with participants through social media, text messaging, or other communication platforms.</p>
-<h2>10. Photography, Video, and Participant Privacy</h2>
-<p>Photography and video recording may occur during Verso Alto Youth Sports activities in accordance with the organization's registration agreements, media acknowledgments, and privacy practices.</p>
-<p>Coaches and volunteers must:</p>
-<ul>
-<li>Respect applicable parental restrictions and organizational media policies.</li>
-<li>Avoid photographing children in private or sensitive situations.</li>
-<li>Refrain from sharing identifying or sensitive participant information without authorization.</li>
-<li>Use photographs and videos only for appropriate organizational purposes.</li>
-</ul>
-<h2>11. Recognizing and Reporting Suspected Abuse</h2>
-<p>All individuals covered by this policy must take suspected child abuse, neglect, exploitation, or serious misconduct seriously.</p>
-<p>When abuse or neglect is suspected:</p>
-<ul>
-<li><strong>Ensure immediate safety.</strong> If a child is in immediate danger, call 911.</li>
-<li><strong>Report to the appropriate authorities.</strong> Any individual who is required to report under Arizona law must promptly make a report to law enforcement or the Arizona Department of Child Safety, as applicable. Verso Alto Youth Sports requires its personnel to promptly report reasonable suspicions of child abuse to the appropriate authorities, even if their individual legal reporting status is uncertain.</li>
-<li><strong>Notify Verso Alto Youth Sports leadership.</strong> Inform the President/Executive Director or another uninvolved board officer as soon as reasonably possible, without delaying a required report to authorities.</li>
-<li><strong>Preserve relevant information.</strong> Document observations, statements, dates, and circumstances accurately.</li>
-<li><strong>Avoid independent investigations.</strong> Do not interrogate the child, confront the accused, or attempt to determine whether an allegation is true.</li>
-</ul>
-<p>An internal report to Verso Alto Youth Sports does not replace any legally required report to public authorities.</p>
-<p>Individuals should not promise absolute confidentiality to a child making a disclosure.</p>
-<h2>12. Response to Allegations and Misconduct</h2>
-<p>When Verso Alto Youth Sports receives a credible allegation or reasonable suspicion of abuse, exploitation, or serious misconduct involving a covered individual, the organization will take appropriate protective measures.</p>
-<p>These may include:</p>
-<ul>
-<li>Immediately restricting or suspending the individual's involvement with minors while concerns are assessed.</li>
-<li>Cooperating with law enforcement and child protective authorities.</li>
-<li>Preserving relevant records and communications.</li>
-<li>Notifying the Board of Directors as appropriate.</li>
-<li>Taking disciplinary or administrative action consistent with applicable law and organizational policy.</li>
-</ul>
-<p>Verso Alto Youth Sports will not retaliate against any person who makes a good-faith report of suspected abuse or misconduct.</p>
-<h2>13. Parent and Guardian Responsibilities</h2>
-<p>Parents and legal guardians are important partners in maintaining a safe environment.</p>
-<p>Parents are encouraged to:</p>
-<ul>
-<li>Review league safety policies.</li>
-<li>Communicate relevant safety or supervision concerns.</li>
-<li>Ensure appropriate drop-off and pickup arrangements.</li>
-<li>Report suspected misconduct promptly.</li>
-<li>Reinforce respectful behavior and appropriate boundaries with their children.</li>
-</ul>
-<p>Parents are welcome to observe ordinary practices and games, subject to reasonable field access and safety rules.</p>
-<h2>14. Policy Enforcement</h2>
-<p>Violations of this policy may result in corrective action, suspension, removal from volunteer responsibilities, termination of involvement, or referral to appropriate authorities.</p>
-<p>Verso Alto Youth Sports reserves the right to take immediate protective action when necessary to safeguard participants.</p>
-<h2>15. Policy Review and Updates</h2>
-<p>The Board of Directors will review this policy at least annually and may update it as necessary to reflect changes in applicable laws, insurance requirements, child protection guidance, and organizational operations.</p>
-<p>All covered individuals are expected to comply with the most current approved version.</p>`}
-};
-$('#polList').innerHTML=Object.entries(POLICIES).map(([k,p],i)=>`
-  <a class="pol reveal" style="transition-delay:${i*.07}s" href="#${k}" data-link><span class="ic"><svg><use href="#doc"/></svg></span>
-  <span><b>${p.title}</b><span class="d">${p.d}</span></span><span class="arr">→</span></a>`).join('');
-function renderPolicy(k){
-  const p=POLICIES[k]; $('#polTitle').textContent=p.title;
-  $('#polBody').innerHTML = p.html || `<p class="meta">Verso Alto Youth Sports, Inc.</p>
-    <div class="pending"><p style="margin:0">The full ${p.title} is being added to this page. For a copy in the meantime, email <a href="mailto:Shostutler@versoaltoyouthsports.com" style="color:var(--gold);font-weight:700">Shostutler@versoaltoyouthsports.com</a> or call <a href="tel:+14804930639" style="color:var(--gold);font-weight:700">(480) 493-0639</a>.</p></div>`;
-}
-
-/* ---------------- routing ---------------- */
-const PAGES=['home','sports','soccer','baseball','basketball','football','about','faq','support','contact','policies'];
-const TAB_OF={soccer:'sports',baseball:'sports',basketball:'sports',football:'sports'};
-let current=null, io=null;
-function setPill(){
-  const a=$('#tabs a.active[data-tab]'), pill=$('#tabs .pill');
-  if(!a){pill.style.width=0;return}
-  const t=$('#tabs').getBoundingClientRect(), r=a.getBoundingClientRect();
-  pill.style.left=(r.left-t.left)+'px'; pill.style.width=r.width+'px';
-}
-function show(route){
-  let page=route;
-  if(POLICIES[route]){page='policy';renderPolicy(route)}
-  else if(!PAGES.includes(route)){route=page='home'}
-  $$('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));
-  const tab=TAB_OF[route]||route;
-  $$('[data-tab]').forEach(a=>a.classList.toggle('active',a.dataset.tab===tab));
-  $$('#mobileMenu a.sub').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+route));
-  current=route; window.scrollTo(0,0); setPill(); initReveals(); onScroll();
-  const names={home:'Faith · Community · Sports'};
-  const label=POLICIES[route]?POLICIES[route].title:(route.charAt(0).toUpperCase()+route.slice(1));
-  document.title = route==='home' ? 'Verso Alto Youth Sports | '+names.home : label+' | Verso Alto Youth Sports';
-}
-function go(route,topic){
-  document.body.classList.remove('menu-open');
-  if(topic){ const s=$('#ft'); [...s.options].forEach(o=>{if(o.text===topic)s.value=o.text}); }
-  if(route===current){window.scrollTo({top:0,behavior:'smooth'});return}
-  if(reduce){history.pushState(null,'','#'+route);show(route);return}
-  const w=$('#wipe'); w.className='in';
-  setTimeout(()=>{history.pushState(null,'','#'+route);show(route);w.className='out';setTimeout(()=>w.className='',700)},620);
-}
-document.addEventListener('click',e=>{
-  const a=e.target.closest('[data-link]'); if(!a) return;
-  e.preventDefault(); go(a.getAttribute('href').slice(1),a.dataset.topic);
-});
-addEventListener('popstate',()=>show(location.hash.slice(1)||'home'));
-addEventListener('resize',setPill);
-$('#burger').onclick=()=>document.body.classList.toggle('menu-open');
-
-/* ---------------- reveals ---------------- */
-function initReveals(){
-  io&&io.disconnect();
-  io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)} }),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  $$('.page.active .reveal').forEach(el=>{el.classList.remove('in');io.observe(el)});
-}
-
-/* ---------------- tilt cards ---------------- */
-document.addEventListener('mousemove',e=>{
-  const card=e.target.closest('.tilt'); $$('.tilt').forEach(c=>{if(c!==card)c.style.transform=''});
-  if(!card||reduce) return;
-  const r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
-  card.style.transform=`rotateY(${(x-.5)*10}deg) rotateX(${(.5-y)*10}deg) translateY(-6px)`;
-  card.style.setProperty('--mx',x*100+'%'); card.style.setProperty('--my',y*100+'%');
-});
-
-/* ---------------- hero parallax ---------------- */
-let mx=0;
-addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5; if(current==='home'&&scrollY<innerHeight) parallax()});
-function parallax(){
-  if(reduce) return;
-  const y=scrollY;
-  $$('#hero .mtn[data-depth]').forEach(l=>{l.style.transform=`translate3d(${-mx*(+l.dataset.mx)}px,${y*(+l.dataset.depth)}px,0)`});
-  $('[data-sun]').style.transform=`translateX(-50%) translateY(${-y*.35}px) scale(${1+y/1800})`;
-  const hc=$('#heroContent'); hc.style.transform=`translate3d(0,${y*.4}px,0)`; hc.style.opacity=Math.max(0,1-y/(innerHeight*.75));
-}
-function onScroll(){
-  const y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
-  $('#progress').style.width=(h>0?y/h*100:0)+'%';
-  $('#hdr').classList.toggle('scrolled',y>40);
-  if(current==='home' && y<innerHeight*1.1) parallax();
-}
-let ticking=false; addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{onScroll();ticking=false})}},{passive:true});
-
-/* ---------------- soccer field animation ---------------- */
-const field=$('#field');
-const ball=document.createElement('div'); ball.className='fball'; ball.innerHTML='<svg viewBox="0 0 100 100"><use href="#ball"/></svg>'; field.append(ball);
-const players=[...Array(6)].map((_,i)=>{const p=document.createElement('div'); p.className='player '+(i<3?'home':'away'); field.append(p); return p});
-setInterval(()=>{ if(current!=='soccer') return;
-  const bx=8+Math.random()*80, by=12+Math.random()*70; ball.style.left=bx+'%'; ball.style.top=by+'%';
-  players.forEach((p,i)=>{const near=i%3===0; p.style.left=(near?bx+(Math.random()*10-5):10+Math.random()*78)+'%'; p.style.top=(near?by+(Math.random()*10-5):10+Math.random()*75)+'%'});
-},1500);
-
-/* ---------------- FAQ ---------------- */
-$$('.faq button').forEach(b=>b.onclick=()=>{const f=b.parentElement, open=!f.classList.contains('open'); $$('.faq').forEach(x=>x.classList.remove('open')); if(open) f.classList.add('open')});
-$$('.faq').forEach(f=>{f.dataset.q=$('button span',f).textContent; f.dataset.a=$('.ans p',f).textContent});
-$('#faqSearch').addEventListener('input',e=>{
-  const v=e.target.value.trim().toLowerCase(); let shown=0;
-  const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-  $$('.faq').forEach(f=>{const hit=!v||(f.dataset.q+' '+f.dataset.a).toLowerCase().includes(v);
-    f.style.display=hit?'':'none'; if(hit)shown++;
-    const hl=t=>v?t.replace(new RegExp('('+esc(v)+')','ig'),'<mark>$1</mark>'):t;
-    $('button span',f).innerHTML=hl(f.dataset.q); $('.ans p',f).innerHTML=hl(f.dataset.a);
-    f.classList.toggle('open',!!v&&hit&&shown===1)});
-  $('#noRes').style.display=shown?'none':'block';
-});
-
-/* ---------------- contact form -> mailto ---------------- */
-$('#cform').addEventListener('submit',e=>{
-  e.preventDefault();
-  const subj=`[${$('#ft').value}] Message from ${$('#fn').value}`;
-  const body=`${$('#fm').value}\n\n— ${$('#fn').value} (${$('#fe').value})`;
-  location.href=`mailto:Shostutler@versoaltoyouthsports.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
-  burst(innerWidth/2,innerHeight*.6); toast('Opening your email app… Verso l\'alto!');
-});
-
-/* ---------------- confetti on interest-form clicks ---------------- */
-const cv=$('#confetti'), cx=cv.getContext('2d'); let parts=[];
-function sizeC(){cv.width=innerWidth;cv.height=innerHeight} sizeC(); addEventListener('resize',sizeC);
-function burst(x,y){ if(reduce) return; const cols=['#f2b632','#ff8a3d','#ffffff','#4a86ff','#2fbf71']; const fresh=!parts.length;
-  for(let i=0;i<120;i++){const a=Math.random()*6.28, s=Math.random()*12+4; parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:Math.random()*6+3,c:cols[i%5],rot:Math.random()*6,vr:Math.random()*.3-.15,life:110})}
-  if(fresh) loop();
-}
-function loop(){cx.clearRect(0,0,cv.width,cv.height);
-  parts.forEach(p=>{p.vy+=.35;p.vx*=.98;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life--; cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.globalAlpha=Math.max(0,p.life/110);cx.fillStyle=p.c;cx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);cx.restore()});
-  parts=parts.filter(p=>p.life>0); if(parts.length) requestAnimationFrame(loop); else cx.clearRect(0,0,cv.width,cv.height)}
-document.addEventListener('click',e=>{const a=e.target.closest('.interest'); if(a){const r=a.getBoundingClientRect(); burst(r.left+r.width/2,r.top+r.height/2)}});
-function toast(t){const el=$('#toast'); el.textContent=t; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),3200)}
-
-/* inner-page mountain edge */
-$$('.phero').forEach(ph=>ph.insertAdjacentHTML('beforeend','<svg class="pmtn" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" opacity=".07" d="M0 120V60l180-50 160 50 200-55 180 60 220-50 180 45 160-35 160 40v115z"/><path fill="#050d22" d="M0 120V85l140-35 170 40 190-45 160 45 210-40 170 35 200-30 200 40v65z"/></svg>'));
-
-show(location.hash.slice(1)||'home');
-document.fonts && document.fonts.ready.then(setPill);
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
