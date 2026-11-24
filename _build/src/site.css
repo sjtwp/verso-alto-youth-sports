@@ -415,3 +415,17 @@ body.menu-open #mobileMenu > *:nth-child(2){transition-delay:.04s}body.menu-open
 .local-links a{color:var(--gold);font-weight:700}
 main,footer{overflow-x:clip}
 @media (max-width:700px){.reveal.left,.reveal.right{transform:translateY(40px)}}
+
+/* city pages */
+a.city{display:block}
+.city .go{display:inline-block;margin-top:.8rem;font-weight:800;color:var(--gold);font-size:.9rem}
+.city-sub{font-size:1.3rem;font-weight:800;margin:1.8rem 0 .6rem;color:#fff}
+.facts-list{list-style:none;display:grid;gap:.2rem;margin-top:1rem}
+.facts-list li{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.facts-list li:last-child{border-bottom:0}
+.facts-list b{color:var(--gold);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding-top:.15rem}
+.facts-list a,.qa a{color:var(--gold);font-weight:700}
+.qa h3{font-size:1.15rem;font-weight:800;margin:1.4rem 0 .4rem;color:#fff}
+.qa h3:first-child{margin-top:0}
+.qa p{color:#d4dcf0}
+@media (max-width:520px){.facts-list li{grid-template-columns:1fr;gap:.2rem}}

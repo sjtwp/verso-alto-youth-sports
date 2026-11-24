@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
 Disallow: /_build/
-Sitemap: https://www.versoaltoyouthsports.com/sitemap.xml

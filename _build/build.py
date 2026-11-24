@@ -9,13 +9,16 @@ SRC = os.path.join(ROOT, 'src')
 ARGS = [a for a in sys.argv[1:] if not a.startswith('--')]
 SINGLE = '--single' in sys.argv   # one index.html with #hash routes (use until the domain is connected)
 OUT = ARGS[0] if ARGS else os.path.join(ROOT, 'dist')
-SITE = 'https://www.versoaltoyouthsports.com'   # canonical domain
+SITE = 'https://www.versoaltoyouthsports.com'   # canonical domain (used by separate-pages mode)
+PREVIEW_URL = 'https://sjtwp.github.io/verso-alto-youth-sports'  # where the one-file site lives until the domain is connected
 FORM = 'https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform'
 sys.path.insert(0, SRC)
 from cities import REGIONS
 from articles1 import ARTICLES as A1
 from articles2 import ARTICLES as A2
 ARTICLES = sorted(A1 + A2, key=lambda a: a['date'], reverse=True)
+CITIES = [dict(c, region=rid, region_name=rname) for rid, rname, _, cs in REGIONS for c in cs]
+CITY_SLUGS = {re.sub(r'[^a-z0-9]+', '-', c['name'].lower()).strip('-') for c in CITIES}
 
 def rd(n): return open(os.path.join(SRC, n), encoding='utf-8').read()
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
@@ -45,7 +48,11 @@ def rel(frm, to):
         r = r.rstrip('/')
     return r + tail
 
+def city_links(h):
+    return re.sub(r'@/service-area/#([a-z0-9-]+)', lambda m: f'@/service-area/{m.group(1)}/' if m.group(1) in CITY_SLUGS else m.group(0), h)
+
 def resolve(htmltext, frm):
+    htmltext = city_links(htmltext)
     return re.sub(r'(href|src)="@(/[^"]*)"', lambda m: f'{m.group(1)}="{rel(frm, m.group(2))}"', htmltext)
 
 def conv_hash_links(h):
@@ -141,7 +148,7 @@ def nav(section, current):
     return desktop, mobile
 
 def footer():
-    cities = ['Gilbert', 'Mesa', 'Chandler', 'Queen Creek', 'Tempe', 'Apache Junction']
+    cities = ['Gilbert', 'Mesa', 'Chandler', 'Queen Creek', 'Tempe', 'Scottsdale']
     clinks = ''.join(f'<li><a href="@/service-area/#{slug(c)}">{c}</a></li>' for c in cities)
     return f'''<footer>
   <svg class="fmtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#0b1b3a" d="M0 120V70l160-50 140 40 180-60 160 70 200-60 160 50 180-40 260 60v40z"/></svg>
@@ -153,7 +160,7 @@ def footer():
       </div>
       <div><h4>Explore</h4><ul><li><a href="@/">Home</a></li><li><a href="@/about/">About</a></li><li><a href="@/blog/">Blog</a></li><li><a href="@/faq/">FAQ</a></li><li><a href="@/support/">Support</a></li><li><a href="@/contact/">Contact</a></li></ul></div>
       <div><h4>Sports</h4><ul><li><a href="@/sports/soccer/">Youth Soccer</a></li><li><a href="@/sports/baseball/">Baseball (coming soon)</a></li><li><a href="@/sports/basketball/">Basketball (coming soon)</a></li><li><a href="@/sports/football/">Football (coming soon)</a></li><li><a class="interest" href="{FORM}" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
-      <div><h4>Serving</h4><ul>{clinks}<li><a href="@/service-area/">All Arizona cities →</a></li></ul></div>
+      <div><h4>Serving</h4><ul>{clinks}<li><a href="@/service-area/">All Maricopa County cities →</a></li></ul></div>
       <div><h4>Families</h4><ul><li><a href="@/policies/">Policies &amp; Forms</a></li><li><a href="@/policies/privacy/">Privacy Policy</a></li><li><a href="@/policies/refund/">Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
     </div>
     <div class="wrap"><div class="fbig">Verso l'Alto</div>
@@ -168,11 +175,12 @@ ORG_LD = {
  "telephone": "+1-480-493-0639", "sport": ["Soccer", "Baseball", "Basketball", "Football"],
  "description": "Catholic, nonprofit youth sports league for kids in Arizona's East Valley — Gilbert, Mesa, Chandler, Queen Creek and beyond.",
  "address": {"@type": "PostalAddress", "addressLocality": "Gilbert", "addressRegion": "AZ", "addressCountry": "US"},
- "areaServed": [{"@type": "City", "name": c + ", AZ"} for c in ['Gilbert', 'Mesa', 'Chandler', 'Queen Creek', 'Tempe', 'Apache Junction', 'Phoenix', 'Scottsdale']] + [{"@type": "State", "name": "Arizona"}],
+ "areaServed": [{"@type": "City", "name": c['name'] + ", AZ"} for c in CITIES] + [{"@type": "AdministrativeArea", "name": "Maricopa County, Arizona"}],
  "nonprofitStatus": "Nonprofit501c3",
 }
 
 PAGES = []
+WEBSITE_LD = {"@context": "https://schema.org", "@type": "WebSite", "name": "Verso Alto Youth Sports", "alternateName": "Verso Alto", "inLanguage": "en-US"}
 def page(path, title, desc, body, section, ld=None, home=False):
     PAGES.append(dict(path=path, title=title, desc=desc, body=body, section=section, ld=ld, home=home))
 
@@ -241,8 +249,8 @@ INTEREST_BTN = lambda cls='btn btn-gold', label='Join the Interest List': f'<a c
 home = sec('home').replace('<div class="sports-grid" data-sportcards></div>', f'<div class="sports-grid">{sport_cards()}</div>')
 home = home.replace('<p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness.</p>',
  '<p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness — right here in Arizona\'s East Valley.</p>', 1)
-east = [c for r in REGIONS if r[0] == 'east-valley' for c, _ in r[3]]
-strip = ''.join(f'<a class="chip" href="@/service-area/#{slug(c)}">{c}</a>' for c in east) + '<a class="chip" href="@/service-area/">All Arizona cities →</a>'
+east = [c['name'] for c in CITIES if c['region'] == 'east-valley']
+strip = ''.join(f'<a class="chip" href="@/service-area/#{slug(c)}">{c}</a>' for c in east) + '<a class="chip" href="@/service-area/">All Maricopa County cities →</a>'
 latest = ''.join(post_card(a, i) for i, a in enumerate(ARTICLES[:3]))
 home_extra = f'''
   <section class="sec" style="padding-top:0">
@@ -303,7 +311,7 @@ page('/about/', 'About Us — Catholic Youth Sports in Arizona', 'Verso Alto You
 fq = sec('faq')
 fq = fq.replace('<span class="eyebrow">FAQ</span>', '<nav class="crumbs"><a href="@/">Home</a><span class="sep">/</span><span>FAQ</span></nav>\n      <span class="eyebrow">FAQ</span>')
 extra_faq = '''
-        <div class="faq reveal"><button><span>What areas do you serve?</span><i class="pm"></i></button><div class="ans"><div><p>Our first season will be played in the East Valley, and we welcome families from Gilbert, Mesa, Chandler, Queen Creek, Tempe, Apache Junction and communities across Arizona. See our full service area page for every city we serve.</p></div></div></div>
+        <div class="faq reveal"><button><span>What areas do you serve?</span><i class="pm"></i></button><div class="ans"><div><p>Our first season will be played in the East Valley, and we welcome families from Gilbert, Mesa, Chandler, Queen Creek, Tempe, Scottsdale, Phoenix and every city and town in Maricopa County. See our service area page for details on each city.</p></div></div></div>
         <div class="faq reveal"><button><span>How can I support Verso Alto Youth Sports?</span><i class="pm"></i></button><div class="ans"><div><p>You can make a one-time gift, become a monthly supporter, or reach out about coaching and partnerships. Visit our Support page for all the ways to give.</p></div></div></div>
       </div>'''
 fq = fq.replace('\n      </div>\n      <p class="noresults"', extra_faq + '\n      <p class="noresults"', 1)
@@ -405,34 +413,107 @@ sup += f'''
   </section>'''
 page('/support/', 'Support Our Mission — Donate to Arizona Youth Sports', 'Donate to Verso Alto Youth Sports, an Arizona 501(c)(3) Catholic youth sports nonprofit. Give once or monthly to keep East Valley youth sports affordable.', sup, 'support')
 
-# SERVICE AREA
-jump = ''.join(f'<a class="chip" href="#{rid}">{name.split(" — ")[0]}</a>' for rid, name, _, _ in REGIONS)
+# SERVICE AREA (Maricopa County) + one page per city
+def city_card(c, i=0):
+    sl = slug(c['name'])
+    return f"""<a class="city reveal{' home' if c.get('home') else ''}" style="transition-delay:{(i%3)*.06:.2f}s" href="@/service-area/{sl}/"><h3>{esc(c['name'])}, AZ</h3><p>{esc(c['tag'])}</p><span class="go">Youth sports in {esc(c['name'])} →</span></a>"""
+jump = ''.join(f'<a class="chip" href="#{rid}">{esc(rname)}</a>' for rid, rname, _, _ in REGIONS)
 regions_html = ''
-for rid, name, sub, cities in REGIONS:
-    cards = ''.join(f'''<article class="city reveal{' home' if rid == 'east-valley' else ''}" id="{slug(c)}"><h3>{esc(c)}, AZ</h3><p>{esc(d)}</p></article>''' for c, d in cities)
-    regions_html += f'''<section class="region" id="{rid}"><div class="region-head reveal"><h2 class="display">{esc(name)}</h2><small>{esc(sub)} · {len(cities)} {'city' if len(cities)==1 else 'cities & towns'}</small></div><div class="cities">{cards}</div></section>'''
-total = sum(len(r[3]) for r in REGIONS)
-sa = phero('Service area', '<span>Serving</span> <span class="grad" style="animation-delay:.1s">Arizona</span>',
-  f'Our first season is played in the East Valley — and families from all {total} cities and towns in Arizona are welcome to join our community, follow our blog, and use eligible Arizona ESA funds.',
-  crumbs=[('Home', '/'), ('About', '/about/'), ('Service area', None)], orb='var(--grass)')
-sa += f'''
+for rid, rname, sub, cs in REGIONS:
+    cards = ''.join(city_card(dict(c, region=rid), i) for i, c in enumerate(cs))
+    regions_html += f"""<section class="region" id="{rid}"><div class="region-head reveal"><h2 class="display">{esc(rname)}</h2><small>{esc(sub)} · {len(cs)} {'city' if len(cs)==1 else 'cities & towns'}</small></div><div class="cities">{cards}</div></section>"""
+sa = phero('Service area', '<span>Serving</span> <span class="grad" style="animation-delay:.1s">Maricopa County</span>',
+  f'Verso Alto Youth Sports serves families in all {len(CITIES)} cities and towns of Maricopa County, Arizona — starting with Saturday-morning youth soccer in the East Valley.',
+  crumbs=[('Home', '/'), ('Service area', None)], orb='var(--grass)')
+sa += f"""
   <section class="sec" style="padding-top:60px">
     <div class="wrap">
       <div class="split reveal" style="align-items:start">
         <div>
           <span class="eyebrow">Where we play</span>
           <h2 class="display h2">East Valley <span class="grad">home field</span></h2>
-          <p class="lead">Spring 2027 <a href="@/sports/soccer/" style="color:var(--gold);font-weight:700">co-ed youth soccer</a> will be played on Saturday mornings at fields in the East Valley (location to be announced). Gilbert, Mesa, Chandler, Queen Creek and Tempe families are just minutes away.</p>
+          <p class="lead">Spring 2027 <a href="@/sports/soccer/" style="color:var(--gold);font-weight:700">co-ed youth soccer</a> for ages 3–8 will be played on Saturday mornings at fields in the East Valley (location to be announced). Families in <a href="@/service-area/gilbert/" style="color:var(--gold);font-weight:700">Gilbert</a>, <a href="@/service-area/mesa/" style="color:var(--gold);font-weight:700">Mesa</a>, <a href="@/service-area/chandler/" style="color:var(--gold);font-weight:700">Chandler</a>, <a href="@/service-area/queen-creek/" style="color:var(--gold);font-weight:700">Queen Creek</a> and <a href="@/service-area/tempe/" style="color:var(--gold);font-weight:700">Tempe</a> are just minutes away.</p>
         </div>
         <div class="panel">
-          <p style="color:var(--muted)">Don't see games near you yet? As we grow into <a href="@/sports/" style="color:var(--gold);font-weight:700">baseball, basketball, and football</a>, we hope to reach more Arizona communities. <a class="interest" href="{FORM}" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">Join the interest list</a> to tell us where you are.</p>
+          <p style="color:var(--muted)">Live elsewhere in Maricopa County? You're welcome to join us now, and as we grow into <a href="@/sports/" style="color:var(--gold);font-weight:700">baseball, basketball, and football</a> we hope to bring programs closer to every part of the Valley. <a class="interest" href="{FORM}" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">Join the interest list</a> and tell us where you are.</p>
         </div>
       </div>
       <div class="chips reveal" style="margin-top:2.4rem">{jump}</div>
       {regions_html}
     </div>
-  </section>'''
-page('/service-area/', f'Service Area — Youth Sports for Families Across Arizona', 'Verso Alto Youth Sports serves Gilbert, Mesa, Chandler, Queen Creek, Tempe and the East Valley, and welcomes families from all 91 cities and towns in Arizona.', sa, 'about')
+  </section>"""
+SA_LD = {"@context": "https://schema.org", "@type": "ItemList", "name": "Verso Alto Youth Sports service area — Maricopa County, AZ",
+         "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": f"{c['name']}, AZ"} for i, c in enumerate(CITIES)]}
+page('/service-area/', 'Service Area — Youth Sports Across Maricopa County, AZ',
+     f"Verso Alto Youth Sports serves all {len(CITIES)} cities and towns in Maricopa County, AZ — Gilbert, Mesa, Chandler, Queen Creek, Tempe, Phoenix, Scottsdale, Glendale, Peoria and more.",
+     sa, 'about', ld=SA_LD)
+
+ART_POOL = ['spring-2027-soccer-season-preview', 'using-arizona-esa-funds-for-youth-sports', 'arizona-heat-safety-for-youth-sports',
+            'best-age-to-start-soccer', 'why-we-dont-hold-tryouts', 'what-to-pack-for-saturday-soccer', 'recreational-vs-club-soccer-phoenix',
+            'benefits-of-multi-sport-kids', 'sun-safety-for-kids-in-arizona', 'what-verso-l-alto-means']
+ABY = {a['slug']: a for a in ARTICLES}
+for ci, c in enumerate(CITIES):
+    name, sl = c['name'], slug(c['name'])
+    near = ''.join(f'<a class="chip" href="@/service-area/{slug(n)}/">{esc(n)}, AZ</a>' for n in c['nearby'])
+    picks = [ABY[ART_POOL[(ci + k) % len(ART_POOL)]] for k in (0, 3, 6)]
+    where = ("just minutes from our planned East Valley fields" if c.get('home') else
+             "a drive away from our East Valley fields — and we hope to bring programs closer as we grow")
+    body = phero(f'Youth sports in {esc(name)}, AZ', f'<span>{esc(name)}</span>', esc(c['tag']),
+                 crumbs=[('Home', '/'), ('Service area', '/service-area/'), (esc(name), None)], orb='var(--grass)' if c.get('home') else 'var(--gold)',
+                 extra=f'<span class="soon-badge{" live" if c.get("home") else ""}">{"● East Valley home field" if c.get("home") else "Maricopa County · " + esc(c["region_name"])}</span>')
+    body += f"""
+  <section class="sec" style="padding-top:60px">
+    <div class="wrap split" style="align-items:start">
+      <div class="reveal left">
+        <span class="eyebrow">About {esc(name)}</span>
+        <h2 class="display h2">Families in <span class="grad">{esc(name)}</span></h2>
+        <p class="lead">{esc(c['about'])}</p>
+        <h3 class="city-sub">Verso Alto Youth Sports in {esc(name)}</h3>
+        <p style="color:#d4dcf0">{esc(c['fit'])}</p>
+        <div class="btnrow">{INTEREST_BTN()}<a class="btn btn-ghost" href="@/sports/soccer/">Youth soccer details</a></div>
+      </div>
+      <div class="panel reveal right">
+        <span class="eyebrow">At a glance</span>
+        <ul class="facts-list">
+          <li><b>City</b><span>{esc(name)}, Arizona</span></li>
+          <li><b>County</b><span>Maricopa County</span></li>
+          <li><b>Area</b><span>{esc(c['region_name'])}</span></li>
+          <li><b>Now forming</b><span><a href="@/sports/soccer/">Co-ed soccer, ages 3–8</a> · Spring 2027</span></li>
+          <li><b>Coming soon</b><span><a href="@/sports/baseball/">Baseball</a>, <a href="@/sports/basketball/">basketball</a>, <a href="@/sports/football/">football</a></span></li>
+          <li><b>Tryouts</b><span>None — every child plays</span></li>
+          <li><b>Payment</b><span>Affordable · <a href="@/blog/using-arizona-esa-funds-for-youth-sports/">Arizona ESA accepted</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap" style="max-width:900px">
+      <div class="sec-head reveal"><span class="eyebrow">{esc(name)} family FAQ</span><h2 class="display" style="font-size:clamp(2rem,4.5vw,3.2rem)">Questions from <span class="grad">{esc(name)}</span> parents</h2></div>
+      <div class="qa reveal">
+        <h3>Where will {esc(name)} kids play?</h3>
+        <p>Our first season is played on Saturday mornings at fields in the East Valley (exact location to be announced). For {esc(name)} families, that's {where}.</p>
+        <h3>Can {esc(name)} families use Arizona ESA funds?</h3>
+        <p>Yes. Verso Alto Youth Sports is an approved Arizona ESA vendor. Choose ESA at registration and you'll receive an invoice for ClassWallet. <a href="@/blog/using-arizona-esa-funds-for-youth-sports/">Here's how it works.</a></p>
+        <h3>Do we need to be Catholic to join?</h3>
+        <p>No. Our programs are rooted in the Catholic faith, and families of all faiths in {esc(name)} and across Maricopa County are welcome. <a href="@/faq/">See the full FAQ.</a></p>
+      </div>
+      <div class="sec-head reveal" style="margin-top:3rem;margin-bottom:1.2rem"><span class="eyebrow">Nearby</span></div>
+      <div class="chips reveal">{near}<a class="chip" href="@/service-area/">All Maricopa County cities →</a></div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">For {esc(name)} sports families</span><h2 class="display" style="font-size:clamp(2rem,4.5vw,3.2rem)">Helpful <span class="grad">articles</span></h2></div>
+      <div class="posts">{''.join(post_card(a, i) for i, a in enumerate(picks))}</div>
+    </div>
+  </section>"""
+    ld = {"@context": "https://schema.org", "@type": "Service", "name": f"Youth sports in {name}, AZ",
+          "serviceType": "Youth sports league", "provider": {"@type": "SportsOrganization", "name": "Verso Alto Youth Sports"},
+          "areaServed": {"@type": "City", "name": f"{name}, AZ", "containedInPlace": {"@type": "AdministrativeArea", "name": "Maricopa County, Arizona"}},
+          "description": c['fit']}
+    page(f'/service-area/{sl}/', f'Youth Sports in {name}, AZ — Catholic Youth Soccer',
+         f"Faith-centered, affordable youth soccer for {name}, AZ families with kids ages 3–8. No tryouts, Arizona ESA accepted. Baseball, basketball & football coming soon.",
+         body, 'about', ld=ld)
 
 # BLOG INDEX
 tags = ['All'] + sorted({a['tag'] for a in ARTICLES})
@@ -468,7 +549,7 @@ for a in ARTICLES:
   <section class="sec" style="padding-top:60px">
     <div class="wrap">
       <article class="prose">{a['body']}</article>
-      <div class="local-links reveal">Serving youth sports families in <a href="@/service-area/#gilbert">Gilbert</a>, <a href="@/service-area/#mesa">Mesa</a>, <a href="@/service-area/#chandler">Chandler</a>, <a href="@/service-area/#queen-creek">Queen Creek</a>, <a href="@/service-area/#tempe">Tempe</a> and <a href="@/service-area/">across Arizona</a>. Explore <a href="@/sports/soccer/">youth soccer</a>, read our <a href="@/faq/">FAQ</a>, or <a href="@/support/">support our mission</a>.</div>
+      <div class="local-links reveal">Serving youth sports families in <a href="@/service-area/#gilbert">Gilbert</a>, <a href="@/service-area/#mesa">Mesa</a>, <a href="@/service-area/#chandler">Chandler</a>, <a href="@/service-area/#queen-creek">Queen Creek</a>, <a href="@/service-area/#tempe">Tempe</a> and <a href="@/service-area/">across Maricopa County</a>. Explore <a href="@/sports/soccer/">youth soccer</a>, read our <a href="@/faq/">FAQ</a>, or <a href="@/support/">support our mission</a>.</div>
       <div class="post-cta reveal"><div><h3>Spring 2027 soccer</h3><p style="font-weight:600">Be the first to know when registration opens.</p></div>{INTEREST_BTN('btn')}</div>
       <div style="max-width:760px;margin:2rem auto 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
         {f'<a class="back" style="margin:0" href="@/blog/{older["slug"]}/">← {esc(older["title"][:48])}{"…" if len(older["title"])>48 else ""}</a>' if older else '<span></span>'}
@@ -490,6 +571,7 @@ def route_of(path):
     return r or 'home'
 
 def resolve_single(h):
+    h = city_links(h)
     def fix(m):
         attr, target = m.group(1), m.group(2)
         if target.startswith('/assets/'):
@@ -557,7 +639,10 @@ def build_single(out_dir):
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{esc(home['title'])}</title>
 <meta name="description" content="{esc(home['desc'])}" />
-<link rel="canonical" href="{SITE}/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:image" content="{PREVIEW_URL}/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{PREVIEW_URL}/og-image.png" />
 <meta property="og:type" content="website" /><meta property="og:site_name" content="Verso Alto Youth Sports" />
 <meta property="og:title" content="{esc(home['title'])}" /><meta property="og:description" content="{esc(home['desc'])}" />
 <meta name="geo.region" content="US-AZ" /><meta name="geo.placename" content="Gilbert, Arizona" />
@@ -569,7 +654,7 @@ def build_single(out_dir):
 <style>
 {css}
 </style>
-<script type="application/ld+json">{json.dumps(ORG_LD, ensure_ascii=False)}</script>
+{"".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in [ORG_LD, WEBSITE_LD] + [p["ld"] for p in PAGES if p["ld"]])}
 </head>
 <body>
 {rd('defs.html')}
@@ -623,8 +708,9 @@ else:
   sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
       f'  <url><loc>{SITE}{p["path"]}</loc><lastmod>{next((a["date"] for a in ARTICLES if p["path"] == "/blog/"+a["slug"]+"/"), today)}</lastmod></url>\n' for p in PAGES) + '</urlset>\n'
   open(os.path.join(OUT, 'sitemap.xml'), 'w').write(sm)
-open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /_build/\nSitemap: {SITE}/sitemap.xml\n')
+open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nDisallow: /_build/\n' + ('' if SINGLE else f'Sitemap: {SITE}/sitemap.xml\n'))
 open(os.path.join(OUT, '.nojekyll'), 'w').write('')
+if os.path.exists(os.path.join(SRC, 'og-image.png')): shutil.copy(os.path.join(SRC, 'og-image.png'), os.path.join(OUT, 'og-image.png'))
 nf = '''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Page not found | Verso Alto Youth Sports</title>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1b3a,#050d22);color:#fbf6ea;padding:24px}h1{font-size:clamp(3rem,12vw,7rem);margin:0;color:#f2b632;font-family:Anton,Impact,sans-serif}a{display:inline-block;margin-top:24px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,#f2b632,#ff8a3d);color:#0b1430;font-weight:800;text-decoration:none}</style></head>
 <body><div><h1>404</h1><p>We couldn't find that page — but the heights are still waiting.</p><a id="home" href="/">Back to home</a></div>
