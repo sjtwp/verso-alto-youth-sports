@@ -423,7 +423,7 @@ for rid, rname, sub, cs in REGIONS:
     cards = ''.join(city_card(dict(c, region=rid), i) for i, c in enumerate(cs))
     regions_html += f"""<section class="region" id="{rid}"><div class="region-head reveal"><h2 class="display">{esc(rname)}</h2><small>{esc(sub)} · {len(cs)} {'city' if len(cs)==1 else 'cities & towns'}</small></div><div class="cities">{cards}</div></section>"""
 sa = phero('Service area', '<span>Serving</span> <span class="grad" style="animation-delay:.1s">Maricopa County</span>',
-  f'Verso Alto Youth Sports serves families in all {len(CITIES)} cities and towns of Maricopa County, Arizona — starting with Saturday-morning youth soccer in the East Valley.',
+  f'Verso Alto Youth Sports serves families in {len(CITIES)} cities and towns across Maricopa County, Arizona — starting with Saturday-morning youth soccer in the East Valley.',
   crumbs=[('Home', '/'), ('Service area', None)], orb='var(--grass)')
 sa += f"""
   <section class="sec" style="padding-top:60px">
@@ -445,7 +445,7 @@ sa += f"""
 SA_LD = {"@context": "https://schema.org", "@type": "ItemList", "name": "Verso Alto Youth Sports service area — Maricopa County, AZ",
          "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": f"{c['name']}, AZ"} for i, c in enumerate(CITIES)]}
 page('/service-area/', 'Service Area — Youth Sports Across Maricopa County, AZ',
-     f"Verso Alto Youth Sports serves all {len(CITIES)} cities and towns in Maricopa County, AZ — Gilbert, Mesa, Chandler, Queen Creek, Tempe, Phoenix, Scottsdale, Glendale, Peoria and more.",
+     f"Verso Alto Youth Sports serves {len(CITIES)} cities and towns across Maricopa County, AZ — Gilbert, Mesa, Chandler, Queen Creek, Tempe, Phoenix, Scottsdale, Glendale, Peoria and more.",
      sa, 'about', ld=SA_LD)
 
 ART_POOL = ['spring-2027-soccer-season-preview', 'using-arizona-esa-funds-for-youth-sports', 'arizona-heat-safety-for-youth-sports',

@@ -1,4 +1,4 @@
-# Verso Alto Youth Sports service area: the 24 incorporated cities and towns of Maricopa County, Arizona.
+# Verso Alto Youth Sports service area: cities and towns in Maricopa County, Arizona.
 # Each city gets its own page (#service-area/<slug> now, /service-area/<slug>/ once the domain is live).
 REGIONS = [
  ("east-valley", "East Valley", "Our home field", [
@@ -44,14 +44,10 @@ REGIONS = [
    tag="Faith-centered youth sports near Camelback Mountain.",
    about="Paradise Valley is a quiet residential town nestled between Camelback Mountain and Mummy Mountain, between Phoenix and Scottsdale. Families here enjoy spacious neighborhoods and easy access to the rest of the Valley.",
    fit="Paradise Valley families can reach our East Valley programs easily for Saturday-morning games, and are welcome to join our growing community of families who value faith, family, and sport."),
-  dict(name="Cave Creek", home=False, nearby=["Carefree", "Phoenix", "Scottsdale"],
+  dict(name="Cave Creek", home=False, nearby=["Phoenix", "Scottsdale", "Paradise Valley"],
    tag="Old West spirit, new youth sports community.",
    about="Cave Creek blends Old West character with Sonoran Desert trails and wide-open spaces in the northern Valley. It's a community where families love horses, hiking, and spending weekends outdoors.",
    fit="Cave Creek families are welcome to join Verso Alto's interest list. As we grow beyond our first East Valley season, we'd love to bring faith-centered youth sports closer to the North Valley."),
-  dict(name="Carefree", home=False, nearby=["Cave Creek", "Scottsdale", "Phoenix"],
-   tag="Joyful, faith-centered play for Carefree kids.",
-   about="Carefree is a peaceful desert town known for its giant sundial, boulder-studded landscapes, and relaxed pace of life in the northern foothills of the Valley.",
-   fit="Carefree families who value joyful play, good sportsmanship, and faith are welcome in the Verso Alto community. Join our interest list to hear about programs as we expand across Maricopa County."),
  ]),
  ("west-valley", "West Valley", "Growing with Maricopa County", [
   dict(name="Glendale", home=False, nearby=["Peoria", "Phoenix", "Tolleson"],
@@ -94,15 +90,5 @@ REGIONS = [
    tag="A historic town welcoming the next generation.",
    about="Youngtown is a small, historic northwest Valley town along the Agua Fria River — known as Arizona's first master-planned retirement community, and today home to a growing number of young families.",
    fit="Youngtown families are welcome to connect with Verso Alto and follow our journey as we grow into an all-sport league serving more of Maricopa County."),
- ]),
- ("outlying", "Outlying Maricopa County", "Wickenburg & Gila Bend", [
-  dict(name="Wickenburg", home=False, nearby=["Surprise", "Peoria", "Buckeye"],
-   tag="Western heritage, faith-centered youth sports.",
-   about="Wickenburg is a historic ranching and gold-mining town in the far northwest corner of Maricopa County, known for its Western heritage, guest ranches, and small-town community spirit.",
-   fit="Wickenburg families are welcome to join our interest list and stay connected through the Verso Alto blog. Eligible families can use Arizona ESA funds toward our programs."),
-  dict(name="Gila Bend", home=False, nearby=["Buckeye", "Goodyear", "Avondale"],
-   tag="Staying connected to Verso Alto from Gila Bend.",
-   about="Gila Bend is a small desert town in southwestern Maricopa County, a crossroads community with deep roots and wide-open skies.",
-   fit="Gila Bend families can join Verso Alto's interest list, follow our blog for youth sports tips, and use eligible Arizona ESA funds toward our programs."),
  ]),
 ]
