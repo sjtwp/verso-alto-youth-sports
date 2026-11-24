@@ -143,7 +143,8 @@ section{position:relative}
 @media (max-width:900px){.pillars{grid-template-columns:1fr}}
 
 /* ---------- sport cards ---------- */
-.sports-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.sports-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem}
+@media (max-width:1150px){.sports-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .sport{position:relative;display:flex;flex-direction:column;min-height:440px;border-radius:28px;overflow:hidden;padding:2rem;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 24px 50px rgba(0,0,0,.35)}
 .sport:hover{transform:translateY(-10px)}
 .sport .art{position:absolute;right:-36px;top:-36px;width:190px;height:190px;z-index:-1;opacity:.95;transition:transform 1.2s var(--ease);filter:drop-shadow(0 12px 20px rgba(0,0,0,.3))}
@@ -151,14 +152,16 @@ section{position:relative}
 .sport.soccer{background:linear-gradient(155deg,#2fbf71,#0d4f31)}
 .sport.baseball{background:linear-gradient(155deg,#4a86ff,#13285a)}
 .sport.basketball{background:linear-gradient(155deg,#ff8a3d,#7a2a0e)}
+.sport.football{background:linear-gradient(155deg,#9b5de5,#3a1c6b)}
 .sport .status{align-self:flex-start;padding:.35rem .8rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.3);backdrop-filter:blur(6px)}
 .sport .status.live{background:#fff;color:#0d4f31}
-.sport h3{margin-top:auto;font-family:Anton;font-weight:400;font-size:clamp(3rem,5vw,4.2rem);text-transform:uppercase;line-height:.95}
+.sport h3{margin-top:auto;font-family:Anton;font-weight:400;font-size:clamp(2.2rem,2.8vw,2.9rem);text-transform:uppercase;line-height:.95}
+@media (max-width:1150px){.sport h3{font-size:clamp(2.6rem,6vw,3.6rem)}}
 .sport p{opacity:.88;margin:.6rem 0 1.4rem}
 .sport .go{font-weight:800;display:inline-flex;align-items:center;gap:.5rem}
 .sport .go svg{width:18px;height:18px;transition:transform .3s}
 .sport:hover .go svg{transform:translateX(6px)}
-@media (max-width:900px){.sports-grid{grid-template-columns:1fr}.sport{min-height:340px}}
+@media (max-width:640px){.sports-grid{grid-template-columns:1fr}.sport{min-height:320px}}
 
 /* ---------- quote ---------- */
 .quote{padding:clamp(100px,14vw,180px) 0;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,rgba(242,182,50,.22),transparent 60%),var(--deep)}
@@ -339,6 +342,12 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
       <circle cx="50" cy="50" r="47" fill="#f07a2b" stroke="#0b1430" stroke-width="4"/>
       <path d="M50 3v94M3 50h94M18 16c16 14 16 54 0 68M82 16c-16 14-16 54 0 68" fill="none" stroke="#0b1430" stroke-width="4"/>
     </symbol>
+    <symbol id="football" viewBox="0 0 100 100">
+      <g transform="rotate(-35 50 50)"><ellipse cx="50" cy="50" rx="47" ry="29" fill="#8a4a24" stroke="#0b1430" stroke-width="4"/>
+      <path d="M14 38c6 3 6 21 0 24M86 38c-6 3-6 21 0 24" fill="none" stroke="#fff" stroke-width="4"/>
+      <path d="M32 50h36" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+      <path d="M38 43v14M45 43v14M52 43v14M59 43v14" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></g>
+    </symbol>
     <symbol id="logo" viewBox="0 0 320 234">
       <path d="M12 15H66L138 219H94Z" fill="#13285a" stroke="#fbf6ea" stroke-width="7" stroke-linejoin="round"/>
       <path d="M180 15H238L306 219H246Z" fill="#13285a" stroke="#fbf6ea" stroke-width="7" stroke-linejoin="round"/>
@@ -369,6 +378,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
           <a href="#soccer" data-link><svg><use href="#ball"/></svg><span>Soccer<small class="live">Spring 2027</small></span></a>
           <a href="#baseball" data-link><svg><use href="#baseball"/></svg><span>Baseball<small>Coming soon</small></span></a>
           <a href="#basketball" data-link><svg><use href="#basketball"/></svg><span>Basketball<small>Coming soon</small></span></a>
+          <a href="#football" data-link><svg><use href="#football"/></svg><span>Football<small>Coming soon</small></span></a>
         </div>
       </div>
       <a href="#about" data-link data-tab="about">About</a>
@@ -386,6 +396,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
   <a href="#soccer" data-link class="sub">⚽ Soccer — Spring 2027</a>
   <a href="#baseball" data-link class="sub">⚾ Baseball — coming soon</a>
   <a href="#basketball" data-link class="sub">🏀 Basketball — coming soon</a>
+  <a href="#football" data-link class="sub">🏈 Football — coming soon</a>
   <a href="#about" data-link data-tab="about">About</a>
   <a href="#faq" data-link data-tab="faq">FAQ</a>
   <a href="#support" data-link data-tab="support">Support</a>
@@ -441,7 +452,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
       <div class="sec-head reveal">
         <span class="eyebrow">Our sports</span>
         <h2 class="display">One league. <span class="grad">Many sports.</span></h2>
-        <p>We're starting with soccer in Spring 2027, with baseball and basketball on the way.</p>
+        <p>We're starting with soccer in Spring 2027, with baseball, basketball, and football on the way.</p>
       </div>
       <div class="sports-grid" data-sportcards></div>
     </div>
@@ -478,7 +489,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
     <div class="wrap" style="position:relative">
       <span class="eyebrow">Sports</span>
       <h1 class="display"><span>Choose your</span><br/><span class="grad" style="animation-delay:.12s">sport</span></h1>
-      <p>Verso Alto is an all-sport league. We kick off with co-ed soccer in Spring 2027, and baseball and basketball are on the way.</p>
+      <p>Verso Alto is an all-sport league. We kick off with co-ed soccer in Spring 2027, and baseball, basketball, and football are on the way.</p>
     </div>
   </section>
   <section class="sec" style="padding-top:60px">
@@ -605,6 +616,40 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
   </section>
 </main>
 
+<!-- ======================= FOOTBALL ======================= -->
+<main class="page" id="page-football">
+  <section class="phero" style="background:linear-gradient(180deg,#0b1b3a,#3a1c6b)">
+    <div class="bigart"><svg viewBox="0 0 100 100"><use href="#football"/></svg></div>
+    <div class="wrap" style="position:relative">
+      <a href="#sports" data-link class="back">← All sports</a><br/>
+      <span class="eyebrow">Football</span>
+      <h1 class="display"><span>Ready,</span> <span class="grad" style="animation-delay:.1s">hike!</span></h1>
+      <p>Football is coming to Verso Alto. We're building a program where kids learn the game, build friendships, and grow in faith and character along the way.</p>
+      <span class="soon-badge">⏳ Coming soon · Details to be announced</span>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="reveal left">
+        <span class="eyebrow">What to expect</span>
+        <h2 class="display h2">Teamwork on <span class="grad">every play</span></h2>
+        <p class="lead">Our football program will teach the fundamentals — throwing, catching, running routes, and playing as a team — in a fun, encouraging setting where every player gets in the game.</p>
+        <ul class="checks">
+          <li>Skill-building for beginners and growing players</li>
+          <li>Teamwork, discipline, and good sportsmanship</li>
+          <li>The same affordable, faith-centered approach as all our sports</li>
+        </ul>
+        <div class="btnrow"><a class="btn btn-gold interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Get notified <svg><use href="#arrow"/></svg></a></div>
+      </div>
+      <div class="panel reveal right">
+        <span class="eyebrow">Status</span>
+        <h3 class="display" style="font-size:2.4rem;margin:.8rem 0">Coming soon</h3>
+        <p style="color:var(--muted)">Age groups, season dates, and locations for football haven't been announced yet. Join the interest list and we'll let you know as soon as details are ready.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
 <!-- ======================= ABOUT ======================= -->
 <main class="page" id="page-about">
   <section class="phero">
@@ -667,7 +712,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
         <input id="faqSearch" type="search" placeholder="Search questions… (try “cost” or “ESA”)" />
       </div>
       <div id="faqList">
-        <div class="faq reveal"><button><span>Will soccer be the only sport?</span><i class="pm"></i></button><div class="ans"><div><p>No! Verso Alto is an all-sport league. We're starting with soccer in Spring 2027, and baseball and basketball are on the way — always with our focus on faith, character, teamwork, and fun. Stay tuned for future announcements.</p></div></div></div>
+        <div class="faq reveal"><button><span>Will soccer be the only sport?</span><i class="pm"></i></button><div class="ans"><div><p>No! Verso Alto is an all-sport league. We're starting with soccer in Spring 2027, and baseball, basketball, and football are on the way — always with our focus on faith, character, teamwork, and fun. Stay tuned for future announcements.</p></div></div></div>
         <div class="faq reveal"><button><span>How much will it cost?</span><i class="pm"></i></button><div class="ans"><div><p>As a Catholic nonprofit, we are committed to keeping youth sports affordable. Registration costs for the Spring 2027 season are still being finalized, and pricing will be announced once complete.</p></div></div></div>
         <div class="faq reveal"><button><span>Do you accept ESA (Empowerment Scholarship Account) funds?</span><i class="pm"></i></button><div class="ans"><div><p>Yes. We are an approved Arizona ESA vendor. Choose ESA as your payment method during registration, and you'll receive an invoice with instructions for paying or seeking reimbursement through ClassWallet.</p></div></div></div>
         <div class="faq reveal"><button><span>Do I have to be Catholic to join?</span><i class="pm"></i></button><div class="ans"><div><p>No. Children and families of all faiths are welcome. Our programs are rooted in the Catholic faith, but participation does not require it.</p></div></div></div>
@@ -726,7 +771,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
           <div class="fld"><input id="fn" placeholder=" " required/><label for="fn">Your name</label></div>
           <div class="fld"><input id="fe" type="email" placeholder=" " required/><label for="fe">Email</label></div>
         </div>
-        <div class="fld"><select id="ft"><option>Spring 2027 Soccer</option><option>Baseball</option><option>Basketball</option><option>Volunteering</option><option>Coaching</option><option>Partnering</option><option>Giving</option><option>Something else</option></select><label for="ft">Topic</label></div>
+        <div class="fld"><select id="ft"><option>Spring 2027 Soccer</option><option>Baseball</option><option>Basketball</option><option>Football</option><option>Volunteering</option><option>Coaching</option><option>Partnering</option><option>Giving</option><option>Something else</option></select><label for="ft">Topic</label></div>
         <div class="fld"><textarea id="fm" placeholder=" " required></textarea><label for="fm">Message</label></div>
         <button class="btn btn-gold" type="submit" style="width:100%;justify-content:center">Send message <svg><use href="#arrow"/></svg></button>
         <p style="color:var(--muted);font-size:.82rem;margin-top:.8rem;text-align:center">Opens your email app with your message ready to send.</p>
@@ -775,7 +820,7 @@ footer .fmtn{width:100%;height:80px;margin-bottom:-2px}
         <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness. To the Heights!</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="#home" data-link>Home</a></li><li><a href="#about" data-link>About</a></li><li><a href="#faq" data-link>FAQ</a></li><li><a href="#support" data-link>Support</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
-      <div><h4>Sports</h4><ul><li><a href="#soccer" data-link>Soccer</a></li><li><a href="#baseball" data-link>Baseball (coming soon)</a></li><li><a href="#basketball" data-link>Basketball (coming soon)</a></li><li><a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
+      <div><h4>Sports</h4><ul><li><a href="#soccer" data-link>Soccer</a></li><li><a href="#baseball" data-link>Baseball (coming soon)</a></li><li><a href="#basketball" data-link>Basketball (coming soon)</a></li><li><a href="#football" data-link>Football (coming soon)</a></li><li><a class="interest" href="https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv9zgM/viewform" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
       <div><h4>Families</h4><ul><li><a href="#policies" data-link>Policies &amp; Forms</a></li><li><a href="#privacy" data-link>Privacy Policy</a></li><li><a href="#refund" data-link>Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
     </div>
     <div class="wrap"><div class="fbig">Verso l'Alto</div>
@@ -795,7 +840,8 @@ $('#yr').textContent=new Date().getFullYear();
 const SPORTS=[
   {key:'soccer',name:'Soccer',icon:'ball',status:'Spring 2027',live:true,desc:'Co-ed recreational soccer for ages 3–8. Six weeks of Saturday-morning fun. No tryouts.'},
   {key:'baseball',name:'Baseball',icon:'baseball',status:'Coming soon',desc:'Hitting, throwing, catching, and running the bases — with faith and fun at the core.'},
-  {key:'basketball',name:'Basketball',icon:'basketball',status:'Coming soon',desc:'Dribbling, passing, shooting, and teamwork on the court. Details to be announced.'}
+  {key:'basketball',name:'Basketball',icon:'basketball',status:'Coming soon',desc:'Dribbling, passing, shooting, and teamwork on the court. Details to be announced.'},
+  {key:'football',name:'Football',icon:'football',status:'Coming soon',desc:'Throwing, catching, running routes, and playing as a team. Details to be announced.'}
 ];
 $$('[data-sportcards]').forEach(g=>g.innerHTML=SPORTS.map((s,i)=>`
   <a class="sport ${s.key} reveal" style="transition-delay:${i*.12}s" href="#${s.key}" data-link>
@@ -823,8 +869,8 @@ function renderPolicy(k){
 }
 
 /* ---------------- routing ---------------- */
-const PAGES=['home','sports','soccer','baseball','basketball','about','faq','support','contact','policies'];
-const TAB_OF={soccer:'sports',baseball:'sports',basketball:'sports'};
+const PAGES=['home','sports','soccer','baseball','basketball','football','about','faq','support','contact','policies'];
+const TAB_OF={soccer:'sports',baseball:'sports',basketball:'sports',football:'sports'};
 let current=null, io=null;
 function setPill(){
   const a=$('#tabs a.active[data-tab]'), pill=$('#tabs .pill');
