@@ -25,7 +25,7 @@ def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 ROUTES = {
  'home': '/', 'sports': '/sports/', 'soccer': '/sports/soccer/', 'baseball': '/sports/baseball/',
- 'basketball': '/sports/basketball/', 'football': '/sports/football/', 'about': '/about/',
+ 'basketball': '/sports/basketball/', 'football': '/sports/flag-football/', 'about': '/about/',
  'service-area': '/service-area/', 'blog': '/blog/', 'faq': '/faq/', 'policies': '/policies/',
  'privacy': '/policies/privacy/', 'refund': '/policies/refund/', 'waiver': '/policies/waiver/',
  'concussion': '/policies/concussion/', 'child-protection': '/policies/child-protection/',
@@ -80,7 +80,7 @@ SPORTS = [
  dict(key='soccer', name='Soccer', icon='ball', status='Spring 2027', live=True, desc='Co-ed recreational soccer for ages 3–8 in the East Valley. Six weeks of Saturday-morning fun. No tryouts.'),
  dict(key='baseball', name='Baseball', icon='baseball', status='Coming soon', desc='Hitting, throwing, catching, and running the bases — with faith and fun at the core.'),
  dict(key='basketball', name='Basketball', icon='basketball', status='Coming soon', desc='Dribbling, passing, shooting, and teamwork on the court. Details to be announced.'),
- dict(key='football', name='Football', icon='football', status='Coming soon', desc='Throwing, catching, running routes, and playing as a team. Details to be announced.'),
+ dict(key='football', name='Flag Football', icon='football', status='Coming soon', desc='Non-contact flag football: throwing, catching, running routes, and teamwork. Details to be announced.'),
 ]
 def sport_cards():
     return ''.join(f'''<a class="sport {s['key']} reveal" style="transition-delay:{i*.1:.1f}s" href="@{ROUTES[s['key']]}">
@@ -159,7 +159,7 @@ def footer():
         <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic, nonprofit youth sports league serving families in Gilbert, Mesa, Chandler, Queen Creek and across Arizona's East Valley. Faith · Community · Sports. To the Heights!</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="@/">Home</a></li><li><a href="@/about/">About</a></li><li><a href="@/blog/">Blog</a></li><li><a href="@/faq/">FAQ</a></li><li><a href="@/support/">Support</a></li><li><a href="@/contact/">Contact</a></li></ul></div>
-      <div><h4>Sports</h4><ul><li><a href="@/sports/soccer/">Youth Soccer</a></li><li><a href="@/sports/baseball/">Baseball (coming soon)</a></li><li><a href="@/sports/basketball/">Basketball (coming soon)</a></li><li><a href="@/sports/football/">Football (coming soon)</a></li><li><a class="interest" href="{FORM}" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
+      <div><h4>Sports</h4><ul><li><a href="@/sports/soccer/">Youth Soccer</a></li><li><a href="@/sports/baseball/">Baseball (coming soon)</a></li><li><a href="@/sports/basketball/">Basketball (coming soon)</a></li><li><a href="@/sports/football/">Flag Football (coming soon)</a></li><li><a class="interest" href="{FORM}" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
       <div><h4>Serving</h4><ul>{clinks}<li><a href="@/service-area/">All Maricopa County cities →</a></li></ul></div>
       <div><h4>Families</h4><ul><li><a href="@/policies/">Policies &amp; Forms</a></li><li><a href="@/policies/privacy/">Privacy Policy</a></li><li><a href="@/policies/refund/">Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
     </div>
@@ -172,7 +172,7 @@ def footer():
 ORG_LD = {
  "@context": "https://schema.org", "@type": "SportsOrganization", "name": "Verso Alto Youth Sports, Inc.",
  "alternateName": "Verso Alto Youth Sports", "url": SITE + "/", "email": "shostutler@versoaltoyouthsports.com",
- "telephone": "+1-480-493-0639", "sport": ["Soccer", "Baseball", "Basketball", "Football"],
+ "telephone": "+1-480-493-0639", "sport": ["Soccer", "Baseball", "Basketball", "Flag Football"],
  "description": "Catholic, nonprofit youth sports league for kids in Arizona's East Valley — Gilbert, Mesa, Chandler, Queen Creek and beyond.",
  "address": {"@type": "PostalAddress", "addressLocality": "Gilbert", "addressRegion": "AZ", "addressCountry": "US"},
  "areaServed": [{"@type": "City", "name": c['name'] + ", AZ"} for c in CITIES] + [{"@type": "AdministrativeArea", "name": "Maricopa County, Arizona"}],
@@ -279,15 +279,15 @@ page('/', 'Verso Alto Youth Sports | Catholic Youth Soccer & Sports in Gilbert, 
 # SPORTS
 sp = sec('sports').replace('<div class="sports-grid" data-sportcards></div>', f'<div class="sports-grid">{sport_cards()}</div>')
 sp = sp.replace('<span class="eyebrow">Sports</span>', '<nav class="crumbs"><a href="@/">Home</a><span class="sep">/</span><span>Sports</span></nav>\n      <span class="eyebrow">Sports</span>')
-page('/sports/', 'Youth Sports Programs in the East Valley, AZ', 'Explore Verso Alto Youth Sports programs: co-ed youth soccer in Spring 2027 plus baseball, basketball and football coming soon for East Valley, Arizona families.', sp, 'sports')
+page('/sports/', 'Youth Sports Programs in the East Valley, AZ', 'Explore Verso Alto Youth Sports programs: co-ed youth soccer in Spring 2027 plus baseball, basketball and flag football coming soon for East Valley, Arizona families.', sp, 'sports')
 
 for key, title, desc in [
  ('soccer', 'Youth Soccer for Ages 3–8 in Gilbert, Mesa & the East Valley', 'Co-ed recreational youth soccer for ages 3–8. Six-week Spring 2027 season on Saturday mornings in Arizona\'s East Valley. No tryouts, ESA accepted.'),
  ('baseball', 'Youth Baseball (Coming Soon) — East Valley, AZ', 'Youth baseball is coming to Verso Alto Youth Sports in Arizona\'s East Valley. Faith-centered, affordable, and fun. Join the interest list.'),
  ('basketball', 'Youth Basketball (Coming Soon) — East Valley, AZ', 'Youth basketball is coming to Verso Alto Youth Sports in Arizona\'s East Valley. Faith-centered, affordable, and fun. Join the interest list.'),
- ('football', 'Youth Football (Coming Soon) — East Valley, AZ', 'Youth football is coming to Verso Alto Youth Sports in Arizona\'s East Valley. Faith-centered, affordable, and fun. Join the interest list.')]:
+ ('football', 'Youth Flag Football (Coming Soon) — East Valley, AZ', 'Non-contact youth flag football is coming to Verso Alto Youth Sports in Arizona\'s East Valley. Faith-centered, affordable, and fun. Join the interest list.')]:
     b = sec(key)
-    b = re.sub(r'<a href="@/sports/" class="back">← All sports</a><br/>', f'<nav class="crumbs"><a href="@/">Home</a><span class="sep">/</span><a href="@/sports/">Sports</a><span class="sep">/</span><span>{key.title()}</span></nav>', b)
+    b = re.sub(r'<a href="@/sports/" class="back">← All sports</a><br/>', f'<nav class="crumbs"><a href="@/">Home</a><span class="sep">/</span><a href="@/sports/">Sports</a><span class="sep">/</span><span>{next(x['name'] for x in SPORTS if x['key'] == key)}</span></nav>', b)
     related = [a for a in ARTICLES if key in a['body'] or (key == 'soccer' and a['tag'] == 'Soccer')][:3]
     if key != 'soccer': related = [a for a in ARTICLES if a['slug'] in ('benefits-of-multi-sport-kids', 'why-we-dont-hold-tryouts', 'building-character-through-youth-sports')]
     b += f'''
@@ -435,7 +435,7 @@ sa += f"""
           <p class="lead">Spring 2027 <a href="@/sports/soccer/" style="color:var(--gold);font-weight:700">co-ed youth soccer</a> for ages 3–8 will be played on Saturday mornings at fields in the East Valley (location to be announced). Families in <a href="@/service-area/gilbert/" style="color:var(--gold);font-weight:700">Gilbert</a>, <a href="@/service-area/mesa/" style="color:var(--gold);font-weight:700">Mesa</a>, <a href="@/service-area/chandler/" style="color:var(--gold);font-weight:700">Chandler</a>, <a href="@/service-area/queen-creek/" style="color:var(--gold);font-weight:700">Queen Creek</a> and <a href="@/service-area/tempe/" style="color:var(--gold);font-weight:700">Tempe</a> are just minutes away.</p>
         </div>
         <div class="panel">
-          <p style="color:var(--muted)">Live elsewhere in Maricopa County? You're welcome to join us now, and as we grow into <a href="@/sports/" style="color:var(--gold);font-weight:700">baseball, basketball, and football</a> we hope to bring programs closer to every part of the Valley. <a class="interest" href="{FORM}" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">Join the interest list</a> and tell us where you are.</p>
+          <p style="color:var(--muted)">Live elsewhere in Maricopa County? You're welcome to join us now, and as we grow into <a href="@/sports/" style="color:var(--gold);font-weight:700">baseball, basketball, and flag football</a> we hope to bring programs closer to every part of the Valley. <a class="interest" href="{FORM}" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">Join the interest list</a> and tell us where you are.</p>
         </div>
       </div>
       <div class="chips reveal" style="margin-top:2.4rem">{jump}</div>
@@ -479,7 +479,7 @@ for ci, c in enumerate(CITIES):
           <li><b>County</b><span>Maricopa County</span></li>
           <li><b>Area</b><span>{esc(c['region_name'])}</span></li>
           <li><b>Now forming</b><span><a href="@/sports/soccer/">Co-ed soccer, ages 3–8</a> · Spring 2027</span></li>
-          <li><b>Coming soon</b><span><a href="@/sports/baseball/">Baseball</a>, <a href="@/sports/basketball/">basketball</a>, <a href="@/sports/football/">football</a></span></li>
+          <li><b>Coming soon</b><span><a href="@/sports/baseball/">Baseball</a>, <a href="@/sports/basketball/">basketball</a>, <a href="@/sports/football/">flag football</a></span></li>
           <li><b>Tryouts</b><span>None — every child plays</span></li>
           <li><b>Payment</b><span>Affordable · <a href="@/blog/using-arizona-esa-funds-for-youth-sports/">Arizona ESA accepted</a></span></li>
         </ul>
@@ -512,7 +512,7 @@ for ci, c in enumerate(CITIES):
           "areaServed": {"@type": "City", "name": f"{name}, AZ", "containedInPlace": {"@type": "AdministrativeArea", "name": "Maricopa County, Arizona"}},
           "description": c['fit']}
     page(f'/service-area/{sl}/', f'Youth Sports in {name}, AZ — Catholic Youth Soccer',
-         f"Faith-centered, affordable youth soccer for {name}, AZ families with kids ages 3–8. No tryouts, Arizona ESA accepted. Baseball, basketball & football coming soon.",
+         f"Faith-centered, affordable youth soccer for {name}, AZ families with kids ages 3–8. No tryouts, Arizona ESA accepted. Baseball, basketball & flag football coming soon.",
          body, 'about', ld=ld)
 
 # BLOG INDEX
@@ -584,7 +584,7 @@ def resolve_single(h):
 ROUTER = r"""
 {
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const ALIAS={soccer:'sports/soccer',baseball:'sports/baseball',basketball:'sports/basketball',football:'sports/football',privacy:'policies/privacy',refund:'policies/refund',waiver:'policies/waiver',concussion:'policies/concussion','child-protection':'policies/child-protection'};
+const ALIAS={soccer:'sports/soccer',baseball:'sports/baseball',basketball:'sports/basketball',football:'sports/flag-football','sports/football':'sports/flag-football',privacy:'policies/privacy',refund:'policies/refund',waiver:'policies/waiver',concussion:'policies/concussion','child-protection':'policies/child-protection'};
 const pages=$$('.page'), routes=pages.map(p=>p.dataset.route), wipe=$('#wipe');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let current=null;

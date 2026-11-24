@@ -13,7 +13,7 @@ REGIONS = [
   dict(name="Chandler", home=True, nearby=["Gilbert", "Tempe", "Mesa"],
    tag="Christ-centered youth sports for Chandler families.",
    about="Chandler blends a thriving tech economy with a strong sense of community, from its downtown square to family favorites like Tumbleweed Park. It's home to vibrant Catholic parishes and schools, and to many families who value faith and character as much as athletics.",
-   fit="From South Chandler to the downtown area, families are a short drive from Verso Alto's East Valley programs. Co-ed soccer for ages 3–8 is just the start — baseball, basketball, and football are on the way."),
+   fit="From South Chandler to the downtown area, families are a short drive from Verso Alto's East Valley programs. Co-ed soccer for ages 3–8 is just the start — baseball, basketball, and flag football are on the way."),
   dict(name="Queen Creek", home=True, nearby=["Gilbert", "Mesa", "Chandler"],
    tag="Affordable youth soccer for one of Arizona's fastest-growing towns.",
    about="Queen Creek has grown from a farming community into one of the fastest-growing towns in Arizona, while keeping its small-town charm through places like Schnepf Farms and its agritourism roots. Young families are moving in every week.",

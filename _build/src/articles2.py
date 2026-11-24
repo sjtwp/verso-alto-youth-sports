@@ -95,12 +95,12 @@ body="""
 """),
 
 dict(slug="benefits-of-multi-sport-kids", date="2026-10-13", tag="Sports",
-title="Soccer, Baseball, Basketball, Football: The Benefits of Playing Multiple Sports",
+title="Soccer, Baseball, Basketball, Flag Football: The Benefits of Playing Multiple Sports",
 desc="Why playing multiple sports is great for young athletes — and how Verso Alto Youth Sports is growing into an all-sport league for Arizona families.",
 body="""
-<p>Verso Alto Youth Sports is starting with soccer — but we're an <strong>all-sport league</strong> at heart. Baseball, basketball, and football are all on the way. Here's why we believe in multi-sport kids.</p>
+<p>Verso Alto Youth Sports is starting with soccer — but we're an <strong>all-sport league</strong> at heart. Baseball, basketball, and flag football are all on the way. Here's why we believe in multi-sport kids.</p>
 <h2>Better overall athletes</h2>
-<p>Each sport develops different skills. Soccer builds footwork and endurance, <a href="@/sports/baseball/">baseball</a> builds hand-eye coordination, <a href="@/sports/basketball/">basketball</a> builds agility, and <a href="@/sports/football/">football</a> builds teamwork and discipline.</p>
+<p>Each sport develops different skills. Soccer builds footwork and endurance, <a href="@/sports/baseball/">baseball</a> builds hand-eye coordination, <a href="@/sports/basketball/">basketball</a> builds agility, and <a href="@/sports/football/">flag football</a> builds speed, agility, and teamwork.</p>
 <h2>Less burnout</h2>
 <p>Playing one sport year-round can lead to burnout. Variety keeps sports fresh and fun.</p>
 <h2>Fewer overuse injuries</h2>
