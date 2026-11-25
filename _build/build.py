@@ -151,7 +151,7 @@ def footer():
     cities = ['Gilbert', 'Mesa', 'Chandler', 'Queen Creek', 'Tempe', 'Scottsdale']
     clinks = ''.join(f'<li><a href="@/service-area/#{slug(c)}">{c}</a></li>' for c in cities)
     return f'''<footer>
-  <svg class="fmtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#0b1b3a" d="M0 120V70l160-50 140 40 180-60 160 70 200-60 160 50 180-40 260 60v40z"/></svg>
+  <svg class="fmtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#12264a" d="M0 120V70l160-50 140 40 180-60 160 70 200-60 160 50 180-40 260 60v40z"/></svg>
   <div class="fbody">
     <div class="wrap fgrid">
       <div>
@@ -209,7 +209,7 @@ def render(p):
 <meta property="og:url" content="{SITE}{path}" />
 <meta name="twitter:card" content="summary" />
 <meta name="geo.region" content="US-AZ" /><meta name="geo.placename" content="Gilbert, Arizona" />
-<meta name="theme-color" content="#06102a" />
+<meta name="theme-color" content="#0a1a36" />
 {redirect}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -646,7 +646,7 @@ def build_single(out_dir):
 <meta property="og:type" content="website" /><meta property="og:site_name" content="Verso Alto Youth Sports" />
 <meta property="og:title" content="{esc(home['title'])}" /><meta property="og:description" content="{esc(home['desc'])}" />
 <meta name="geo.region" content="US-AZ" /><meta name="geo.placename" content="Gilbert, Arizona" />
-<meta name="theme-color" content="#06102a" />
+<meta name="theme-color" content="#0a1a36" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
@@ -712,7 +712,7 @@ open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nDisal
 open(os.path.join(OUT, '.nojekyll'), 'w').write('')
 if os.path.exists(os.path.join(SRC, 'og-image.png')): shutil.copy(os.path.join(SRC, 'og-image.png'), os.path.join(OUT, 'og-image.png'))
 nf = '''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Page not found | Verso Alto Youth Sports</title>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1b3a,#050d22);color:#fbf6ea;padding:24px}h1{font-size:clamp(3rem,12vw,7rem);margin:0;color:#f2b632;font-family:Anton,Impact,sans-serif}a{display:inline-block;margin-top:24px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,#f2b632,#ff8a3d);color:#0b1430;font-weight:800;text-decoration:none}</style></head>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;text-align:center;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#12264a,#0a1a36);color:#f3f5f8;padding:24px}h1{font-size:clamp(3rem,12vw,7rem);margin:0;color:#f2b632;font-family:Anton,Impact,sans-serif}a{display:inline-block;margin-top:24px;padding:14px 26px;border-radius:999px;background:linear-gradient(135deg,#f2b632,#ff8a3d);color:#0b1430;font-weight:800;text-decoration:none}</style></head>
 <body><div><h1>404</h1><p>We couldn't find that page — but the heights are still waiting.</p><a id="home" href="/">Back to home</a></div>
 <script>var b=location.pathname.indexOf('/verso-alto-youth-sports/')===0?'/verso-alto-youth-sports/':'/';document.getElementById('home').href=b;/*SINGLE*/</script></body></html>'''
 if SINGLE:

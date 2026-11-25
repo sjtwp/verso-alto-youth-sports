@@ -127,7 +127,7 @@ if(cform){
 /* ---------- confetti on interest / give clicks ---------- */
 const cv=$('#confetti'), cx=cv.getContext('2d'); let parts=[];
 const sizeC=()=>{cv.width=innerWidth;cv.height=innerHeight}; sizeC(); addEventListener('resize',sizeC);
-function burst(x,y){ if(reduce) return; const cols=['#f2b632','#ff8a3d','#ffffff','#4a86ff','#2fbf71']; const fresh=!parts.length;
+function burst(x,y){ if(reduce) return; const cols=['#c0c7d1','#e6eaf0','#ffffff','#4a86ff','#7d8fab']; const fresh=!parts.length;
   for(let i=0;i<120;i++){const a=Math.random()*6.28, s=Math.random()*12+4; parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:Math.random()*6+3,c:cols[i%5],rot:Math.random()*6,vr:Math.random()*.3-.15,life:110})}
   if(fresh) loop();
 }
@@ -138,5 +138,5 @@ document.addEventListener('click',e=>{const a=e.target.closest('.interest,.give'
 function toast(t){const el=$('#toast'); el.textContent=t; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),3200)}
 
 /* ---------- inner-page mountain edge ---------- */
-$$('.phero').forEach(ph=>ph.insertAdjacentHTML('beforeend','<svg class="pmtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#ffffff" opacity=".07" d="M0 120V60l180-50 160 50 200-55 180 60 220-50 180 45 160-35 160 40v115z"/><path fill="#050d22" d="M0 120V85l140-35 170 40 190-45 160 45 210-40 170 35 200-30 200 40v65z"/></svg>'));
+$$('.phero').forEach(ph=>ph.insertAdjacentHTML('beforeend','<svg class="pmtn" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#ffffff" opacity=".07" d="M0 120V60l180-50 160 50 200-55 180 60 220-50 180 45 160-35 160 40v115z"/><path fill="#0a1a36" d="M0 120V85l140-35 170 40 190-45 160 45 210-40 170 35 200-30 200 40v65z"/></svg>'));
 }
