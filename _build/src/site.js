@@ -119,7 +119,7 @@ if(cform){
     e.preventDefault();
     const subj=`[${sel.value}] Message from ${$('#fn').value}`;
     const body=`${$('#fm').value}\n\n— ${$('#fn').value} (${$('#fe').value})`;
-    location.href=`mailto:Shostutler@versoaltoyouthsports.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+    location.href=`mailto:info@versoaltoyouthsports.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
     burst(innerWidth/2,innerHeight*.6); toast('Opening your email app… Verso l\'alto!');
   });
 }

@@ -132,7 +132,7 @@ body="""
 
 dict(slug="faith-at-home-after-the-game", date="2026-10-27", tag="Faith",
 title="Faith at Home After the Game: Simple Ways to Keep the Lessons Going",
-desc="Easy ways Catholic families can connect youth sports to faith at home — prayers before games, gratitude, and conversations about virtue.",
+desc="Easy ways families can connect youth sports to faith at home — prayers before games, gratitude, and conversations about virtue.",
 body="""
 <p>The lessons of the field don't have to end when the whistle blows. Here are simple ways to carry faith and virtue home after the game.</p>
 <h2>Pray before and after games</h2>

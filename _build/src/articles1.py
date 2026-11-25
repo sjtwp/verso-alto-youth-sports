@@ -2,16 +2,16 @@ FORM = "https://docs.google.com/forms/d/1PZcpAY_OP1VVB4GeXCgl2Py-XU9SOIxdt931PGv
 
 ARTICLES = [
 dict(slug="welcome-to-verso-alto-youth-sports", date="2026-07-07", tag="News",
-title="Welcome to Verso Alto Youth Sports: Catholic Youth Sports for the East Valley",
-desc="Meet Verso Alto Youth Sports, a new Catholic, all-sport youth league for families in Gilbert, Mesa, Chandler, Queen Creek and across the East Valley.",
+title="Welcome to Verso Alto Youth Sports: Faith-Based Youth Sports for the East Valley",
+desc="Meet Verso Alto Youth Sports, a new Christ-centered, all-sport youth league for families in Gilbert, Mesa, Chandler, Queen Creek and across the East Valley.",
 body=f"""
 <p>Every Arizona parent knows the feeling: a Saturday morning, coffee in hand, watching your child chase a ball across the grass while the sun climbs over the Superstition Mountains. Those mornings are where friendships are formed, confidence is built, and character is shaped. That is exactly why we started <strong>Verso Alto Youth Sports</strong>.</p>
 <h2>A new kind of youth league for Arizona families</h2>
-<p>Verso Alto Youth Sports is a Catholic, nonprofit youth sports program based in the East Valley. We exist to help kids grow in <em>body, mind, and spirit</em> while giving families an affordable, welcoming place to belong. Our first program is <a href="@/sports/soccer/">co-ed youth soccer for ages 3–8</a>, launching in Spring 2027, with <a href="@/sports/">baseball, basketball, and flag football</a> planned as we grow.</p>
+<p>Verso Alto Youth Sports is a Christ-centered, nonprofit youth sports program based in the East Valley. We exist to help kids grow in <em>body, mind, and spirit</em> while giving families an affordable, welcoming place to belong. Our first program is <a href="@/sports/soccer/">co-ed youth soccer for ages 3–8</a>, launching in Spring 2027, with <a href="@/sports/">baseball, basketball, and flag football</a> planned as we grow.</p>
 <h2>Why faith and sports belong together</h2>
 <p>Sports teach patience, humility, perseverance, and teamwork — the same virtues our faith calls us to practice every day. In our programs, kids will pray together, learn good sportsmanship, and be encouraged to strive for something greater. You can read more about our name and mission on our <a href="@/about/">About page</a> or in our post on <a href="@/blog/what-verso-l-alto-means/">what "Verso l'Alto" means</a>.</p>
 <h2>Open to every family</h2>
-<p>Our programs are rooted in the Catholic faith, but <strong>families of all faiths are welcome</strong>. You don't need to belong to a particular parish to join. Whether you live in <a href="@/service-area/#gilbert">Gilbert</a>, <a href="@/service-area/#mesa">Mesa</a>, <a href="@/service-area/#chandler">Chandler</a>, or <a href="@/service-area/#queen-creek">Queen Creek</a>, there's a spot for your child.</p>
+<p>Our programs are Christ-centered, and <strong>families of all faiths are welcome</strong>. You don't need to belong to a particular church to join. Whether you live in <a href="@/service-area/#gilbert">Gilbert</a>, <a href="@/service-area/#mesa">Mesa</a>, <a href="@/service-area/#chandler">Chandler</a>, or <a href="@/service-area/#queen-creek">Queen Creek</a>, there's a spot for your child.</p>
 <h2>Affordable by design</h2>
 <p>Youth sports in the Phoenix area can get expensive fast. As a nonprofit, we're committed to keeping registration affordable, and we are an approved Arizona ESA vendor, so eligible families can use Empowerment Scholarship Account funds. Learn more in our <a href="@/blog/using-arizona-esa-funds-for-youth-sports/">ESA guide</a> or on our <a href="@/faq/">FAQ page</a>.</p>
 <h2>How to get involved</h2>
@@ -198,7 +198,7 @@ body="""
 
 dict(slug="building-character-through-youth-sports", date="2026-09-01", tag="Faith",
 title="Building Character Through Youth Sports: The Virtues We Teach on the Field",
-desc="How Verso Alto Youth Sports helps Arizona kids grow in virtue — patience, courage, humility, and teamwork — through Catholic, faith-centered sports.",
+desc="How Verso Alto Youth Sports helps Arizona kids grow in virtue — patience, courage, humility, and teamwork — through faith-centered sports.",
 body="""
 <p>Skills matter. But years from now, most kids won't remember the score of a U6 soccer game. They will remember how sports made them <em>feel</em> — and who they became along the way. At Verso Alto, character comes first.</p>
 <h2>Patience</h2>

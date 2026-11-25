@@ -156,12 +156,12 @@ def footer():
     <div class="wrap fgrid">
       <div>
         <a href="@/" class="brand wordmark fword" aria-label="Verso Alto Youth Sports — home"><span><b>VERSO ALTO</b><small>YOUTH SPORTS</small></span></a>
-        <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Catholic, nonprofit youth sports league serving families in Gilbert, Mesa, Chandler, Queen Creek and across Arizona's East Valley. Faith · Community · Sports. To the Heights!</p>
+        <p style="color:var(--muted);margin-top:1.2rem;max-width:360px">A Christ-centered, nonprofit youth sports league serving families in Gilbert, Mesa, Chandler, Queen Creek and across Arizona's East Valley. Faith · Community · Sports. To the Heights!</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="@/">Home</a></li><li><a href="@/about/">About</a></li><li><a href="@/blog/">Blog</a></li><li><a href="@/faq/">FAQ</a></li><li><a href="@/support/">Support</a></li><li><a href="@/contact/">Contact</a></li></ul></div>
       <div><h4>Sports</h4><ul><li><a href="@/sports/soccer/">Youth Soccer</a></li><li><a href="@/sports/baseball/">Baseball (coming soon)</a></li><li><a href="@/sports/basketball/">Basketball (coming soon)</a></li><li><a href="@/sports/football/">Flag Football (coming soon)</a></li><li><a class="interest" href="{FORM}" target="_blank" rel="noopener">Interest Form</a></li></ul></div>
       <div><h4>Serving</h4><ul>{clinks}<li><a href="@/service-area/">All Maricopa County cities →</a></li></ul></div>
-      <div><h4>Families</h4><ul><li><a href="@/policies/">Policies &amp; Forms</a></li><li><a href="@/policies/privacy/">Privacy Policy</a></li><li><a href="@/policies/refund/">Refund Policy</a></li><li><a href="mailto:Shostutler@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
+      <div><h4>Families</h4><ul><li><a href="@/policies/">Policies &amp; Forms</a></li><li><a href="@/policies/privacy/">Privacy Policy</a></li><li><a href="@/policies/refund/">Refund Policy</a></li><li><a href="mailto:info@versoaltoyouthsports.com">Email us</a></li><li><a href="tel:+14804930639">(480) 493-0639</a></li></ul></div>
     </div>
     <div class="wrap"><div class="fbig">Verso l'Alto</div>
       <div class="fbottom"><span>© <span id="yr"></span> Verso Alto Youth Sports, Inc. · Arizona 501(c)(3) nonprofit · East Valley, AZ</span><a href="@/policies/privacy/">Privacy Policy</a></div>
@@ -171,9 +171,9 @@ def footer():
 
 ORG_LD = {
  "@context": "https://schema.org", "@type": "SportsOrganization", "name": "Verso Alto Youth Sports, Inc.",
- "alternateName": "Verso Alto Youth Sports", "url": SITE + "/", "email": "shostutler@versoaltoyouthsports.com",
+ "alternateName": "Verso Alto Youth Sports", "url": SITE + "/", "email": "info@versoaltoyouthsports.com",
  "telephone": "+1-480-493-0639", "sport": ["Soccer", "Baseball", "Basketball", "Flag Football"],
- "description": "Catholic, nonprofit youth sports league for kids in Arizona's East Valley — Gilbert, Mesa, Chandler, Queen Creek and beyond.",
+ "description": "Christ-centered, nonprofit youth sports league for kids in Arizona's East Valley — Gilbert, Mesa, Chandler, Queen Creek and beyond.",
  "address": {"@type": "PostalAddress", "addressLocality": "Gilbert", "addressRegion": "AZ", "addressCountry": "US"},
  "areaServed": [{"@type": "City", "name": c['name'] + ", AZ"} for c in CITIES] + [{"@type": "AdministrativeArea", "name": "Maricopa County, Arizona"}],
  "nonprofitStatus": "Nonprofit501c3",
@@ -247,8 +247,8 @@ INTEREST_BTN = lambda cls='btn btn-gold', label='Join the Interest List': f'<a c
 
 # HOME
 home = sec('home').replace('<div class="sports-grid" data-sportcards></div>', f'<div class="sports-grid">{sport_cards()}</div>')
-home = home.replace('<p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness.</p>',
- '<p>A Catholic youth sports program built to help foster growth in faith, build community, and strive for greatness — right here in Arizona\'s East Valley.</p>', 1)
+home = home.replace('<p>A Christ-centered youth sports program built to help foster growth in faith, build community, and strive for greatness.</p>',
+ '<p>A Christ-centered youth sports program built to help foster growth in faith, build community, and strive for greatness — right here in Arizona\'s East Valley.</p>', 1)
 east = [c['name'] for c in CITIES if c['region'] == 'east-valley']
 strip = ''.join(f'<a class="chip" href="@/service-area/#{slug(c)}">{c}</a>' for c in east) + '<a class="chip" href="@/service-area/">All Maricopa County cities →</a>'
 latest = ''.join(post_card(a, i) for i, a in enumerate(ARTICLES[:3]))
@@ -272,8 +272,8 @@ home_extra = f'''
   </section>
 '''
 home = home.replace('  <section class="quote">', home_extra + '  <section class="quote">', 1)
-page('/', 'Verso Alto Youth Sports | Catholic Youth Soccer & Sports in Gilbert, Mesa & the East Valley AZ',
-     'Verso Alto Youth Sports is a Catholic, nonprofit youth sports league in Arizona\'s East Valley. Co-ed soccer for ages 3–8 in Spring 2027 for Gilbert, Mesa, Chandler & Queen Creek families. ESA accepted.',
+page('/', 'Verso Alto Youth Sports | Faith-Based Youth Soccer & Sports in Gilbert, Mesa & the East Valley AZ',
+     'Verso Alto Youth Sports is a Christ-centered, nonprofit youth sports league in Arizona\'s East Valley. Co-ed soccer for ages 3–8 in Spring 2027 for Gilbert, Mesa, Chandler & Queen Creek families. ESA accepted.',
      home, 'home', home=True)
 
 # SPORTS
@@ -305,7 +305,7 @@ ab = sec('about')
 ab = ab.replace('<span class="eyebrow">About us</span>', '<nav class="crumbs"><a href="@/">Home</a><span class="sep">/</span><span>About</span></nav>\n      <span class="eyebrow">About us</span>')
 ab = ab.replace('<p style="color:var(--muted);margin-top:1rem">We pursue excellence in sport, faith, character, and service. Children and families of all faiths are welcome.</p>',
  '<p style="color:var(--muted);margin-top:1rem">We pursue excellence in sport, faith, character, and service. Children and families of all faiths are welcome.</p>\n        <p style="color:var(--muted);margin-top:1rem">Based in Gilbert and serving families across Arizona\'s East Valley — including <a href="@/service-area/#mesa" style="color:var(--gold);font-weight:700">Mesa</a>, <a href="@/service-area/#chandler" style="color:var(--gold);font-weight:700">Chandler</a>, <a href="@/service-area/#queen-creek" style="color:var(--gold);font-weight:700">Queen Creek</a> and <a href="@/service-area/#tempe" style="color:var(--gold);font-weight:700">Tempe</a> — we\'re starting with <a href="@/sports/soccer/" style="color:var(--gold);font-weight:700">co-ed youth soccer</a> and growing into an all-sport league. Read our story on the <a href="@/blog/" style="color:var(--gold);font-weight:700">blog</a>.</p>')
-page('/about/', 'About Us — Catholic Youth Sports in Arizona', 'Verso Alto Youth Sports, Inc. is an Arizona 501(c)(3) nonprofit providing affordable, Christ-centered youth sports for East Valley families. Inspired by St. Pier Giorgio Frassati.', ab, 'about')
+page('/about/', 'About Us — Faith-Based Youth Sports in Arizona', 'Verso Alto Youth Sports, Inc. is an Arizona 501(c)(3) nonprofit providing affordable, Christ-centered youth sports for East Valley families. Inspired by St. Pier Giorgio Frassati.', ab, 'about')
 
 # FAQ
 fq = sec('faq')
@@ -345,7 +345,7 @@ for k, v in POL.items():
       {body}
     </div>
   </section>'''
-    page(ROUTES[k], v['title'], f"{v['title']} for Verso Alto Youth Sports, Inc., an Arizona Catholic youth sports nonprofit. {v['d']}", b, 'faq')
+    page(ROUTES[k], v['title'], f"{v['title']} for Verso Alto Youth Sports, Inc., an Arizona faith-based youth sports nonprofit. {v['d']}", b, 'faq')
 
 # SUPPORT
 sup = phero('Support', '<span>Support our</span><br/><span class="grad" style="animation-delay:.12s">mission</span>',
@@ -406,12 +406,12 @@ sup += f'''
       <div class="mini-ways">
         <div class="way reveal"><span class="em">🙏</span><h3>Pray</h3><p>Lift up our players, families, and coaches. Prayer is the foundation of everything we do.</p><a class="link" href="@/about/">Our mission →</a></div>
         <div class="way reveal" style="transition-delay:.08s"><span class="em">📣</span><h3>Coach</h3><p>Share your love of the game and help young athletes grow in skill and character.</p><a class="link" href="@/contact/?topic=Coaching">I want to coach →</a></div>
-        <div class="way reveal" style="transition-delay:.16s"><span class="em">🤝</span><h3>Partner</h3><p>Parishes, schools, and local organizations — let's build something great together.</p><a class="link" href="@/contact/?topic=Partnering">Become a partner →</a></div>
+        <div class="way reveal" style="transition-delay:.16s"><span class="em">🤝</span><h3>Partner</h3><p>Churches, schools, and local organizations — let's build something great together.</p><a class="link" href="@/contact/?topic=Partnering">Become a partner →</a></div>
       </div>
       <p class="note reveal">Verso Alto Youth Sports, Inc. is an Arizona nonprofit corporation and a 501(c)(3) tax-exempt organization. Donations are tax-deductible to the extent allowed by law. Read our <a href="@/blog/why-coach-youth-sports/" style="color:var(--gold);font-weight:700">guide to coaching</a> or our <a href="@/blog/welcome-to-verso-alto-youth-sports/" style="color:var(--gold);font-weight:700">welcome post</a>.</p>
     </div>
   </section>'''
-page('/support/', 'Support Our Mission — Donate to Arizona Youth Sports', 'Donate to Verso Alto Youth Sports, an Arizona 501(c)(3) Catholic youth sports nonprofit. Give once or monthly to keep East Valley youth sports affordable.', sup, 'support')
+page('/support/', 'Support Our Mission — Donate to Arizona Youth Sports', 'Donate to Verso Alto Youth Sports, an Arizona 501(c)(3) faith-based youth sports nonprofit. Give once or monthly to keep East Valley youth sports affordable.', sup, 'support')
 
 # SERVICE AREA (Maricopa County) + one page per city
 def city_card(c, i=0):
@@ -494,8 +494,8 @@ for ci, c in enumerate(CITIES):
         <p>Our first season is played on Saturday mornings at fields in the East Valley (exact location to be announced). For {esc(name)} families, that's {where}.</p>
         <h3>Can {esc(name)} families use Arizona ESA funds?</h3>
         <p>Yes. Verso Alto Youth Sports is an approved Arizona ESA vendor. Choose ESA at registration and you'll receive an invoice for ClassWallet. <a href="@/blog/using-arizona-esa-funds-for-youth-sports/">Here's how it works.</a></p>
-        <h3>Do we need to be Catholic to join?</h3>
-        <p>No. Our programs are rooted in the Catholic faith, and families of all faiths in {esc(name)} and across Maricopa County are welcome. <a href="@/faq/">See the full FAQ.</a></p>
+        <h3>Do we need to belong to a particular church to join?</h3>
+        <p>No. Our programs are Christ-centered, and families of all faiths and backgrounds in {esc(name)} and across Maricopa County are welcome. <a href="@/faq/">See the full FAQ.</a></p>
       </div>
       <div class="sec-head reveal" style="margin-top:3rem;margin-bottom:1.2rem"><span class="eyebrow">Nearby</span></div>
       <div class="chips reveal">{near}<a class="chip" href="@/service-area/">All Maricopa County cities →</a></div>
@@ -511,7 +511,7 @@ for ci, c in enumerate(CITIES):
           "serviceType": "Youth sports league", "provider": {"@type": "SportsOrganization", "name": "Verso Alto Youth Sports"},
           "areaServed": {"@type": "City", "name": f"{name}, AZ", "containedInPlace": {"@type": "AdministrativeArea", "name": "Maricopa County, Arizona"}},
           "description": c['fit']}
-    page(f'/service-area/{sl}/', f'Youth Sports in {name}, AZ — Catholic Youth Soccer',
+    page(f'/service-area/{sl}/', f'Youth Sports in {name}, AZ — Faith-Based Youth Soccer',
          f"Faith-centered, affordable youth soccer for {name}, AZ families with kids ages 3–8. No tryouts, Arizona ESA accepted. Baseball, basketball & flag football coming soon.",
          body, 'about', ld=ld)
 
@@ -562,7 +562,7 @@ for a in ARTICLES:
     ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": a['title'], "description": a['desc'],
           "datePublished": a['date'], "dateModified": a['date'], "author": {"@type": "Organization", "name": "Verso Alto Youth Sports"},
           "publisher": {"@type": "Organization", "name": "Verso Alto Youth Sports"}, "mainEntityOfPage": f"{SITE}/blog/{a['slug']}/",
-          "keywords": f"{a['tag']}, youth sports, Arizona, East Valley, Gilbert, Mesa, Chandler, Catholic youth sports"}
+          "keywords": f"{a['tag']}, youth sports, Arizona, East Valley, Gilbert, Mesa, Chandler, faith-based youth sports, Christian youth sports"}
     page(f"/blog/{a['slug']}/", a['title'], a['desc'], b, 'blog', ld=ld)
 
 # ---------------------------------------------------------------- single-file mode
