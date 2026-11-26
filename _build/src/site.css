@@ -71,10 +71,10 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45de
 
 /* ---------- HERO: sunrise ---------- */
 .hero{position:relative;height:100vh;min-height:660px;overflow:hidden;
-  background:linear-gradient(180deg,#071330 0%,#10295a 22%,#34507e 40%,#8a9bb5 56%,#d9d2b0 72%,#ffd75a 86%,#ffc72c 100%)}
+  background:linear-gradient(180deg,#2a4f8f 0%,#4f7bbd 22%,#8eaad6 42%,#d8d4e0 58%,#ffe0a8 74%,#ffd36b 88%,#ffc94a 100%)}
 .rays{position:absolute;left:50%;top:78%;width:180vmax;height:180vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(rgba(255,255,255,.14) 0 4deg,transparent 4deg 14deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 0%,transparent 55%);mask:radial-gradient(circle,#000 0%,transparent 55%);animation:spin 120s linear infinite;pointer-events:none}
 .sun-wrap{position:absolute;left:50%;bottom:22%;width:min(36vw,400px);aspect-ratio:1;transform:translateX(-50%);will-change:transform}
-.sun{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fffdf0 0%,#fff1a8 34%,#ffd23f 58%,rgba(255,199,44,0) 72%);animation:sunrise 3s var(--ease) both}
+.sun{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fffef5 0%,#fff3c2 34%,#ffe07a 58%,rgba(255,211,107,0) 72%);animation:sunrise 3s var(--ease) both}
 .sun::after{content:"";position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(255,215,90,.5),transparent 60%);animation:pulse 6s ease-in-out infinite}
 @keyframes sunrise{from{transform:translateY(55%);filter:brightness(.9)}}
 @keyframes pulse{50%{transform:scale(1.1);opacity:.7}}
@@ -438,9 +438,8 @@ a.city{display:block}
 .fword b{font-size:1.6rem}.fword small{font-size:.95rem}
 @media (max-width:600px){.wordmark b{font-size:1.15rem}.wordmark small{font-size:.74rem}}
 
-/* ---------- Scheme #25: Navy, Silver & Yellow sunrise with red action buttons ---------- */
-:root{--red:#d62828;--red2:#b01e1e}
-.btn-gold,.btn-dark.interest,.mm-cta{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;box-shadow:0 14px 40px rgba(214,40,40,.35)}
-.cta-mini{background:var(--red);color:#fff}
-.cta-mini:hover{box-shadow:0 10px 30px rgba(214,40,40,.45)}
+/* ---------- Scheme #39: Golden Dawn — navy & silver with a golden morning sky and silver buttons ---------- */
+.btn-dark.interest{background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink);box-shadow:0 14px 40px rgba(10,26,54,.35)}
+.cta-mini{background:linear-gradient(135deg,var(--gold),var(--sun));color:var(--ink)}
 .cta-band{background:linear-gradient(120deg,var(--navy2),var(--deep));color:var(--cream);border:1px solid rgba(255,255,255,.08)}
+.cloud{background:rgba(255,255,255,.85)}
