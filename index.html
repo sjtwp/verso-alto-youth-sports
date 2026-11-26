@@ -92,7 +92,8 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45de
 /* ---------- HERO: sunrise ---------- */
 .hero{position:relative;height:100vh;min-height:660px;overflow:hidden;
   background:linear-gradient(180deg,#2a4f8f 0%,#4f7bbd 22%,#8eaad6 42%,#d8d4e0 58%,#ffe0a8 74%,#ffd36b 88%,#ffc94a 100%)}
-.rays{position:absolute;left:50%;top:78%;width:180vmax;height:180vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(rgba(255,255,255,.14) 0 4deg,transparent 4deg 14deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 0%,transparent 55%);mask:radial-gradient(circle,#000 0%,transparent 55%);animation:spin 120s linear infinite;pointer-events:none}
+.rays{position:absolute;left:50%;top:50%;width:180vmax;height:180vmax;margin:-90vmax 0 0 -90vmax;background:repeating-conic-gradient(rgba(255,255,255,.14) 0 4deg,transparent 4deg 14deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 0%,transparent 55%);mask:radial-gradient(circle,#000 0%,transparent 55%);animation:spin 90s linear infinite;pointer-events:none;z-index:0}
+.sun{position:relative;z-index:1}
 .sun-wrap{position:absolute;left:50%;bottom:22%;width:min(36vw,400px);aspect-ratio:1;transform:translateX(-50%);will-change:transform}
 .sun{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fffef5 0%,#fff3c2 34%,#ffe07a 58%,rgba(255,211,107,0) 72%);animation:sunrise 3s var(--ease) both}
 .sun::after{content:"";position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(circle,rgba(255,215,90,.5),transparent 60%);animation:pulse 6s ease-in-out infinite}
@@ -552,8 +553,7 @@ a.city{display:block}
 <div class="page" data-route="home" data-section="home" data-title="Verso Alto Youth Sports | Faith-Based Youth Soccer &amp; Sports in Gilbert, Mesa &amp; the East Valley AZ" data-desc="Verso Alto Youth Sports is a Christ-centered, nonprofit youth sports league in Arizona&#x27;s East Valley. Co-ed soccer for ages 3–8 in Spring 2027 for Gilbert, Mesa, Chandler &amp; Queen Creek families. ESA accepted.">
 
   <section class="hero" id="hero">
-    <div class="rays"></div>
-    <div class="sun-wrap" data-sun><div class="sun"></div></div>
+    <div class="sun-wrap" data-sun><div class="rays"></div><div class="sun"></div></div>
     <div class="cloud" style="top:14%;width:180px;animation-duration:90s;animation-delay:-20s"></div>
     <div class="cloud" style="top:26%;width:120px;opacity:.6;animation-duration:120s;animation-delay:-70s"></div>
     <div class="cloud" style="top:9%;width:240px;opacity:.5;animation-duration:150s;animation-delay:-110s"></div>
